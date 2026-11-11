@@ -1,5 +1,6 @@
 import type { Map as LibreMap } from 'maplibre-gl';
-import { cities, demoFarms, flowPaths, connectionPaths, type Coast, type Point } from '@/lib/geo/scene';
+import {offshoreAssets} from '@/lib/geo/assets';
+import { cities, connectionPaths, type Coast, type Point } from '@/lib/geo/scene';
 export type SceneSettings = { playing:boolean; speed:number; wind:boolean; connections:boolean; cities:boolean; windActivity:number; flows:Record<string,number> };
 export class SceneRenderer {
  private ctx:CanvasRenderingContext2D; private backdrop=document.createElement('canvas');
@@ -27,7 +28,7 @@ export class SceneRenderer {
   const count=Math.max(1,Math.round(2+strength*4));for(let i=0;i<count;i++){const raw=(this.elapsed*(.035+strength*.035)+i/count+index*.17)%1;const t=direction>0?raw:1-raw;for(let k=0;k<12;k++){const u=t-direction*k*.004;if(u<0||u>1)continue;const [x,y]=this.curve(points,u);c.globalAlpha=(1-k/12)*.85;this.dot(c,x,y,k===0?1.5:.8,'#8df5e5');}c.globalAlpha=1;}}
  private turbine(x:number,y:number,index:number){const c=this.ctx,size=4.5;c.save();c.translate(x,y);c.strokeStyle='#9bd9d7';c.lineWidth=.8;c.beginPath();c.moveTo(0,0);c.lineTo(0,8);c.stroke();c.rotate(this.elapsed*.8+index*1.7);for(let i=0;i<3;i++){c.rotate(Math.PI*2/3);c.beginPath();c.moveTo(-.6,0);c.lineTo(-.4,-size*.4);c.lineTo(.5,-size);c.lineTo(1.1,-size*.25);c.closePath();c.fillStyle='#b9e9e3';c.fill();}this.dot(c,0,0,1,'#effff9');c.restore();}
  private draw(){if(this.disposed)return;if(this.dirty)this.bake();const {width:w,height:h}=this.canvas.getBoundingClientRect();this.ctx.clearRect(0,0,w,h);this.ctx.drawImage(this.backdrop,0,0,w,h);
-  if(this.settings.wind){flowPaths.forEach((p,i)=>this.flow(p,i));demoFarms.forEach((farm,fi)=>{const [x,y]=this.project(farm.point);this.glow(this.ctx,x,y,35,'#2ea8ba',.12);for(let j=0;j<farm.count;j++){const col=j%4,row=Math.floor(j/4);this.turbine(x+(col-1.5)*12,y+(row-1)*13+col*3,j+fi);}});}
+  if(this.settings.wind){offshoreAssets.slice(0,14).forEach((farm,fi)=>{const [x,y]=this.project(farm.point);const nearest=[...cities].sort((a,b)=>Math.hypot(a[0]-farm.point[0],a[1]-farm.point[1])-Math.hypot(b[0]-farm.point[0],b[1]-farm.point[1]))[0];const end:Point=[nearest[0],nearest[1]];const middle:Point=[(farm.point[0]+end[0])/2+.3,(farm.point[1]+end[1])/2+.15];this.flow([farm.point,middle,end],fi);this.glow(this.ctx,x,y,25,'#2ea8ba',.12);for(let j=0;j<3;j++)this.turbine(x+(j-1)*11,y+(j%2)*7,j+fi);});}
   if(this.settings.connections)connectionPaths.forEach((p,i)=>{const value=this.settings.flows[p.id];if(value!==undefined)this.flow(p.points,i,value);});
  }
  private tick=(t:number)=>{this.frame=0;const dt=Math.min((t-this.last)/1000,.06);this.last=t;if(this.settings.playing&&!document.hidden){this.elapsed+=dt*this.settings.speed;this.draw();this.schedule();}};
