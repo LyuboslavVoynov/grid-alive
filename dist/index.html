@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GRID / ALIVE — Motion study</title>
+<meta name="description" content="A top-down cinematic concept of Britain's electricity system. Sample data and illustrative motion.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<canvas id="map" aria-label="Top-down map of Great Britain with illustrative rotating wind turbines and animated electricity trails"></canvas>
+<div class="vignette"></div>
+<header><a class="brand" href="./">GRID <i>/</i> ALIVE</a><div class="status"><span></span> DESIGN CONCEPT <b>SAMPLE DATA</b></div></header>
+<aside class="summary" aria-label="Sample generation mix">
+<p class="eyebrow">GENERATION MIX</p><div class="total">30.0 <span>GW</span></div><p class="subhead">Domestic generation <span class="sample-tag">SAMPLE</span></p>
+<button id="mix-toggle" class="mix-toggle" aria-expanded="false" aria-controls="mix-detail">View generation split <span>＋</span></button>
+<div id="mix-detail">
+<div class="mix-layout"><div class="mix-bar" aria-hidden="true"><span style="--fuel:#6bcbc1;flex:40"></span><span style="--fuel:#b7a3c8;flex:15"></span><span style="--fuel:#788da4;flex:35"></span><span style="--fuel:#62b8d8;flex:2"></span><span style="--fuel:#84ba8e;flex:6"></span><span style="--fuel:#ded2bc;flex:2"></span></div>
+<table aria-label="Illustrative generation shares"><tbody>
+<tr style="--fuel:#6bcbc1"><th scope="row"><span class="fuel">〰</span>Wind</th><td>12.0 GW</td><td>40%</td></tr>
+<tr style="--fuel:#dfba77"><th scope="row"><span class="fuel">☼</span>Solar</th><td>0.0 GW</td><td>0%</td></tr>
+<tr style="--fuel:#c6b9dd"><th scope="row"><span class="fuel">✧</span>Nuclear</th><td>4.5 GW</td><td>15%</td></tr>
+<tr style="--fuel:#8baccd"><th scope="row"><span class="fuel">♧</span>Gas</th><td>10.5 GW</td><td>35%</td></tr>
+<tr style="--fuel:#62b8d8"><th scope="row"><span class="fuel">♢</span>Hydro</th><td>0.6 GW</td><td>2%</td></tr>
+<tr style="--fuel:#84ba8e"><th scope="row"><span class="fuel">♧</span>Biomass</th><td>1.8 GW</td><td>6%</td></tr>
+<tr style="--fuel:#ded2bc"><th scope="row"><span class="fuel dots">•••</span>Other</th><td>0.6 GW</td><td>2%</td></tr>
+</tbody></table></div>
+<dl class="balance"><div><dt>Demand</dt><dd>33.0 GW</dd></div><div><dt>Net imports</dt><dd>3.0 GW</dd></div></dl>
+<p class="demo">Sample figures for design review.<br>Live measurements are not connected.</p>
+</div></aside>
+<aside class="market" aria-label="Sample carbon intensity"><p class="eyebrow">CARBON INTENSITY</p><div class="carbon"><div>146 <span>gCO₂ / kWh</span></div><p class="period">Sample observation · 18:00–18:30</p></div></aside>
+<div class="north"><span>↑</span>N</div>
+<section class="map-tools" aria-label="Map controls"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="reset" aria-label="Reset map view">⌖</button></section>
+<div class="hint"><span class="pulse"></span><span>OFFSHORE WIND <b>Rotating turbines · illustrative flow</b></span></div>
+<footer><div class="layers" aria-label="Visual layers"><span class="active">Energy flow</span><button id="wind" aria-pressed="true">Wind farms</button><button id="connections" aria-pressed="true">Connections</button><button id="cities" aria-pressed="true">City lights</button></div><div class="transport"><button id="play" aria-label="Pause animation">Ⅱ</button><span class="transport-label">ILLUSTRATIVE MOTION</span><div class="track"><span></span></div><button id="speed" aria-label="Change animation speed">1×</button><span class="motion-state">Running</span></div><div class="footnote"><span>GREAT BRITAIN <em>·</em> Sample data <em>·</em> Flow paths illustrative</span><span>Geography: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noreferrer">Natural Earth</a> · Public domain</span></div></footer>
+</main><script src="app.js"></script></body></html>
