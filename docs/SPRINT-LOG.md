@@ -21,3 +21,13 @@
 - Replaced production sample figures with real observations; each metric shows its own time. Added methodology and outage/partial-data states.
 - Verification: 10 tests cover accounting, unknown fuels, revisions, gaps, zero-carbon estimates, negative values, cache fallback and cold-start failure. TypeScript passed. The local API returned actual provider observations with no errors during integration.
 - Remaining: turbine locations remain illustrative; regional carbon and historical replay are later milestones.
+
+## Sprint 3 — geographic assets and observed activity
+
+- Replaced demonstration asset locations with 105 selected operational renewable projects from DESNZ REPD July 2026; excluded Northern Ireland and retained source IDs, capacity, country and dated status.
+- Added source-coloured geographic markers, mouse selection and a keyboard-accessible site picker. Site panels separate installed capacity from unavailable measured output.
+- Added stylised offshore turbines at real site reference points and explicitly illustrative particle paths; national wind share controls path activity.
+- International paths use Elexon link observations and preserve import/export signs; schematic routes do not claim surveyed terminal locations.
+- Documented licences, coverage, approximate coordinate conversion and geographic preparation in docs/DATA-SOURCES.md.
+- Prepared NESO DNO boundaries for the next milestone and tested the mapping to all fourteen Carbon Intensity region IDs.
+- Verification: 12 unit tests and TypeScript pass. Geographic tests cover unique IDs, GB coverage, valid coordinates and closed regional polygons.

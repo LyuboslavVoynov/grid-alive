@@ -1,0 +1,1682 @@
+[
+  {
+    "id": "repd-2502",
+    "name": "Hornsea 2 - Optimus and Breesea",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 1320,
+    "turbines": 165,
+    "country": "England",
+    "updated": "01/09/2022",
+    "point": [
+      1.53999,
+      53.96
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2525",
+    "name": "Hornsea 1 - Heron & Njord",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 1218,
+    "turbines": 174,
+    "country": "England",
+    "updated": "03/09/2020",
+    "point": [
+      1.42074,
+      53.68154
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2540",
+    "name": "Seagreen",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 1075,
+    "turbines": 114,
+    "country": "Scotland",
+    "updated": "18/10/2023",
+    "point": [
+      -1.92662,
+      56.63551
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2534",
+    "name": "Moray East",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 950,
+    "turbines": 100,
+    "country": "Scotland",
+    "updated": "12/04/2023",
+    "point": [
+      -2.79054,
+      57.96732
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6158",
+    "name": "Moray West Offshore Wind Farm Project",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 882,
+    "turbines": 60,
+    "country": "Scotland",
+    "updated": "14/05/2026",
+    "point": [
+      -3.31307,
+      58.06989
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2532",
+    "name": "Triton Knoll ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 857,
+    "turbines": 90,
+    "country": "England",
+    "updated": "02/03/2022",
+    "point": [
+      0.86164,
+      53.21227
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2524",
+    "name": "East Anglia 1 (EA 1)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 714,
+    "turbines": 102,
+    "country": "England",
+    "updated": "20/08/2020",
+    "point": [
+      2.1709,
+      52.13744
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2533",
+    "name": "Walney 3",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 659,
+    "turbines": 110,
+    "country": "England",
+    "updated": "04/06/2020",
+    "point": [
+      -3.74001,
+      54.08999
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2511",
+    "name": "London Array Phase 1",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 630,
+    "turbines": 175,
+    "country": "England",
+    "updated": "06/11/2018",
+    "point": [
+      1.49583,
+      51.62168
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2521",
+    "name": "Beatrice",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 588,
+    "turbines": 84,
+    "country": "Scotland",
+    "updated": "31/05/2019",
+    "point": [
+      -2.95016,
+      58.08823
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2543",
+    "name": "Gwynt y Mor ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 576,
+    "turbines": 160,
+    "country": "Wales",
+    "updated": "19/08/2020",
+    "point": [
+      -3.62665,
+      53.454
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2510",
+    "name": "Greater Gabbard Wind Farm",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 504,
+    "turbines": 140,
+    "country": "England",
+    "updated": "02/10/2019",
+    "point": [
+      1.92842,
+      51.91764
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2522",
+    "name": "Neart na Gaoithe",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 450,
+    "turbines": 54,
+    "country": "Scotland",
+    "updated": "23/03/2026",
+    "point": [
+      -2.25,
+      56.27
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2538",
+    "name": "Dudgeon East ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 402,
+    "turbines": 67,
+    "country": "England",
+    "updated": "02/01/2020",
+    "point": [
+      0.61347,
+      53.11746
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2520",
+    "name": "Rampion Offshore Wind Farm (Hastings Zone)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 400,
+    "turbines": 116,
+    "country": "England",
+    "updated": "06/12/2019",
+    "point": [
+      -0.18,
+      50.63999
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2519",
+    "name": "West of Duddon Sands",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 389,
+    "turbines": 108,
+    "country": "England",
+    "updated": "20/08/2020",
+    "point": [
+      -3.46201,
+      53.98515
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2526",
+    "name": "Galloper Wind Farm",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 353,
+    "turbines": 56,
+    "country": "England",
+    "updated": "02/10/2019",
+    "point": [
+      2.03999,
+      51.87999
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2512",
+    "name": "Sheringham Shoal ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 317,
+    "turbines": 88,
+    "country": "England",
+    "updated": "05/11/2019",
+    "point": [
+      1.14792,
+      53.13532
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2499",
+    "name": "Thanet ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 300,
+    "turbines": 100,
+    "country": "England",
+    "updated": "01/05/2018",
+    "point": [
+      1.63341,
+      51.42993
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2515",
+    "name": "Race Bank (Phase 1)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 289.8,
+    "turbines": 46,
+    "country": "England",
+    "updated": "20/08/2020",
+    "point": [
+      0.58917,
+      53.13597
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6501",
+    "name": "Race Bank (Phase 2)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 283.5,
+    "turbines": 45,
+    "country": "England",
+    "updated": "20/08/2020",
+    "point": [
+      0.58917,
+      53.13597
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2513",
+    "name": "Centrica (Lincs)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 270,
+    "turbines": 75,
+    "country": "England",
+    "updated": "01/05/2018",
+    "point": [
+      0.49808,
+      53.18417
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2539",
+    "name": "Burbo Bank Extension (Burbo Bank 2)",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 258,
+    "turbines": 32,
+    "country": "England",
+    "updated": "02/05/2018",
+    "point": [
+      -3.27,
+      53.47999
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2544",
+    "name": "Humber Gateway A",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 219,
+    "turbines": 73,
+    "country": "England",
+    "updated": "03/10/2016",
+    "point": [
+      0.50064,
+      53.38746
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2545",
+    "name": "Westermost Rough A",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 210,
+    "turbines": 35,
+    "country": "England",
+    "updated": "05/04/2018",
+    "point": [
+      0.56148,
+      53.09773
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2500",
+    "name": "Walney 1",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 183.6,
+    "turbines": 51,
+    "country": "England",
+    "updated": "03/09/2020",
+    "point": [
+      -3.51579,
+      54.03945
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2506",
+    "name": "Walney 2",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 183.6,
+    "turbines": 51,
+    "country": "England",
+    "updated": "03/09/2020",
+    "point": [
+      -3.60897,
+      54.08074
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2509",
+    "name": "Ormonde Offshore",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 150,
+    "turbines": 30,
+    "country": "England",
+    "updated": "23/08/2017",
+    "point": [
+      -3.43859,
+      54.08887
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2490",
+    "name": "Gunfleet Sands Offshore Wind Scheme",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 108,
+    "turbines": 30,
+    "country": "England",
+    "updated": "01/05/2018",
+    "point": [
+      1.21801,
+      51.73082
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2491",
+    "name": "Inner Dowsing ",
+    "technology": "Wind Offshore",
+    "fuel": "wind",
+    "capacityMw": 97.2,
+    "turbines": 27,
+    "country": "England",
+    "updated": "24/08/2017",
+    "point": [
+      0.44652,
+      53.18797
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6828",
+    "name": "Viking Wind Farm ",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 443,
+    "turbines": 103,
+    "country": "Scotland",
+    "updated": "24/01/2022",
+    "point": [
+      -1.20843,
+      60.33933
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4011",
+    "name": "Clyde Wind Farm",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 350,
+    "turbines": 152,
+    "country": "Scotland",
+    "updated": "01/06/2018",
+    "point": [
+      -3.54273,
+      55.44163
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-3489",
+    "name": "Whitelee",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 322,
+    "turbines": 140,
+    "country": "Scotland",
+    "updated": "20/05/2010",
+    "point": [
+      -4.27906,
+      55.68121
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4586",
+    "name": "South Kyle Wind Farm",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 240,
+    "turbines": 50,
+    "country": "Scotland",
+    "updated": "16/01/2026",
+    "point": [
+      -4.29318,
+      55.31733
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4386",
+    "name": "Kilgallioch wind farm",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 239,
+    "turbines": 96,
+    "country": "Scotland",
+    "updated": "22/02/2018",
+    "point": [
+      -4.80172,
+      54.98845
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4595",
+    "name": "Pen Y Cymoedd",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 228,
+    "turbines": 76,
+    "country": "Wales",
+    "updated": "04/06/2018",
+    "point": [
+      -3.69573,
+      51.65554
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4597",
+    "name": "Stronelairg Wind Farm",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 227.7,
+    "turbines": 66,
+    "country": "Scotland",
+    "updated": "02/01/2019",
+    "point": [
+      -4.52637,
+      57.12692
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4244",
+    "name": "Dorenell Wind Farm (Previously Site A and B Scaut Hill)",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 177,
+    "turbines": 59,
+    "country": "Scotland",
+    "updated": "23/07/2019",
+    "point": [
+      -3.13168,
+      57.3509
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4178",
+    "name": "Clyde Wind Farm Extension (Clyde 2)",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 172.8,
+    "turbines": 54,
+    "country": "Scotland",
+    "updated": "01/06/2018",
+    "point": [
+      -3.5479,
+      55.50414
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4028",
+    "name": "Griffin Wind farm",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 156,
+    "turbines": 52,
+    "country": "Scotland",
+    "updated": "29/02/2012",
+    "point": [
+      -3.73375,
+      56.58122
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4059",
+    "name": "Fallago Rig",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 144,
+    "turbines": 48,
+    "country": "Scotland",
+    "updated": "02/07/2020",
+    "point": [
+      -2.68803,
+      55.83131
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-3440",
+    "name": "Crystal Rig Wind Farm Phase 2a",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 138,
+    "turbines": 60,
+    "country": "Scotland",
+    "updated": "28/10/2010",
+    "point": [
+      -2.52931,
+      55.89948
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4119",
+    "name": "Harestanes",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 136,
+    "turbines": 68,
+    "country": "Scotland",
+    "updated": "02/07/2014",
+    "point": [
+      -3.5742,
+      55.23903
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-3116",
+    "name": "Black Law",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 124,
+    "turbines": 54,
+    "country": "Scotland",
+    "updated": "14/12/2011",
+    "point": [
+      -3.76257,
+      55.76219
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-3109",
+    "name": "Hadyard Hill",
+    "technology": "Wind Onshore",
+    "fuel": "wind",
+    "capacityMw": 120,
+    "turbines": 52,
+    "country": "Scotland",
+    "updated": "06/05/2009",
+    "point": [
+      -4.73191,
+      55.25682
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6502",
+    "name": "Cleve Hill Solar Project",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 373,
+    "turbines": null,
+    "country": "England",
+    "updated": "28/07/2025",
+    "point": [
+      0.91389,
+      51.33877
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6411",
+    "name": "Llanwern Solar Farm & Battery Storage",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 75,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "31/03/2022",
+    "point": [
+      -2.90317,
+      51.5613
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2347",
+    "name": "Shotwick Solar Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 72.2,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "02/02/2018",
+    "point": [
+      -3.02272,
+      53.24089
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-8051",
+    "name": "Larks Green Solar Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 70,
+    "turbines": null,
+    "country": "England",
+    "updated": "16/05/2023",
+    "point": [
+      -2.47741,
+      51.57794
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2203",
+    "name": "Bradenstoke solar park",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 69.8,
+    "turbines": null,
+    "country": "England",
+    "updated": "09/07/2024",
+    "point": [
+      -1.96804,
+      51.50664
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-8479",
+    "name": "Breach Farm - Solar farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 67,
+    "turbines": null,
+    "country": "England",
+    "updated": "17/04/2026",
+    "point": [
+      0.34921,
+      52.29189
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-9096",
+    "name": "Gonerby Moor, Great Gonerby - Solar Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 60,
+    "turbines": null,
+    "country": "England",
+    "updated": "13/07/2026",
+    "point": [
+      -0.67444,
+      52.95593
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-8131",
+    "name": "Darlington Road, Skeeby",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 55,
+    "turbines": null,
+    "country": "England",
+    "updated": "11/11/2024",
+    "point": [
+      -1.69894,
+      54.41112
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-2088",
+    "name": "West Raynham",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "09/04/2015",
+    "point": [
+      0.74478,
+      52.7905
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-7223",
+    "name": "Inkersall Grange Farm ",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "10/07/2026",
+    "point": [
+      -1.06602,
+      53.12841
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-7256",
+    "name": "The Grange",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "01/04/2021",
+    "point": [
+      -0.82411,
+      53.05056
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-7425",
+    "name": "Hatherden Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "11/11/2025",
+    "point": [
+      -1.5102,
+      51.24827
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-7840",
+    "name": "Croome Airfield Solar Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "16/01/2026",
+    "point": [
+      -2.15554,
+      52.0884
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-8101",
+    "name": "Litchardon Cross Solar Farm",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "28/02/2024",
+    "point": [
+      -4.12097,
+      51.04518
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-8136",
+    "name": "Kemble Wick",
+    "technology": "Solar Photovoltaics",
+    "fuel": "solar",
+    "capacityMw": 49.9,
+    "turbines": null,
+    "country": "England",
+    "updated": "14/04/2026",
+    "point": [
+      -2.03034,
+      51.66035
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-388",
+    "name": "Glendoe Hydro Scheme",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 100,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "17/07/2009",
+    "point": [
+      -4.6592,
+      57.14365
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6601",
+    "name": "Lochaber",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 65,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "05/04/2018",
+    "point": [
+      -5.07259,
+      56.82906
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-10995",
+    "name": "Tummel Bridge Power Station - Hydro Plant",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/11/2024",
+    "point": [
+      -4.02124,
+      56.7064
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-387",
+    "name": "Great Glen Scheme",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 36,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "20/09/2018",
+    "point": [
+      -4.72133,
+      57.20163
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4881",
+    "name": "Dolgarrog",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 32,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "03/10/2018",
+    "point": [
+      -3.84261,
+      53.19116
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-398",
+    "name": "Aigas",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 20,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "03/04/2006",
+    "point": [
+      -4.54532,
+      57.45744
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-399",
+    "name": "Kilmorack",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 20,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "03/04/2006",
+    "point": [
+      -4.51212,
+      57.46323
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-402",
+    "name": "Ceannacroc",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 20,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -4.93197,
+      57.15276
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-404",
+    "name": "Invergarry",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 20,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -4.77404,
+      57.07214
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-391",
+    "name": "Kinlochleven Hydro Power Station",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 19.5,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2018",
+    "point": [
+      -4.96341,
+      56.71457
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-400",
+    "name": "Orrin",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 18,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "03/04/2006",
+    "point": [
+      -4.55852,
+      57.52942
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-394",
+    "name": "Pitlochry",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 15,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -3.74056,
+      56.69911
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-401",
+    "name": "Tor Achilty",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 15,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "03/04/2006",
+    "point": [
+      -4.59836,
+      57.554
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-405",
+    "name": "Livishie",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 15,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -4.6474,
+      57.22025
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-407",
+    "name": "Cashlie",
+    "technology": "Large Hydro",
+    "fuel": "hydro",
+    "capacityMw": 11,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "22/04/2009",
+    "point": [
+      -4.46514,
+      56.54312
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-4909",
+    "name": "Llyn Celyn ",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4.5,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "05/01/2015",
+    "point": [
+      -3.67117,
+      52.94382
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-415",
+    "name": "Llyn Brianne Dam",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4.4,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "15/07/2009",
+    "point": [
+      -3.76989,
+      52.12025
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-421",
+    "name": "Inverfarigaig",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "03/07/2009",
+    "point": [
+      -4.45498,
+      57.27992
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-462",
+    "name": "Dalchonzie",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "17/12/2015",
+    "point": [
+      -4.04112,
+      56.37338
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-464",
+    "name": "Lubreoch",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -4.51745,
+      56.54194
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-484",
+    "name": "Maldie Burn",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 4,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "26/03/2014",
+    "point": [
+      -4.98194,
+      58.26027
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-424",
+    "name": "Kingairloch",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3.5,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "10/05/2006",
+    "point": [
+      -5.52892,
+      56.62142
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-470",
+    "name": "Lairg",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3.5,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -4.41456,
+      58.02867
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-485",
+    "name": "Black Rock",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3.5,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "05/04/2013",
+    "point": [
+      -4.35044,
+      57.6692
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-434",
+    "name": "Cuileig Hydro Scheme",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3.3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "10/12/2009",
+    "point": [
+      -5.03923,
+      57.76327
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-425",
+    "name": "Douglas Water Hydro",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "23/10/2008",
+    "point": [
+      -5.15329,
+      56.21486
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-428",
+    "name": "River E Hydro Scheme",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "05/10/2010",
+    "point": [
+      -4.45057,
+      57.2135
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-463",
+    "name": "Lednock",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2006",
+    "point": [
+      -3.99754,
+      56.37454
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-468",
+    "name": "Achanalt",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "27/04/2006",
+    "point": [
+      -4.91604,
+      57.61082
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-475",
+    "name": "Cia Aig Hydro",
+    "technology": "Small Hydro",
+    "fuel": "hydro",
+    "capacityMw": 3,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "24/08/2016",
+    "point": [
+      -5.00759,
+      56.95375
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-175",
+    "name": "Drax Biomass Power Station - Unit 3",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 645,
+    "turbines": null,
+    "country": "England",
+    "updated": "04/06/2018",
+    "point": [
+      -0.9911,
+      53.73559
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-192",
+    "name": "Drax Biomass Power Station - Unit 2",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 645,
+    "turbines": null,
+    "country": "England",
+    "updated": "04/06/2018",
+    "point": [
+      -0.9911,
+      53.73559
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-6659",
+    "name": "Drax Biomass Power Station - Unit 4",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 645,
+    "turbines": null,
+    "country": "England",
+    "updated": "03/09/2018",
+    "point": [
+      -0.9911,
+      53.73559
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-115",
+    "name": "Lynemouth Power Station",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 420,
+    "turbines": null,
+    "country": "England",
+    "updated": "21/11/2018",
+    "point": [
+      -1.5325,
+      55.20672
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-155",
+    "name": "Markinch Biomass CHP Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 65,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "04/04/2018",
+    "point": [
+      -3.16226,
+      56.20118
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-196",
+    "name": "Stevens Croft",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 50.4,
+    "turbines": null,
+    "country": "Scotland",
+    "updated": "25/09/2014",
+    "point": [
+      -3.38089,
+      55.1524
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-47",
+    "name": "Iggesund Paperboard CHP Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 49,
+    "turbines": null,
+    "country": "England",
+    "updated": "04/07/2013",
+    "point": [
+      -3.54733,
+      54.66398
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-185",
+    "name": "Snetterton Biomass Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 44.2,
+    "turbines": null,
+    "country": "England",
+    "updated": "02/11/2017",
+    "point": [
+      0.95443,
+      52.47915
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-152",
+    "name": "Tilbury Green Power",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 43,
+    "turbines": null,
+    "country": "England",
+    "updated": "27/11/2018",
+    "point": [
+      0.34968,
+      51.4604
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-161",
+    "name": "Templeborough Biomass Power Plant- Rotherham",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 42,
+    "turbines": null,
+    "country": "England",
+    "updated": "05/11/2019",
+    "point": [
+      -1.37337,
+      53.42259
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-132",
+    "name": "SAICA Paper Mill",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 41.6,
+    "turbines": null,
+    "country": "England",
+    "updated": "09/01/2014",
+    "point": [
+      -2.41952,
+      53.42511
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-78",
+    "name": "Elean Business Park Biomass Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "England",
+    "updated": "29/06/2011",
+    "point": [
+      0.12973,
+      52.39791
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-113",
+    "name": "Margam Green Energy Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "Wales",
+    "updated": "03/10/2018",
+    "point": [
+      -3.74789,
+      51.56331
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-150",
+    "name": "Brigg Renewable Energy Plant ",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "England",
+    "updated": "02/11/2017",
+    "point": [
+      -0.50961,
+      53.54233
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  },
+  {
+    "id": "repd-206",
+    "name": "Sleaford Renewable Energy Plant",
+    "technology": "Biomass (dedicated)",
+    "fuel": "biomass",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "England",
+    "updated": "31/08/2017",
+    "point": [
+      -0.38272,
+      52.99901
+    ],
+    "source": "DESNZ REPD July 2026",
+    "status": "Operational (source snapshot)"
+  }
+]
