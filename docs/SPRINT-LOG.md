@@ -31,3 +31,12 @@
 - Documented licences, coverage, approximate coordinate conversion and geographic preparation in docs/DATA-SOURCES.md.
 - Prepared NESO DNO boundaries for the next milestone and tested the mapping to all fourteen Carbon Intensity region IDs.
 - Verification: 12 unit tests and TypeScript pass. Geographic tests cover unique IDs, GB coverage, valid coordinates and closed regional polygons.
+
+## Sprint 4 — regional carbon and replay
+
+- Connected all fourteen NESO regional forecasts/modelled estimates to approximate licensed DNO boundary geometry; included a numerical legend and accessible region-value list.
+- Added flow/carbon/connections modes and a measured interconnector list with timestamps, units and direction.
+- Implemented a bounded 24-hour historical endpoint using signed Elexon FUELINST, INDO and NESO national/regional data; the timeline uses half-hour observation steps.
+- Scrubbing changes generation, demand, carbon, regions and interconnector observations together. Missing intervals are unavailable; current observations are not substituted. Return-to-latest restores the latest feed.
+- Added tests for interval edges, unique regional coverage, zero-intensity values, bounded cache fallback and the GMT/BST repeated-hour distinction.
+- Verification: 16 unit tests and TypeScript pass. Production build passed. Local endpoints return 14 regions and 48 replay frames. Browser checks confirmed carbon colouring, mobile generation expansion, scrubbing to the prior day and restoring latest values. Fixed a stale development-module export by restarting the preview.

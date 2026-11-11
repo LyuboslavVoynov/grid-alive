@@ -25,6 +25,6 @@ Never present fixtures as live measurements. Generation totals and shares must u
 
 ## Geography
 
-Coastlines: Natural Earth 1:10m countries, simplified for this viewport; public domain. https://www.naturalearthdata.com/about/terms-of-use/ . City lights are procedural artwork, not satellite imagery or power-grid routes. Turbine clusters currently demonstrate motion only.
+Coastlines: Natural Earth 1:10m countries, simplified for this viewport; public domain. https://www.naturalearthdata.com/about/terms-of-use/ . City lights are procedural artwork, not satellite imagery or power-grid routes. Selected renewable sites use the dated DESNZ REPD July 2026 snapshot. Installed capacity is not live output; turbine symbols and paths remain illustrative. Regional carbon forecasts use approximate NESO DNO boundaries. Replay covers 24 complete half-hour periods with real historical observations and visible gaps.
 
 See [the build plan](docs/BUILD-PLAN.md) for branches, sprint acceptance criteria and access decisions. Use the connected GitHub app for repository writes; do not change the local CLI account.
