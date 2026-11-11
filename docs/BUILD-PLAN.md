@@ -100,4 +100,4 @@ Done when the public URL is verified, no sample numbers appear as measurements, 
 
 ## Current status
 
-Scope and plan prepared. GitHub repository and connected-app access established. Approved prototype contains sample figures and illustrative motion. No production data adapters or Next.js migration have been completed. No public launch has occurred.
+Sprints 0–4 are implemented and merged: production Next.js map, real timestamped Elexon/NESO observations, selected licensed renewable-site geography, regional carbon and 24-hour replay. Sprint 5 local hardening is implemented; public deployment awaits the owner’s hosting connection. The approved standalone prototype retains sample figures for design reference. See docs/SPRINT-LOG.md and docs/QA.md. No public launch has occurred.

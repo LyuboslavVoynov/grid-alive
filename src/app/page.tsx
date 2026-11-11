@@ -1,2 +1,4 @@
-import GridApp from '@/components/grid-app';
-export default function Page(){return <GridApp/>;}
+import GridApp from "@/components/grid-app";
+export default function Page() {
+  return <GridApp />;
+}
