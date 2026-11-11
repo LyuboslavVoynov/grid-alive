@@ -13,6 +13,7 @@ export type Tariff = {
 };
 export type CarbonRate = { from: string; to: string; intensity: number };
 export type TaskWindow = {
+  assumptions?: string;
   from: string;
   to: string;
   cost: number | null;

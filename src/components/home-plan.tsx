@@ -96,6 +96,7 @@ export function HomePlan({
       {w ? (
         <>
           <h3>{localTime(w.from)}</h3>
+          {w.assumptions && <p>{w.assumptions}</p>}
           <p>
             Until {localTime(w.to)} ·{" "}
             {w.cost === null

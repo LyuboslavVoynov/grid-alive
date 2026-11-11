@@ -122,7 +122,15 @@ export function TaskPlanner({
           {onPlan && (kind === "best" || kind === "green") && (
             <button
               className="text-button"
-              onClick={() => onPlan(w, kind === "best" ? "price" : "carbon")}
+              onClick={() =>
+                onPlan(
+                  {
+                    ...w,
+                    assumptions: `${task} · ${kwh} kWh over ${hours} hours · ${tariff?.name}`,
+                  },
+                  kind === "best" ? "price" : "carbon",
+                )
+              }
             >
               Use this window in my plan ↗
             </button>

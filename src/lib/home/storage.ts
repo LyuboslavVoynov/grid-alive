@@ -18,6 +18,7 @@ const tariffSchema = z.object({
 });
 const windowSchema = z
   .object({
+    assumptions: z.string().max(300).optional(),
     from: ts,
     to: ts,
     cost: z.number().finite().nullable(),
