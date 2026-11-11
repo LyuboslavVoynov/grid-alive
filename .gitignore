@@ -10,3 +10,6 @@ test-results/
 !.env.example
 outputs/
 *.tar.gz
+*.tsbuildinfo
+.vercel/
+public/vendor/
