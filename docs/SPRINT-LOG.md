@@ -50,3 +50,7 @@
 - Public deployment requires the owner's hosting connection; Vercel integration has been offered. No hosting configuration or paid plan has been changed.
 
 - Final local hardening: 18 tests, typecheck and build pass. Added an integration test demonstrating that future generation and old demand are never substituted into a selected historical period. Full provider outages retain explicit unavailable layers. See docs/QA.md for checks and limits.
+
+## Owner decision — local review
+
+Keep the application local for now. Public deployment is intentionally deferred, not blocked on a connection. Do not initiate hosting setup or deployment unless the owner resumes that work. Production-mode local smoke checks returned HTTP 200 for the application, methodology, map worker and all three data APIs, including 14 regions and 48 historical periods with no gaps.

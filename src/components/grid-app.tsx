@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { ProductNav } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
 import type { Snapshot, History, Regional } from "@/types/electricity";
@@ -205,6 +206,7 @@ export default function GridApp() {
         <a className="brand" href="/" aria-label="GRID ALIVE home">
           GRID <i>/</i> ALIVE
         </a>
+        <ProductNav active="britain" />
         <div className="status">
           <span /> {status}{" "}
           <b>

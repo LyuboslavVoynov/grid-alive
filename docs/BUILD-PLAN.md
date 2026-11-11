@@ -1,6 +1,6 @@
 # GRID / ALIVE — delivery plan
 
-Updated 11 November 2026. Owner decisions: public website, no sign-in; GitHub repository under LyuboslavVoynov; electricity prices excluded from the initial release.
+Updated 11 November 2026. Owner decisions: public website, no sign-in; GitHub repository under LyuboslavVoynov; initial map release delivered; the approved v2 storyboard now includes costs and household tools. Hosting decision: keep the application local for now; do not deploy.
 
 ## Product baseline
 
@@ -100,4 +100,28 @@ Done when the public URL is verified, no sample numbers appear as measurements, 
 
 ## Current status
 
-Sprints 0–4 are implemented and merged: production Next.js map, real timestamped Elexon/NESO observations, selected licensed renewable-site geography, regional carbon and 24-hour replay. Sprint 5 local hardening is implemented; public deployment awaits the owner’s hosting connection. The approved standalone prototype retains sample figures for design reference. See docs/SPRINT-LOG.md and docs/QA.md. No public launch has occurred.
+Sprints 0–4 are implemented and merged: production Next.js map, real timestamped Elexon/NESO observations, selected licensed renewable-site geography, regional carbon and 24-hour replay. Sprint 5 local hardening is implemented; the owner has explicitly deferred public deployment and requested local-only operation for now. The approved standalone prototype retains sample figures for design reference. See docs/SPRINT-LOG.md and docs/QA.md. No public launch has occurred.
+
+
+## Approved v2 — storyboard delivery (11 November 2026)
+
+The owner approved all eight storyboard scenes and instructed sequential implementation. Local-only remains in force. The historical initial-release exclusions above describe v1 and are superseded for v2 by this section.
+
+| Sprint | Branch | Deliverable / acceptance |
+| --- | --- | --- |
+| V2.1 | codex/v2-01-navigation | Britain / Your area / Your home navigation, shareable routes, cohesive responsive shell; preserve flat animated map. |
+| V2.2 | codex/v2-02-britain-insights | Demand history and comparisons, real timestamped frequency, demand/wind/carbon outlook and published operational context; gaps remain gaps. |
+| V2.3 | codex/v2-03-local-insights | Validated outward postcode lookup; regional modelled fuel mix and carbon; nearby dated assets; sourced annual domestic/non-domestic local consumption. |
+| V2.4 | codex/v2-04-cost-planner | Manual single/time-of-use tariff and public supplier rate import, standing charges, separate wholesale index; valid time-window task costs and carbon with explainable arithmetic. |
+| V2.5 | codex/v2-05-home-usage | Browser-local CSV import, validated readings, daily/weekly costs and baseline insight, practical plan, tariff scenario comparison, opt-in in-page reminders and clear-data. |
+| V2.6 | codex/v2-06-integration-qa | End-to-end navigation, mobile and keyboard review, meaningful data/calculation tests, typecheck/build, updated sources and limitations. |
+
+Each sprint is implemented and checked before the next branch is created. Local branches form an ordered commit chain; repository publication uses the connected GitHub app only. Do not switch or authenticate the CLI account. No hosting deployment.
+
+### Data and personal-data decisions
+
+Use public Elexon, NESO, DESNZ and supported supplier APIs without secrets. Manual tariff and file import are working first-class paths. Do not invent measured city/sector demand, individual-site output, future prices, or personal meter data. Forecasts, dated annual data and measurements are explicitly different. Local personal readings never leave the browser and are not persisted unless chosen. Public tariff import needs no account. Authenticated meter connection and background notifications require a later explicit provider/setup decision; do not ship inert controls that imply those connections exist. Notify the owner if a required provider feature is unavailable, continue independent work.
+
+### Validation
+
+Check interval coverage, gaps, DST, negative unit prices, standing-charge accounting, single-rate zero timing savings, CSV overlap/duplicates/invalid timestamps, postcode errors, provider outages, and no fixture data in live views. User-facing forecasts only cover published periods. Savings estimates show assumptions and exclude automatically extrapolated annual claims. No appliance control.
