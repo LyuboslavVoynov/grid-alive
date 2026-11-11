@@ -1,13 +1,30 @@
-# GRID / ALIVE — motion study
+# GRID / ALIVE
 
-A dependency-free visual prototype of direction 01. North-up, flat projection; no camera tilt, globe, or perspective. Animated canvas turbines, conceptual flow particles, city lights, zoom/reset, layer visibility, pause, and speed controls. Reduced-motion preferences pause animation by default. Responsive layout.
+A cinematic, top-down view of Great Britain's electricity system. Public website, no sign-in. Prices are outside the initial release.
 
-All asset positions and flow paths are illustrative. No generation values, actual transmission routes, measured flows, or live API connection are represented. This is a visual review milestone, not the production app from the broader brief.
+## Development
 
-Run `python3 -m http.server 4173 --directory dist` from this folder. Open http://localhost:4173.
+Requires Node.js 22 or newer.
 
-Coastline geometry: Natural Earth 1:10m countries (public domain), simplified for this viewport. Source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_10m_admin_0_countries.geojson . Terms: https://www.naturalearthdata.com/about/terms-of-use/ . Land texture and city illumination are procedural visual treatments, not satellite imagery.
+```sh
+npm ci
+npm run dev
+```
 
-Updated design: seven-source domestic generation table in GW and percentages, total generation, demand, net imports, and carbon intensity. All figures are fixed sample data for layout review; no API is connected. Mobile generation details expand from the compact summary.
+Open http://127.0.0.1:3000. `npm run typecheck` checks TypeScript and `npm run build` creates the production application. The install hook prepares the locally served MapLibre worker; no map service account, paid tiles, or map API key is needed.
 
-Initial release: public website without sign-in; prices deferred. See [the sprint plan](docs/BUILD-PLAN.md) for branches, acceptance criteria, data rules and required access.
+## Current milestone
+
+Next.js/React/TypeScript foundation, MapLibre flat map with pan/zoom/reset and keyboard/touch controls, procedural city illumination, illustrative turbines and particle paths, layer toggles, pause/speed controls and reduced-motion support. The current production shell still shows explicitly labelled sample electricity figures pending the data sprint.
+
+The approved standalone motion study remains in `dist/` and can be served with `python3 -m http.server 4173 --directory dist`.
+
+## Data integrity
+
+Never present fixtures as live measurements. Generation totals and shares must use compatible intervals and coverage; imports and storage are separate. Every observation tracks source, reporting time, retrieval time, quality and freshness. Individual asset output and physical network flows must not be inferred from national data.
+
+## Geography
+
+Coastlines: Natural Earth 1:10m countries, simplified for this viewport; public domain. https://www.naturalearthdata.com/about/terms-of-use/ . City lights are procedural artwork, not satellite imagery or power-grid routes. Turbine clusters currently demonstrate motion only.
+
+See [the build plan](docs/BUILD-PLAN.md) for branches, sprint acceptance criteria and access decisions. Use the connected GitHub app for repository writes; do not change the local CLI account.
