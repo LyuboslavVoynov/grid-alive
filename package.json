@@ -8,7 +8,8 @@
     "start": "next start --hostname 127.0.0.1 --port 3000",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "postinstall": "node scripts/prepare-map-worker.mjs"
+    "postinstall": "node scripts/prepare-map-worker.mjs",
+    "format": "prettier --write src tests scripts next.config.ts"
   },
   "dependencies": {
     "maplibre-gl": "6.17.0",
@@ -22,6 +23,7 @@
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "prettier": "3.10.0",
     "proj4": "2.22.0",
     "typescript": "7.0.2",
     "vitest": "5.1.0"

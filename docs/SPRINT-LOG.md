@@ -40,3 +40,13 @@
 - Scrubbing changes generation, demand, carbon, regions and interconnector observations together. Missing intervals are unavailable; current observations are not substituted. Return-to-latest restores the latest feed.
 - Added tests for interval edges, unique regional coverage, zero-intensity values, bounded cache fallback and the GMT/BST repeated-hour distinction.
 - Verification: 16 unit tests and TypeScript pass. Production build passed. Local endpoints return 14 regions and 48 replay frames. Browser checks confirmed carbon colouring, mobile generation expansion, scrubbing to the prior day and restoring latest values. Fixed a stale development-module export by restarting the preview.
+
+## Sprint 5 — launch preparation (deployment pending)
+
+- Reduced particle projection work by projecting curve control points once per path, rather than once per trail particle.
+- Adapts procedural texture density to viewport area; animation pauses when hidden and honors reduced motion.
+- Added dismissible information overlays, focus treatment and larger touch targets.
+- Documented deployment, observation cache limits, operational checks, rollback and geographic refresh.
+- Public deployment requires the owner's hosting connection; Vercel integration has been offered. No hosting configuration or paid plan has been changed.
+
+- Final local hardening: 18 tests, typecheck and build pass. Added an integration test demonstrating that future generation and old demand are never substituted into a selected historical period. Full provider outages retain explicit unavailable layers. See docs/QA.md for checks and limits.
