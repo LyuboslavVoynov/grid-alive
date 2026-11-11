@@ -24,3 +24,13 @@ Desktop and a 390 × 844 mobile viewport in the in-app browser:
 - Cross-browser checks outside the in-app browser have not been performed. Reduced-motion behavior is implemented through the browser media query but has not been exercised with a changed OS preference in this session.
 - Geographic reference coordinates are approximate and inventory coverage is intentionally selected, not comprehensive. Individual site output is not provided.
 - Process-local caching is not durable across server restarts or shared across instances; cold-start provider outages show unavailable data.
+
+## V2 integration evidence — 11 November 2026
+
+- 32 unit/data tests pass; TypeScript and Next.js optimized build pass.
+- Browser desktop and 390 × 844 narrow view: route navigation, tariff form, task planner, supply/demand/outlook, regional postcode and personal usage. Narrow views have no horizontal document overflow; map pitch remains locked at zero.
+- Synthetic QA CSV only (outside repository and never a default): 336 half-hour records imported locally; one complete day correctly showed 14.80 kWh, £3.93 energy on the test schedule, £0.50 standing, 300 W overnight median. No personal meter data was accessed.
+- Manual task test: 2 kWh costs 60p peak / 20p off-peak, 40p saving; separate published-rate import also checked through the UI. Lowest-cost and lowest-carbon windows can differ and both can be saved.
+- Read-only live API smoke checks verified /api/insights, /api/area?postcode=SW1A, /api/market and public tariff code validation/import.
+- Fixed a zero-dimension Canvas drawImage error during route changes. Fresh browser after fix: no console errors. Reminders and browser storage start off. Clear workspace resets active form state as well as saved data.
+- Do not infer supplier-account linking, background push delivery, detailed per-sector current demand or individual station output from these checks. These are unconfigured/unavailable, clearly labelled paths.

@@ -88,6 +88,7 @@ export class SceneRenderer {
   }
   resize = () => {
     const { width, height } = this.canvas.getBoundingClientRect();
+    if (width < 1 || height < 1) return;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     this.canvas.width = Math.round(width * dpr);
     this.canvas.height = Math.round(height * dpr);
@@ -257,7 +258,14 @@ export class SceneRenderer {
     c.restore();
   }
   private draw() {
-    if (this.disposed) return;
+    if (
+      this.disposed ||
+      !this.canvas.width ||
+      !this.canvas.height ||
+      !this.backdrop.width ||
+      !this.backdrop.height
+    )
+      return;
     if (this.dirty) this.bake();
     const { width: w, height: h } = this.canvas.getBoundingClientRect();
     this.ctx.clearRect(0, 0, w, h);

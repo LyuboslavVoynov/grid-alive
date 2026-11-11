@@ -54,3 +54,22 @@
 ## Owner decision — local review
 
 Keep the application local for now. Public deployment is intentionally deferred, not blocked on a connection. Do not initiate hosting setup or deployment unless the owner resumes that work. Production-mode local smoke checks returned HTTP 200 for the application, methodology, map worker and all three data APIs, including 14 regions and 48 historical periods with no gaps.
+
+## V2 storyboard build — 11 November 2026
+
+Owner approved the complete storyboard and instructed sequential delivery. All implementation remains local; no hosting account or deployment was touched.
+
+| Sprint | Local branch | Outcome |
+| --- | --- | --- |
+| V2.1 | codex/v2-01-navigation | Approved scope and acceptance criteria; three main destinations and responsive product shell. |
+| V2.2 | codex/v2-02-britain-insights | Observed demand comparison, timestamped frequency, published demand/wind/carbon forecasts, selected REMIT availability context. |
+| V2.3 | codex/v2-03-local-insights | Outward postcode regional modelled mix/carbon, nearest featured sites, 350 authorities of official 2024 domestic/non-domestic consumption. |
+| V2.4 | codex/v2-04-cost-planner | Manual single/two-rate tariff, public Agile direct-debit import, separate APXMIDP wholesale context, complete-coverage task cost and carbon comparisons. |
+| V2.5 | codex/v2-05-home-usage | Private CSV readings, daily/week analysis, baseline, annual comparison scenarios, saved windows, calendar export, opt-in in-page reminders and browser storage. |
+| V2.6 | codex/v2-06-integration-qa | Format, calculation/data tests, source and privacy documentation, production build, real API smoke tests and browser QA; fixed zero-size canvas redraw on route changes and clear-workspace form reset. |
+
+Validation: 32 tests, TypeScript and production build pass. Browser checks include desktop navigation, manual 30p/10p task arithmetic, live Agile import, separate carbon windows and saving to plan, a synthetic 336-reading CSV (14.8 kWh/day, £3.93 energy, £0.50 standing, 300 W median overnight), 390px responsive map/home/area layouts and no horizontal document overflow. A fresh browser session after the map resize fix reported no console errors.
+
+Live server smoke results: 96 observed demand points, 73 published demand forecast points, 48 wind forecast points, 96 national carbon points, four parsed REMIT messages, postcode SW1A/London with 96 regional intervals and two intersecting authorities, 48 market index points, current Agile public rates. Counts vary with provider publication. Tests cover annual source reconciliation, revisions, forecast expiry, postcode validation, missing prices, negative prices, DST and CSV invalid/overlapping/future intervals.
+
+Limits: authenticated meter linking is not configured; file import is the supported personal-data path. No closed-page push service; calendar export and in-page reminders are provided. Tariff provider import supports public Agile/direct-debit import only. Unit output remains unavailable where no matched observation exists; notices are not measured output. No exhaustive grid outage feed, detailed live sector consumption or guaranteed savings. These limitations are visible in product copy and methodology.

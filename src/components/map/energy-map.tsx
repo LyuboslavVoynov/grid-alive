@@ -292,7 +292,12 @@ export function EnergyMap({
           zoomOut: () =>
             map.zoomOut({ duration: settingsRef.current.playing ? 250 : 0 }),
           reset: fit,
-          focus: (point) => map.flyTo({center: point, zoom: 6.2, duration: settingsRef.current.playing ? 650 : 0}),
+          focus: (point) =>
+            map.flyTo({
+              center: point,
+              zoom: 6.2,
+              duration: settingsRef.current.playing ? 650 : 0,
+            }),
         });
         map.on("error", (e) => {
           console.error("Map rendering error", e.error?.message);

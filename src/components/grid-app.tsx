@@ -1,6 +1,10 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BritainInsights, GridHeartbeat, useInsights } from "./britain-insights";
+import {
+  BritainInsights,
+  GridHeartbeat,
+  useInsights,
+} from "./britain-insights";
 import { ProductNav } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
@@ -16,7 +20,7 @@ const symbols: Record<string, string> = {
 };
 const gw = (mw: number) => `${(mw / 1000).toFixed(1)} GW`;
 export default function GridApp() {
-  const [view,setView] = useState<"supply"|"demand"|"outlook">("supply");
+  const [view, setView] = useState<"supply" | "demand" | "outlook">("supply");
   const insights = useInsights();
   const [showOverlays, setShowOverlays] = useState(true);
   const [playing, setPlaying] = useState(false),
@@ -519,8 +523,27 @@ export default function GridApp() {
           </p>
         </section>
       )}
-      <div className="britain-tabs tab-strip" aria-label="Britain view">{(["supply","demand","outlook"] as const).map(v=><button key={v} aria-pressed={view===v} onClick={()=>{setView(v);setHistoryIndex(null);}}>{v === "supply" ? "Supply" : v === "demand" ? "Demand" : "Outlook"}</button>)}</div>
-      {view !== "supply" && <BritainInsights view={view} data={insights.data} error={insights.error}/>}
+      <div className="britain-tabs tab-strip" aria-label="Britain view">
+        {(["supply", "demand", "outlook"] as const).map((v) => (
+          <button
+            key={v}
+            aria-pressed={view === v}
+            onClick={() => {
+              setView(v);
+              setHistoryIndex(null);
+            }}
+          >
+            {v === "supply" ? "Supply" : v === "demand" ? "Demand" : "Outlook"}
+          </button>
+        ))}
+      </div>
+      {view !== "supply" && (
+        <BritainInsights
+          view={view}
+          data={insights.data}
+          error={insights.error}
+        />
+      )}
       <footer>
         <div className="mode-switch" aria-label="Visualisation mode">
           {(["flow", "carbon", "connections"] as const).map((m) => (
