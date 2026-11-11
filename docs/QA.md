@@ -27,7 +27,7 @@ Desktop and a 390 × 844 mobile viewport in the in-app browser:
 
 ## V2 integration evidence — 11 November 2026
 
-- 32 unit/data tests pass; TypeScript and Next.js optimized build pass.
+- 33 unit/data tests pass; TypeScript and Next.js optimized build pass.
 - Browser desktop and 390 × 844 narrow view: route navigation, tariff form, task planner, supply/demand/outlook, regional postcode and personal usage. Narrow views have no horizontal document overflow; map pitch remains locked at zero.
 - Synthetic QA CSV only (outside repository and never a default): 336 half-hour records imported locally; one complete day correctly showed 14.80 kWh, £3.93 energy on the test schedule, £0.50 standing, 300 W overnight median. No personal meter data was accessed.
 - Manual task test: 2 kWh costs 60p peak / 20p off-peak, 40p saving; separate published-rate import also checked through the UI. Lowest-cost and lowest-carbon windows can differ and both can be saved.

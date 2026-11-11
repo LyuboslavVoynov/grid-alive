@@ -62,3 +62,11 @@ it("keeps partial day and missing price coverage explicit", () => {
     covered: 0,
   });
 });
+
+it("rejects calendar dates JavaScript would silently roll into the next month", () => {
+  expect(() =>
+    parseReadings(
+      "interval_start,interval_end,consumption\n2026-02-30T00:00Z,2026-02-30T00:30Z,1",
+    ),
+  ).toThrow(/calendar date/);
+});

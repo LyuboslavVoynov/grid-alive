@@ -91,6 +91,17 @@ export function parseReadings(text: string, now = Date.now()): Reading[] {
         throw Error(
           `Row ${i + 2}: use ISO timestamps with Z or an explicit UTC offset.`,
         );
+      const validCalendarDate = (value: string) => {
+        const date = new Date(value.slice(0, 10) + "T00:00:00Z");
+        return (
+          Number.isFinite(date.getTime()) &&
+          date.toISOString().slice(0, 10) === value.slice(0, 10)
+        );
+      };
+      if (!validCalendarDate(f) || !validCalendarDate(t))
+        throw Error(
+          `Row ${i + 2}: the timestamp contains an invalid calendar date.`,
+        );
       const a = Date.parse(f),
         b = Date.parse(t);
       if (
