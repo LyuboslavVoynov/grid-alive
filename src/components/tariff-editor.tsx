@@ -1,0 +1,299 @@
+"use client";
+import { useEffect, useState } from "react";
+import { type Tariff, validateTariff, money } from "@/lib/home/energy";
+import { localTime } from "./series-chart";
+export function TariffEditor({
+  tariff,
+  onSave,
+}: {
+  tariff: Tariff | null;
+  onSave: (t: Tariff) => void;
+}) {
+  const [kind, setKind] = useState<"single" | "tou">(
+      tariff?.kind === "tou" ? "tou" : "single",
+    ),
+    [name, setName] = useState(
+      tariff?.kind !== "published" ? (tariff?.name ?? "") : "",
+    ),
+    [unit, setUnit] = useState(
+      tariff?.kind !== "published" && tariff ? String(tariff.unit) : "",
+    ),
+    [standing, setStanding] = useState(tariff ? String(tariff.standing) : ""),
+    [offPeak, setOffPeak] = useState(
+      tariff?.kind === "tou" ? String(tariff.offPeak) : "",
+    ),
+    [offStart, setStart] = useState(tariff?.offStart ?? "00:30"),
+    [offEnd, setEnd] = useState(tariff?.offEnd ?? "07:30"),
+    [message, setMessage] = useState(""),
+    [error, setError] = useState("");
+  const [products, setProducts] = useState<{ code: string; name: string }[]>(
+      [],
+    ),
+    [product, setProduct] = useState(""),
+    [codes, setCodes] = useState<string[]>([]),
+    [code, setCode] = useState(""),
+    [busy, setBusy] = useState(false);
+  useEffect(() => {
+    const c = new AbortController();
+    fetch("/api/tariffs", { signal: c.signal })
+      .then((r) => r.json())
+      .then((v) => {
+        setProducts(v.products ?? []);
+      })
+      .catch(() => {});
+    return () => c.abort();
+  }, []);
+  async function loadProduct(v: string) {
+    setProduct(v);
+    setCodes([]);
+    setCode("");
+    setError("");
+    if (!v) return;
+    setBusy(true);
+    try {
+      const r = await fetch("/api/tariffs?product=" + encodeURIComponent(v));
+      const d = await r.json();
+      if (!r.ok) throw Error(d.error);
+      setCodes(d.tariffs);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Product unavailable");
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function importTariff() {
+    setBusy(true);
+    setError("");
+    try {
+      const r = await fetch(
+        `/api/tariffs?product=${encodeURIComponent(product)}&tariff=${encodeURIComponent(code)}`,
+      );
+      const d = await r.json();
+      if (!r.ok) throw Error(d.error);
+      if (d.stale)
+        throw Error(
+          "Supplier rates are delayed. Refresh before using them for a new plan.",
+        );
+      onSave(validateTariff(d.tariff));
+      setMessage("Published rates loaded. Only covered periods can be costed.");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Rates unavailable");
+    } finally {
+      setBusy(false);
+    }
+  }
+  function save(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    try {
+      if (
+        !unit.trim() ||
+        !standing.trim() ||
+        (kind === "tou" && !offPeak.trim())
+      )
+        throw Error(
+          "Fill in all required rates, including a zero standing charge if applicable.",
+        );
+      onSave(
+        validateTariff({
+          name,
+          kind,
+          unit: Number(unit),
+          standing: Number(standing),
+          offPeak: kind === "tou" ? Number(offPeak) : Number(unit),
+          offStart,
+          offEnd,
+          rates: [],
+          source: "Manually entered · assumed VAT-inclusive",
+        }),
+      );
+      setMessage("Your tariff is ready. You can now compare task windows.");
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Invalid tariff");
+    }
+  }
+  return (
+    <div className="tariff-editor">
+      <section>
+        <p className="eyebrow">YOUR HOUSEHOLD RATES</p>
+        <h2>Start with your tariff</h2>
+        <p className="section-copy">
+          Use VAT-inclusive rates from your bill. Standing charges are shown
+          separately from energy costs.
+        </p>
+        <form className="field-grid" onSubmit={save}>
+          <label className="wide">
+            Tariff name
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your tariff name"
+              required
+              maxLength={80}
+            />
+          </label>
+          <label className="wide">
+            Tariff type
+            <select
+              value={kind}
+              onChange={(e) => setKind(e.target.value as "single" | "tou")}
+            >
+              <option value="single">Single rate</option>
+              <option value="tou">Peak / off-peak schedule</option>
+            </select>
+          </label>
+          <label>
+            {kind === "tou" ? "Peak rate" : "Unit rate"} · p/kWh
+            <input
+              type="number"
+              min="-100"
+              max="1000"
+              step="0.001"
+              value={unit}
+              onChange={(e) => setUnit(e.target.value)}
+              placeholder="From your bill"
+              required
+            />
+          </label>
+          <label>
+            Standing charge · p/day
+            <input
+              type="number"
+              min="0"
+              max="1000"
+              step="0.001"
+              value={standing}
+              onChange={(e) => setStanding(e.target.value)}
+              placeholder="From your bill"
+              required
+            />
+          </label>
+          {kind === "tou" && (
+            <>
+              <label className="wide">
+                Off-peak rate · p/kWh
+                <input
+                  type="number"
+                  min="-100"
+                  max="1000"
+                  step="0.001"
+                  value={offPeak}
+                  onChange={(e) => setOffPeak(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Off-peak begins
+                <input
+                  type="time"
+                  step="1800"
+                  value={offStart}
+                  onChange={(e) => setStart(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Off-peak ends
+                <input
+                  type="time"
+                  step="1800"
+                  value={offEnd}
+                  onChange={(e) => setEnd(e.target.value)}
+                  required
+                />
+              </label>
+              <p className="small wide">
+                Schedule repeats daily in Europe/London, including clock
+                changes. Use a separate scenario if your tariff has more than
+                two rates or different weekend schedules.
+              </p>
+            </>
+          )}
+          <button className="action-button wide" type="submit">
+            Use these rates ↗
+          </button>
+        </form>
+      </section>
+      <section className="supplier-import">
+        <p className="eyebrow">OR LOAD PUBLISHED RATES</p>
+        <h2>Already on Agile Octopus?</h2>
+        <p className="section-copy">
+          Load public import rates using your existing product and tariff code.
+          No account or API key is needed. This does not switch your supplier.
+        </p>
+        <div className="field-grid">
+          <label className="wide">
+            Product
+            <select
+              value={product}
+              onChange={(e) => void loadProduct(e.target.value)}
+              disabled={busy}
+            >
+              <option value="">Choose your existing product</option>
+              {products.map((p) => (
+                <option key={p.code} value={p.code}>
+                  {p.name} · {p.code}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="wide">
+            Exact tariff code from your bill
+            <select
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              disabled={!codes.length || busy}
+            >
+              <option value="">Choose the matching region code</option>
+              {codes.map((c) => (
+                <option key={c}>{c}</option>
+              ))}
+            </select>
+          </label>
+          <button
+            className="action-button wide"
+            onClick={() => void importTariff()}
+            disabled={!code || busy}
+          >
+            {busy ? "Loading…" : "Load my published rates ↗"}
+          </button>
+        </div>
+        <p className="small">
+          Other suppliers, smart charging rewards and personalised discounts can
+          be entered manually where the schedule is known. Published future
+          prices appear only when released.
+        </p>
+        {tariff && (
+          <div className="active-tariff">
+            <p className="eyebrow">ACTIVE TARIFF</p>
+            <h3>{tariff.name}</h3>
+            <p>
+              {tariff.kind === "published"
+                ? "Published interval rates"
+                : tariff.kind === "single"
+                  ? `${tariff.unit}p/kWh`
+                  : `${tariff.unit}p peak · ${tariff.offPeak}p off-peak`}{" "}
+              · {money(tariff.standing)}/day standing charge
+            </p>
+            <p className="small">
+              {tariff.source}
+              {tariff.retrievedAt
+                ? ` · retrieved ${localTime(tariff.retrievedAt)}`
+                : ""}
+            </p>
+          </div>
+        )}
+      </section>
+      {error && (
+        <p className="form-message wide" role="alert">
+          {error}
+        </p>
+      )}
+      {message && (
+        <p className="success-message wide" role="status">
+          {message}
+        </p>
+      )}
+    </div>
+  );
+}

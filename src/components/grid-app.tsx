@@ -1,5 +1,11 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  BritainInsights,
+  GridHeartbeat,
+  useInsights,
+} from "./britain-insights";
+import { ProductNav } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
 import type { Snapshot, History, Regional } from "@/types/electricity";
@@ -14,6 +20,8 @@ const symbols: Record<string, string> = {
 };
 const gw = (mw: number) => `${(mw / 1000).toFixed(1)} GW`;
 export default function GridApp() {
+  const [view, setView] = useState<"supply" | "demand" | "outlook">("supply");
+  const insights = useInsights();
   const [showOverlays, setShowOverlays] = useState(true);
   const [playing, setPlaying] = useState(false),
     [speed, setSpeed] = useState(1),
@@ -191,7 +199,7 @@ export default function GridApp() {
     }).format(new Date(value));
   return (
     <main
-      className={`${playing ? "" : "paused"} ${mixOpen ? "mix-open" : ""} ${showOverlays ? "" : "overlays-hidden"}`}
+      className={`${playing ? "" : "paused"} ${mixOpen ? "mix-open" : ""} ${showOverlays ? "" : "overlays-hidden"} view-${view}`}
     >
       <EnergyMap
         settings={{ ...settings, wind: wind && mode !== "carbon" }}
@@ -205,6 +213,7 @@ export default function GridApp() {
         <a className="brand" href="/" aria-label="GRID ALIVE home">
           GRID <i>/</i> ALIVE
         </a>
+        <ProductNav active="britain" />
         <div className="status">
           <span /> {status}{" "}
           <b>
@@ -323,7 +332,8 @@ export default function GridApp() {
           </p>
         </div>
       </aside>
-      <aside className="market" aria-label="Carbon intensity">
+      <aside className="market" aria-label="Carbon intensity and frequency">
+        {historyIndex === null && <GridHeartbeat data={insights.data} />}
         <p className="eyebrow">CARBON INTENSITY</p>
         <div className="carbon">
           <div>
@@ -512,6 +522,27 @@ export default function GridApp() {
             Map routes are schematic, not surveyed cables.
           </p>
         </section>
+      )}
+      <div className="britain-tabs tab-strip" aria-label="Britain view">
+        {(["supply", "demand", "outlook"] as const).map((v) => (
+          <button
+            key={v}
+            aria-pressed={view === v}
+            onClick={() => {
+              setView(v);
+              setHistoryIndex(null);
+            }}
+          >
+            {v === "supply" ? "Supply" : v === "demand" ? "Demand" : "Outlook"}
+          </button>
+        ))}
+      </div>
+      {view !== "supply" && (
+        <BritainInsights
+          view={view}
+          data={insights.data}
+          error={insights.error}
+        />
       )}
       <footer>
         <div className="mode-switch" aria-label="Visualisation mode">

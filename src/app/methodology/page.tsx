@@ -104,7 +104,115 @@ export default function Methodology() {
         Electricity totals cover Great Britain. Northern Ireland is a separate
         electricity system and is not included in GB generation totals;
         transfers to or from Northern Ireland can appear as interconnector
-        measurements. Prices are outside the initial release.
+        measurements. Household costs use the separate v2 tariff and planning
+        tools described below.
+      </p>
+      <h2>Demand trends, frequency and outlook</h2>
+      <p>
+        Elexon INDO supplies observed national demand. Comparisons align
+        settlement intervals 24 hours apart in UTC, which can differ from the
+        same local clock time on daylight-saving transitions. The demand and
+        wind outlook uses published national demand and wind generation
+        forecasts, with independent coverage. NESO supplies up to 48 hours of
+        carbon forecasts. A forecast is uncertain and gaps remain unavailable.
+        Grid frequency is a timestamped Elexon observation around a nominal 50
+        Hz; it is not an assurance about local outages.
+      </p>
+      <p>
+        Station context shows up to five latest published REMIT messages
+        overlapping the selected future window. It is a selected set, not a
+        comprehensive outage or station-status feed. Event status and timing
+        matter. Declared unavailable capacity is not metered station output or a
+        prediction of household supply interruptions.
+      </p>
+      <h2>Your area and annual consumption</h2>
+      <p>
+        Only the outward postcode is sent to NESO and Postcodes.io. NESO
+        supplies a modelled regional mix, including imports and embedded
+        generation; this differs from the national metered generation table.
+        Postcodes.io supplies approximate outward-code centres and intersecting
+        local authorities. An outward postcode can span multiple authorities.
+        Nearby projects are selected from our dated inventory and do not imply a
+        direct power supply connection.
+      </p>
+      <p>
+        DESNZ 2024 local authority consumption is annual metered-consumption
+        estimates, classified as domestic and non-domestic, not live city or
+        sector demand. Non-domestic includes businesses, industry and public
+        services. Mean domestic kWh per meter is context, not a household
+        efficiency target. Postal, local-authority and electricity-region
+        boundaries are different. Contains public sector information licensed
+        under the Open Government Licence v3.0, © Crown copyright 2025.{" "}
+        <a href="https://www.gov.uk/government/statistical-data-sets/stacked-electricity-consumption-statistics-data">
+          Official annual dataset
+        </a>
+        . Postcode geographic data contains OS and ONS open data; see{" "}
+        <a href="https://postcodes.io/about/">Postcodes.io attribution</a>.
+      </p>
+      <h2>Household tariffs and wholesale context</h2>
+      <p>
+        Manual rates are entered in VAT-inclusive p/kWh and standing charges in
+        p/day. Two-rate schedules repeat daily in Europe/London, including clock
+        changes. More complicated schedules, discounts and personalised smart
+        charging rewards are not inferred. The public Octopus integration loads
+        an explicitly selected Agile import tariff for direct-debit payment,
+        without signing into an account or switching supplier. It uses
+        value_inc_vat and each rate's validity interval. Rates are available for
+        at most the previous 14 days and next 48 hours, limited to periods
+        actually published. The current standing charge is used, not a
+        historical charge schedule.
+      </p>
+      <p>
+        The separate Elexon APXMIDP market index includes observations with
+        positive traded volume, in £/MWh. Dividing by 10 gives the equivalent
+        energy-only p/kWh scale. This is not a retail tariff or a future price
+        forecast; household rates also reflect networks, policy costs, supplier
+        costs, VAT and standing charges.
+      </p>
+      <h2>Task planning and estimates</h2>
+      <p>
+        The planner integrates an assumed constant-power task across fully
+        covered rate and carbon intervals. Task presets are editable examples,
+        not observed appliance use. Starts are aligned to half hours; the task
+        must finish before the selected deadline, within 48 hours. Any price or
+        carbon gap produces an unknown result, never a zero. A single-rate
+        tariff yields no direct unit-charge saving for shifting the same energy.
+        Standing charges are excluded from timing comparisons. The cheapest and
+        lowest-carbon windows are independent and may differ.
+      </p>
+      <p>
+        Annual comparison scenarios use user-entered annual kWh, stated off-peak
+        assumptions where relevant, unchanged rates and 365 standing charges.
+        They exclude exit fees, discounts, rewards and future changes; they are
+        not quotes or eligibility checks. Unpublished dynamic prices cannot
+        support a reliable annual projection.
+      </p>
+      <h2>Personal readings and privacy</h2>
+      <p>
+        Consumption CSV files are parsed in your browser and never uploaded.
+        Aligned half-hour import energy in kWh and explicit-offset ISO
+        timestamps are required. Negative readings, future readings, duplicate
+        and overlapping intervals are rejected. Missing readings remain missing;
+        a complete London day contains 46, 48 or 50 half-hour intervals
+        depending on clock changes. Period comparisons require complete days.
+        Imported readings are priced using the selected tariff, which may differ
+        from your historical bill.
+      </p>
+      <p>
+        Energy costs and current daily standing charges are separate. Standing
+        charges count each calendar day represented, even if its readings are
+        incomplete. The overnight baseline is the median half-hour power from
+        midnight to 05:00, using at least six readings. Meter totals cannot
+        identify individual appliances or establish that the baseline is
+        avoidable.
+      </p>
+      <p>
+        The workspace lives in memory by default. You can opt into local browser
+        storage for rates, readings and saved windows, or clear it.
+        Authenticated meter linking is not configured. In-page reminders work
+        while My plan is open; calendar exports let your calendar manage
+        notifications. No push notification service or automatic appliance
+        control is connected.
       </p>
       <h2>Attribution and source documentation</h2>
       <ul>

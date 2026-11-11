@@ -1,5 +1,9 @@
 # Deployment and operation
 
+## Current owner decision
+
+Keep the application local for now. The hosting instructions below are for a future deployment, not authorization to deploy.
+
 ## Readiness
 
 This project is prepared for a public Next.js deployment. No API secrets, accounts or database are required for electricity data. The geographic files and MapLibre workers are served from the deployment itself. The source repository is public; the standalone design prototype in dist/ remains explicitly illustrative.
