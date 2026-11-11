@@ -15,7 +15,7 @@ Open http://127.0.0.1:3000. `npm run typecheck` checks TypeScript and `npm run b
 
 ## Current milestone
 
-Next.js/React/TypeScript foundation, MapLibre flat map with pan/zoom/reset and keyboard/touch controls, procedural city illumination, illustrative turbines and particle paths, layer toggles, pause/speed controls and reduced-motion support. The current production shell still shows explicitly labelled sample electricity figures pending the data sprint.
+Next.js/React/TypeScript foundation, MapLibre flat map with pan/zoom/reset and keyboard/touch controls, procedural city illumination, illustrative turbines and particle paths, layer toggles, pause/speed controls and reduced-motion support. The production application reads real Elexon metered generation, demand and interconnector observations, and NESO carbon estimates. It never falls back to sample values. Solar is shown as not reported because the selected metered feed does not separately report it. The standalone study remains illustrative.
 
 The approved standalone motion study remains in `dist/` and can be served with `python3 -m http.server 4173 --directory dist`.
 
