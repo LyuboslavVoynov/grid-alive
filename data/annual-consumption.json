@@ -1,0 +1,3502 @@
+[
+  {
+    "code": "E06000001",
+    "name": "Hartlepool",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 123.0070535,
+    "nonDomesticGwh": 273.7993068,
+    "totalGwh": 396.8063603,
+    "meanDomesticKwh": 2744.039385
+  },
+  {
+    "code": "E06000002",
+    "name": "Middlesbrough",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 179.2041781,
+    "nonDomesticGwh": 223.4755175,
+    "totalGwh": 402.6796957,
+    "meanDomesticKwh": 2794.38918
+  },
+  {
+    "code": "E06000003",
+    "name": "Redcar and Cleveland",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 180.8386999,
+    "nonDomesticGwh": 563.7268151,
+    "totalGwh": 744.565515,
+    "meanDomesticKwh": 2734.139185
+  },
+  {
+    "code": "E06000004",
+    "name": "Stockton-on-Tees",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 258.7114854,
+    "nonDomesticGwh": 735.799683,
+    "totalGwh": 994.5111684,
+    "meanDomesticKwh": 2898.630695
+  },
+  {
+    "code": "E06000005",
+    "name": "Darlington",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 153.4464407,
+    "nonDomesticGwh": 242.7649552,
+    "totalGwh": 396.2113959,
+    "meanDomesticKwh": 2917.565515
+  },
+  {
+    "code": "E06000047",
+    "name": "County Durham",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 699.4270203,
+    "nonDomesticGwh": 1041.429817,
+    "totalGwh": 1740.856838,
+    "meanDomesticKwh": 2813.950202
+  },
+  {
+    "code": "E06000057",
+    "name": "Northumberland",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 512.5688692,
+    "nonDomesticGwh": 948.9742179,
+    "totalGwh": 1461.543087,
+    "meanDomesticKwh": 3173.290178
+  },
+  {
+    "code": "E08000021",
+    "name": "Newcastle upon Tyne",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 386.9607903,
+    "nonDomesticGwh": 619.2109233,
+    "totalGwh": 1006.171714,
+    "meanDomesticKwh": 2917.618246
+  },
+  {
+    "code": "E08000022",
+    "name": "North Tyneside",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 270.0240641,
+    "nonDomesticGwh": 440.7149452,
+    "totalGwh": 710.7390093,
+    "meanDomesticKwh": 2669.461747
+  },
+  {
+    "code": "E08000023",
+    "name": "South Tyneside",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 182.0850741,
+    "nonDomesticGwh": 167.2642792,
+    "totalGwh": 349.3493533,
+    "meanDomesticKwh": 2534.450672
+  },
+  {
+    "code": "E08000024",
+    "name": "Sunderland",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 351.9905858,
+    "nonDomesticGwh": 650.3247113,
+    "totalGwh": 1002.315297,
+    "meanDomesticKwh": 2671.553913
+  },
+  {
+    "code": "E08000037",
+    "name": "Gateshead",
+    "region": "North East",
+    "year": 2024,
+    "domesticGwh": 254.6618144,
+    "nonDomesticGwh": 470.6235417,
+    "totalGwh": 725.2853561,
+    "meanDomesticKwh": 2705.024371
+  },
+  {
+    "code": "E06000006",
+    "name": "Halton",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 169.7041317,
+    "nonDomesticGwh": 437.476502,
+    "totalGwh": 607.1806337,
+    "meanDomesticKwh": 2951.273551
+  },
+  {
+    "code": "E06000007",
+    "name": "Warrington",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 295.5333186,
+    "nonDomesticGwh": 508.5934607,
+    "totalGwh": 804.1267793,
+    "meanDomesticKwh": 3115.698171
+  },
+  {
+    "code": "E06000008",
+    "name": "Blackburn with Darwen",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 191.3787029,
+    "nonDomesticGwh": 314.3868553,
+    "totalGwh": 505.7655582,
+    "meanDomesticKwh": 3066.327574
+  },
+  {
+    "code": "E06000009",
+    "name": "Blackpool",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 203.7662384,
+    "nonDomesticGwh": 254.0716227,
+    "totalGwh": 457.8378611,
+    "meanDomesticKwh": 3053.318125
+  },
+  {
+    "code": "E06000049",
+    "name": "Cheshire East",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 661.8907427,
+    "nonDomesticGwh": 935.2246364,
+    "totalGwh": 1597.115379,
+    "meanDomesticKwh": 3553.031809
+  },
+  {
+    "code": "E06000050",
+    "name": "Cheshire West and Chester",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 535.4626672,
+    "nonDomesticGwh": 1189.533043,
+    "totalGwh": 1724.99571,
+    "meanDomesticKwh": 3306.263922
+  },
+  {
+    "code": "E06000063",
+    "name": "Cumberland",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 427.474683,
+    "nonDomesticGwh": 671.9195723,
+    "totalGwh": 1099.394255,
+    "meanDomesticKwh": 3163.620158
+  },
+  {
+    "code": "E06000064",
+    "name": "Westmorland and Furness",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 412.471782,
+    "nonDomesticGwh": 850.3111839,
+    "totalGwh": 1262.782966,
+    "meanDomesticKwh": 3549.121324
+  },
+  {
+    "code": "E07000117",
+    "name": "Burnley",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 121.1725831,
+    "nonDomesticGwh": 189.2657569,
+    "totalGwh": 310.43834,
+    "meanDomesticKwh": 2887.880624
+  },
+  {
+    "code": "E07000118",
+    "name": "Chorley",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 168.2935112,
+    "nonDomesticGwh": 169.228785,
+    "totalGwh": 337.5222963,
+    "meanDomesticKwh": 3246.402608
+  },
+  {
+    "code": "E07000119",
+    "name": "Fylde",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 136.7603688,
+    "nonDomesticGwh": 211.2710324,
+    "totalGwh": 348.0314012,
+    "meanDomesticKwh": 3386.582691
+  },
+  {
+    "code": "E07000120",
+    "name": "Hyndburn",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 104.8552237,
+    "nonDomesticGwh": 165.4531717,
+    "totalGwh": 270.3083954,
+    "meanDomesticKwh": 2839.834893
+  },
+  {
+    "code": "E07000121",
+    "name": "Lancaster",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 201.6314694,
+    "nonDomesticGwh": 275.4250588,
+    "totalGwh": 477.0565282,
+    "meanDomesticKwh": 3174.748775
+  },
+  {
+    "code": "E07000122",
+    "name": "Pendle",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 122.8302084,
+    "nonDomesticGwh": 166.8529576,
+    "totalGwh": 289.683166,
+    "meanDomesticKwh": 3016.829385
+  },
+  {
+    "code": "E07000123",
+    "name": "Preston",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 210.4759972,
+    "nonDomesticGwh": 336.0286364,
+    "totalGwh": 546.5046337,
+    "meanDomesticKwh": 3152.962284
+  },
+  {
+    "code": "E07000124",
+    "name": "Ribble Valley",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 106.8795368,
+    "nonDomesticGwh": 306.0993999,
+    "totalGwh": 412.9789367,
+    "meanDomesticKwh": 3720.266518
+  },
+  {
+    "code": "E07000125",
+    "name": "Rossendale",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 105.1082411,
+    "nonDomesticGwh": 182.2097957,
+    "totalGwh": 287.3180368,
+    "meanDomesticKwh": 3273.380289
+  },
+  {
+    "code": "E07000126",
+    "name": "South Ribble",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 158.8248914,
+    "nonDomesticGwh": 269.7908632,
+    "totalGwh": 428.6157546,
+    "meanDomesticKwh": 3074.783975
+  },
+  {
+    "code": "E07000127",
+    "name": "West Lancashire",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 173.4594981,
+    "nonDomesticGwh": 312.45528,
+    "totalGwh": 485.9147781,
+    "meanDomesticKwh": 3404.504379
+  },
+  {
+    "code": "E07000128",
+    "name": "Wyre",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 170.6456273,
+    "nonDomesticGwh": 276.1353238,
+    "totalGwh": 446.780951,
+    "meanDomesticKwh": 3175.688606
+  },
+  {
+    "code": "E08000001",
+    "name": "Bolton",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 391.9430663,
+    "nonDomesticGwh": 470.9251341,
+    "totalGwh": 862.8682004,
+    "meanDomesticKwh": 3090.643659
+  },
+  {
+    "code": "E08000002",
+    "name": "Bury",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 265.4775523,
+    "nonDomesticGwh": 300.7403935,
+    "totalGwh": 566.2179459,
+    "meanDomesticKwh": 3151.891917
+  },
+  {
+    "code": "E08000003",
+    "name": "Manchester",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 798.8330335,
+    "nonDomesticGwh": 1597.438127,
+    "totalGwh": 2396.271161,
+    "meanDomesticKwh": 3367.207894
+  },
+  {
+    "code": "E08000004",
+    "name": "Oldham",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 292.0472911,
+    "nonDomesticGwh": 360.9440146,
+    "totalGwh": 652.9913057,
+    "meanDomesticKwh": 3000.403664
+  },
+  {
+    "code": "E08000005",
+    "name": "Rochdale",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 291.2832021,
+    "nonDomesticGwh": 400.2487944,
+    "totalGwh": 691.5319964,
+    "meanDomesticKwh": 3032.557386
+  },
+  {
+    "code": "E08000006",
+    "name": "Salford",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 444.7581187,
+    "nonDomesticGwh": 544.4252568,
+    "totalGwh": 989.1833755,
+    "meanDomesticKwh": 3317.35749
+  },
+  {
+    "code": "E08000007",
+    "name": "Stockport",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 429.9085653,
+    "nonDomesticGwh": 437.5508575,
+    "totalGwh": 867.4594229,
+    "meanDomesticKwh": 3259.722981
+  },
+  {
+    "code": "E08000008",
+    "name": "Tameside",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 304.5583375,
+    "nonDomesticGwh": 341.8927798,
+    "totalGwh": 646.4511173,
+    "meanDomesticKwh": 2916.694639
+  },
+  {
+    "code": "E08000009",
+    "name": "Trafford",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 351.841563,
+    "nonDomesticGwh": 878.3065006,
+    "totalGwh": 1230.148064,
+    "meanDomesticKwh": 3453.829027
+  },
+  {
+    "code": "E08000010",
+    "name": "Wigan",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 443.335726,
+    "nonDomesticGwh": 566.7456699,
+    "totalGwh": 1010.081396,
+    "meanDomesticKwh": 2938.976088
+  },
+  {
+    "code": "E08000011",
+    "name": "Knowsley",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 200.2716681,
+    "nonDomesticGwh": 364.7756173,
+    "totalGwh": 565.0472855,
+    "meanDomesticKwh": 2849.706425
+  },
+  {
+    "code": "E08000012",
+    "name": "Liverpool",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 650.454595,
+    "nonDomesticGwh": 996.8463093,
+    "totalGwh": 1647.300904,
+    "meanDomesticKwh": 2893.957613
+  },
+  {
+    "code": "E08000013",
+    "name": "St. Helens",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 239.3863489,
+    "nonDomesticGwh": 389.0213833,
+    "totalGwh": 628.4077322,
+    "meanDomesticKwh": 2856.77537
+  },
+  {
+    "code": "E08000014",
+    "name": "Sefton",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 384.4894952,
+    "nonDomesticGwh": 356.0833931,
+    "totalGwh": 740.5728883,
+    "meanDomesticKwh": 2985.421854
+  },
+  {
+    "code": "E08000015",
+    "name": "Wirral",
+    "region": "North West",
+    "year": 2024,
+    "domesticGwh": 451.0010532,
+    "nonDomesticGwh": 411.6482732,
+    "totalGwh": 862.6493264,
+    "meanDomesticKwh": 3001.471138
+  },
+  {
+    "code": "E06000010",
+    "name": "Kingston upon Hull, City of",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 337.4223604,
+    "nonDomesticGwh": 662.9531536,
+    "totalGwh": 1000.375514,
+    "meanDomesticKwh": 2757.732503
+  },
+  {
+    "code": "E06000011",
+    "name": "East Riding of Yorkshire",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 534.6999732,
+    "nonDomesticGwh": 939.1539511,
+    "totalGwh": 1473.853924,
+    "meanDomesticKwh": 3248.007418
+  },
+  {
+    "code": "E06000012",
+    "name": "North East Lincolnshire",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 215.9642588,
+    "nonDomesticGwh": 470.8377319,
+    "totalGwh": 686.8019906,
+    "meanDomesticKwh": 2911.629013
+  },
+  {
+    "code": "E06000013",
+    "name": "North Lincolnshire",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 235.4283936,
+    "nonDomesticGwh": 824.5677545,
+    "totalGwh": 1059.996148,
+    "meanDomesticKwh": 3080.676694
+  },
+  {
+    "code": "E06000014",
+    "name": "York",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 286.2812187,
+    "nonDomesticGwh": 456.747077,
+    "totalGwh": 743.0282958,
+    "meanDomesticKwh": 3152.42552
+  },
+  {
+    "code": "E06000065",
+    "name": "North Yorkshire",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 1091.381848,
+    "nonDomesticGwh": 1862.109128,
+    "totalGwh": 2953.490976,
+    "meanDomesticKwh": 3626.479817
+  },
+  {
+    "code": "E08000017",
+    "name": "Doncaster",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 416.1966845,
+    "nonDomesticGwh": 725.7662841,
+    "totalGwh": 1141.962969,
+    "meanDomesticKwh": 2955.249725
+  },
+  {
+    "code": "E08000018",
+    "name": "Rotherham",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 348.1238155,
+    "nonDomesticGwh": 554.434434,
+    "totalGwh": 902.5582496,
+    "meanDomesticKwh": 2887.7242
+  },
+  {
+    "code": "E08000032",
+    "name": "Bradford",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 692.5290857,
+    "nonDomesticGwh": 822.9909319,
+    "totalGwh": 1515.520018,
+    "meanDomesticKwh": 3185.198696
+  },
+  {
+    "code": "E08000033",
+    "name": "Calderdale",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 309.094415,
+    "nonDomesticGwh": 394.9289051,
+    "totalGwh": 704.0233201,
+    "meanDomesticKwh": 3223.057267
+  },
+  {
+    "code": "E08000034",
+    "name": "Kirklees",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 579.8406813,
+    "nonDomesticGwh": 675.2726209,
+    "totalGwh": 1255.113302,
+    "meanDomesticKwh": 3089.484774
+  },
+  {
+    "code": "E08000035",
+    "name": "Leeds",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 1130.796288,
+    "nonDomesticGwh": 1732.683452,
+    "totalGwh": 2863.47974,
+    "meanDomesticKwh": 3141.26659
+  },
+  {
+    "code": "E08000036",
+    "name": "Wakefield",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 468.4228613,
+    "nonDomesticGwh": 1026.239187,
+    "totalGwh": 1494.662048,
+    "meanDomesticKwh": 2876.724853
+  },
+  {
+    "code": "E08000038",
+    "name": "Barnsley",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 326.879553,
+    "nonDomesticGwh": 536.9176982,
+    "totalGwh": 863.7972512,
+    "meanDomesticKwh": 2877.435524
+  },
+  {
+    "code": "E08000039",
+    "name": "Sheffield",
+    "region": "Yorkshire and The Humber",
+    "year": 2024,
+    "domesticGwh": 726.2723049,
+    "nonDomesticGwh": 1172.420307,
+    "totalGwh": 1898.692612,
+    "meanDomesticKwh": 2955.570361
+  },
+  {
+    "code": "E06000015",
+    "name": "Derby",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 348.8238762,
+    "nonDomesticGwh": 591.098456,
+    "totalGwh": 939.9223323,
+    "meanDomesticKwh": 3087.893385
+  },
+  {
+    "code": "E06000016",
+    "name": "Leicester",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 427.7877245,
+    "nonDomesticGwh": 766.471817,
+    "totalGwh": 1194.259541,
+    "meanDomesticKwh": 3145.312956
+  },
+  {
+    "code": "E06000017",
+    "name": "Rutland",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 71.07505227,
+    "nonDomesticGwh": 221.3330871,
+    "totalGwh": 292.4081393,
+    "meanDomesticKwh": 4001.523042
+  },
+  {
+    "code": "E06000018",
+    "name": "Nottingham",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 415.7920112,
+    "nonDomesticGwh": 673.0455725,
+    "totalGwh": 1088.837584,
+    "meanDomesticKwh": 3107.517162
+  },
+  {
+    "code": "E06000061",
+    "name": "North Northamptonshire",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 530.800484,
+    "nonDomesticGwh": 990.7563686,
+    "totalGwh": 1521.556853,
+    "meanDomesticKwh": 3339.018827
+  },
+  {
+    "code": "E06000062",
+    "name": "West Northamptonshire",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 666.1625926,
+    "nonDomesticGwh": 991.8441144,
+    "totalGwh": 1658.006707,
+    "meanDomesticKwh": 3648.846417
+  },
+  {
+    "code": "E07000032",
+    "name": "Amber Valley",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 196.9528683,
+    "nonDomesticGwh": 286.8983583,
+    "totalGwh": 483.8512266,
+    "meanDomesticKwh": 3258.219765
+  },
+  {
+    "code": "E07000033",
+    "name": "Bolsover",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 114.0294431,
+    "nonDomesticGwh": 216.6119134,
+    "totalGwh": 330.6413565,
+    "meanDomesticKwh": 2979.29255
+  },
+  {
+    "code": "E07000034",
+    "name": "Chesterfield",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 142.3552676,
+    "nonDomesticGwh": 200.1451945,
+    "totalGwh": 342.5004621,
+    "meanDomesticKwh": 2830.462235
+  },
+  {
+    "code": "E07000035",
+    "name": "Derbyshire Dales",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 132.8086496,
+    "nonDomesticGwh": 224.4018374,
+    "totalGwh": 357.210487,
+    "meanDomesticKwh": 3768.476522
+  },
+  {
+    "code": "E07000036",
+    "name": "Erewash",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 159.7995084,
+    "nonDomesticGwh": 189.38059,
+    "totalGwh": 349.1800984,
+    "meanDomesticKwh": 3060.003608
+  },
+  {
+    "code": "E07000037",
+    "name": "High Peak",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 140.5206076,
+    "nonDomesticGwh": 555.6401046,
+    "totalGwh": 696.1607121,
+    "meanDomesticKwh": 3250.835321
+  },
+  {
+    "code": "E07000038",
+    "name": "North East Derbyshire",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 151.3802206,
+    "nonDomesticGwh": 232.7893205,
+    "totalGwh": 384.1695412,
+    "meanDomesticKwh": 3127.561271
+  },
+  {
+    "code": "E07000039",
+    "name": "South Derbyshire",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 170.0182193,
+    "nonDomesticGwh": 319.7033329,
+    "totalGwh": 489.7215521,
+    "meanDomesticKwh": 3393.238584
+  },
+  {
+    "code": "E07000129",
+    "name": "Blaby",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 143.5721374,
+    "nonDomesticGwh": 241.92537,
+    "totalGwh": 385.4975074,
+    "meanDomesticKwh": 3247.577131
+  },
+  {
+    "code": "E07000130",
+    "name": "Charnwood",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 248.5558169,
+    "nonDomesticGwh": 389.1953934,
+    "totalGwh": 637.7512103,
+    "meanDomesticKwh": 3194.188998
+  },
+  {
+    "code": "E07000131",
+    "name": "Harborough",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 166.6095307,
+    "nonDomesticGwh": 176.3747514,
+    "totalGwh": 342.9842821,
+    "meanDomesticKwh": 3784.6879
+  },
+  {
+    "code": "E07000132",
+    "name": "Hinckley and Bosworth",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 177.9098606,
+    "nonDomesticGwh": 229.1277227,
+    "totalGwh": 407.0375833,
+    "meanDomesticKwh": 3409.345201
+  },
+  {
+    "code": "E07000133",
+    "name": "Melton",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 90.16767394,
+    "nonDomesticGwh": 137.5500201,
+    "totalGwh": 227.717694,
+    "meanDomesticKwh": 3627.164164
+  },
+  {
+    "code": "E07000134",
+    "name": "North West Leicestershire",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 170.3068128,
+    "nonDomesticGwh": 392.9617363,
+    "totalGwh": 563.2685491,
+    "meanDomesticKwh": 3524.707414
+  },
+  {
+    "code": "E07000135",
+    "name": "Oadby and Wigston",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 76.83479118,
+    "nonDomesticGwh": 83.45218307,
+    "totalGwh": 160.2869742,
+    "meanDomesticKwh": 3161.795448
+  },
+  {
+    "code": "E07000136",
+    "name": "Boston",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 108.226117,
+    "nonDomesticGwh": 178.1488451,
+    "totalGwh": 286.374962,
+    "meanDomesticKwh": 3435.095441
+  },
+  {
+    "code": "E07000137",
+    "name": "East Lindsey",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 261.1840596,
+    "nonDomesticGwh": 400.7702726,
+    "totalGwh": 661.9543322,
+    "meanDomesticKwh": 3760.533009
+  },
+  {
+    "code": "E07000138",
+    "name": "Lincoln",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 124.6521021,
+    "nonDomesticGwh": 212.1378115,
+    "totalGwh": 336.7899136,
+    "meanDomesticKwh": 2838.938283
+  },
+  {
+    "code": "E07000139",
+    "name": "North Kesteven",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 191.3632175,
+    "nonDomesticGwh": 253.9726733,
+    "totalGwh": 445.3358909,
+    "meanDomesticKwh": 3529.189044
+  },
+  {
+    "code": "E07000140",
+    "name": "South Holland",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 163.3118367,
+    "nonDomesticGwh": 291.0021317,
+    "totalGwh": 454.3139683,
+    "meanDomesticKwh": 3711.632651
+  },
+  {
+    "code": "E07000141",
+    "name": "South Kesteven",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 237.6448378,
+    "nonDomesticGwh": 300.5119559,
+    "totalGwh": 538.1567937,
+    "meanDomesticKwh": 3595.776029
+  },
+  {
+    "code": "E07000142",
+    "name": "West Lindsey",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 160.4626703,
+    "nonDomesticGwh": 193.9367534,
+    "totalGwh": 354.3994238,
+    "meanDomesticKwh": 3534.887217
+  },
+  {
+    "code": "E07000170",
+    "name": "Ashfield",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 173.0849814,
+    "nonDomesticGwh": 295.7561543,
+    "totalGwh": 468.8411357,
+    "meanDomesticKwh": 3031.419888
+  },
+  {
+    "code": "E07000171",
+    "name": "Bassetlaw",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 186.9230243,
+    "nonDomesticGwh": 348.0288364,
+    "totalGwh": 534.9518607,
+    "meanDomesticKwh": 3354.684572
+  },
+  {
+    "code": "E07000172",
+    "name": "Broxtowe",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 157.2014816,
+    "nonDomesticGwh": 145.3809026,
+    "totalGwh": 302.5823842,
+    "meanDomesticKwh": 3074.60505
+  },
+  {
+    "code": "E07000173",
+    "name": "Gedling",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 176.2654485,
+    "nonDomesticGwh": 138.3300254,
+    "totalGwh": 314.5954739,
+    "meanDomesticKwh": 3222.461992
+  },
+  {
+    "code": "E07000174",
+    "name": "Mansfield",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 148.4847863,
+    "nonDomesticGwh": 203.2893129,
+    "totalGwh": 351.7740992,
+    "meanDomesticKwh": 2921.261215
+  },
+  {
+    "code": "E07000175",
+    "name": "Newark and Sherwood",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 198.7157948,
+    "nonDomesticGwh": 303.8221659,
+    "totalGwh": 502.5379607,
+    "meanDomesticKwh": 3461.766717
+  },
+  {
+    "code": "E07000176",
+    "name": "Rushcliffe",
+    "region": "East Midlands",
+    "year": 2024,
+    "domesticGwh": 192.1897218,
+    "nonDomesticGwh": 229.5944854,
+    "totalGwh": 421.7842072,
+    "meanDomesticKwh": 3517.381438
+  },
+  {
+    "code": "E06000019",
+    "name": "Herefordshire, County of",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 335.1168769,
+    "nonDomesticGwh": 509.7125493,
+    "totalGwh": 844.8294262,
+    "meanDomesticKwh": 3836.044836
+  },
+  {
+    "code": "E06000020",
+    "name": "Telford and Wrekin",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 251.2573663,
+    "nonDomesticGwh": 496.6524284,
+    "totalGwh": 747.9097947,
+    "meanDomesticKwh": 3043.92041
+  },
+  {
+    "code": "E06000021",
+    "name": "Stoke-on-Trent",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 331.8368554,
+    "nonDomesticGwh": 490.5693998,
+    "totalGwh": 822.4062551,
+    "meanDomesticKwh": 2869.592917
+  },
+  {
+    "code": "E06000051",
+    "name": "Shropshire",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 539.7060769,
+    "nonDomesticGwh": 730.6394644,
+    "totalGwh": 1270.345541,
+    "meanDomesticKwh": 3657.833904
+  },
+  {
+    "code": "E07000192",
+    "name": "Cannock Chase",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 143.9668864,
+    "nonDomesticGwh": 142.3707634,
+    "totalGwh": 286.3376498,
+    "meanDomesticKwh": 3176.394105
+  },
+  {
+    "code": "E07000193",
+    "name": "East Staffordshire",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 184.3999195,
+    "nonDomesticGwh": 425.5600304,
+    "totalGwh": 609.9599499,
+    "meanDomesticKwh": 3338.58236
+  },
+  {
+    "code": "E07000194",
+    "name": "Lichfield",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 172.3617709,
+    "nonDomesticGwh": 239.3788523,
+    "totalGwh": 411.7406232,
+    "meanDomesticKwh": 3542.383848
+  },
+  {
+    "code": "E07000195",
+    "name": "Newcastle-under-Lyme",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 174.1097185,
+    "nonDomesticGwh": 243.1414021,
+    "totalGwh": 417.2511206,
+    "meanDomesticKwh": 3097.872328
+  },
+  {
+    "code": "E07000196",
+    "name": "South Staffordshire",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 168.72778,
+    "nonDomesticGwh": 281.66585,
+    "totalGwh": 450.39363,
+    "meanDomesticKwh": 3497.528709
+  },
+  {
+    "code": "E07000197",
+    "name": "Stafford",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 211.3423774,
+    "nonDomesticGwh": 277.7308099,
+    "totalGwh": 489.0731873,
+    "meanDomesticKwh": 3359.974204
+  },
+  {
+    "code": "E07000198",
+    "name": "Staffordshire Moorlands",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 150.8893547,
+    "nonDomesticGwh": 253.9679959,
+    "totalGwh": 404.8573506,
+    "meanDomesticKwh": 3403.237809
+  },
+  {
+    "code": "E07000199",
+    "name": "Tamworth",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 111.2613352,
+    "nonDomesticGwh": 146.9129481,
+    "totalGwh": 258.1742832,
+    "meanDomesticKwh": 3209.708492
+  },
+  {
+    "code": "E07000218",
+    "name": "North Warwickshire",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 103.9684888,
+    "nonDomesticGwh": 415.4777444,
+    "totalGwh": 519.4462332,
+    "meanDomesticKwh": 3548.897078
+  },
+  {
+    "code": "E07000219",
+    "name": "Nuneaton and Bedworth",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 190.7256153,
+    "nonDomesticGwh": 199.6311543,
+    "totalGwh": 390.3567696,
+    "meanDomesticKwh": 3099.818218
+  },
+  {
+    "code": "E07000220",
+    "name": "Rugby",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 177.9303577,
+    "nonDomesticGwh": 437.4911489,
+    "totalGwh": 615.4215067,
+    "meanDomesticKwh": 3481.185588
+  },
+  {
+    "code": "E07000221",
+    "name": "Stratford-on-Avon",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 275.7983275,
+    "nonDomesticGwh": 340.9186041,
+    "totalGwh": 616.7169317,
+    "meanDomesticKwh": 4199.569496
+  },
+  {
+    "code": "E07000222",
+    "name": "Warwick",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 243.2649886,
+    "nonDomesticGwh": 341.667618,
+    "totalGwh": 584.9326066,
+    "meanDomesticKwh": 3574.167503
+  },
+  {
+    "code": "E07000234",
+    "name": "Bromsgrove",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 159.8317598,
+    "nonDomesticGwh": 145.7692564,
+    "totalGwh": 305.6010163,
+    "meanDomesticKwh": 3751.126754
+  },
+  {
+    "code": "E07000235",
+    "name": "Malvern Hills",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 148.417389,
+    "nonDomesticGwh": 134.059494,
+    "totalGwh": 282.4768831,
+    "meanDomesticKwh": 3919.128308
+  },
+  {
+    "code": "E07000236",
+    "name": "Redditch",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 116.3814696,
+    "nonDomesticGwh": 155.9885636,
+    "totalGwh": 272.3700331,
+    "meanDomesticKwh": 3115.552658
+  },
+  {
+    "code": "E07000237",
+    "name": "Worcester",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 144.4025731,
+    "nonDomesticGwh": 196.2170282,
+    "totalGwh": 340.6196013,
+    "meanDomesticKwh": 3090.147081
+  },
+  {
+    "code": "E07000238",
+    "name": "Wychavon",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 228.4152706,
+    "nonDomesticGwh": 335.6150697,
+    "totalGwh": 564.0303403,
+    "meanDomesticKwh": 3808.508055
+  },
+  {
+    "code": "E07000239",
+    "name": "Wyre Forest",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 155.170341,
+    "nonDomesticGwh": 182.3311202,
+    "totalGwh": 337.5014612,
+    "meanDomesticKwh": 3319.222678
+  },
+  {
+    "code": "E08000025",
+    "name": "Birmingham",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 1501.492052,
+    "nonDomesticGwh": 2241.930671,
+    "totalGwh": 3743.422722,
+    "meanDomesticKwh": 3364.356347
+  },
+  {
+    "code": "E08000026",
+    "name": "Coventry",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 446.2567116,
+    "nonDomesticGwh": 687.2655527,
+    "totalGwh": 1133.522264,
+    "meanDomesticKwh": 3138.188714
+  },
+  {
+    "code": "E08000027",
+    "name": "Dudley",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 435.9042445,
+    "nonDomesticGwh": 447.6230491,
+    "totalGwh": 883.5272936,
+    "meanDomesticKwh": 3129.787218
+  },
+  {
+    "code": "E08000028",
+    "name": "Sandwell",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 418.5554817,
+    "nonDomesticGwh": 676.9466503,
+    "totalGwh": 1095.502132,
+    "meanDomesticKwh": 3122.429889
+  },
+  {
+    "code": "E08000029",
+    "name": "Solihull",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 328.5313869,
+    "nonDomesticGwh": 573.9951127,
+    "totalGwh": 902.5264996,
+    "meanDomesticKwh": 3493.490997
+  },
+  {
+    "code": "E08000030",
+    "name": "Walsall",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 380.7633278,
+    "nonDomesticGwh": 451.6258792,
+    "totalGwh": 832.389207,
+    "meanDomesticKwh": 3261.942857
+  },
+  {
+    "code": "E08000031",
+    "name": "Wolverhampton",
+    "region": "West Midlands",
+    "year": 2024,
+    "domesticGwh": 362.1631419,
+    "nonDomesticGwh": 507.389598,
+    "totalGwh": 869.5527398,
+    "meanDomesticKwh": 3261.673168
+  },
+  {
+    "code": "E06000031",
+    "name": "Peterborough",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 279.6437997,
+    "nonDomesticGwh": 574.9272461,
+    "totalGwh": 854.5710459,
+    "meanDomesticKwh": 3119.771071
+  },
+  {
+    "code": "E06000032",
+    "name": "Luton",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 268.094721,
+    "nonDomesticGwh": 340.8022902,
+    "totalGwh": 608.8970112,
+    "meanDomesticKwh": 3308.953493
+  },
+  {
+    "code": "E06000033",
+    "name": "Southend-on-Sea",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 266.342232,
+    "nonDomesticGwh": 243.0324477,
+    "totalGwh": 509.3746797,
+    "meanDomesticKwh": 3265.038272
+  },
+  {
+    "code": "E06000034",
+    "name": "Thurrock",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 252.3794844,
+    "nonDomesticGwh": 601.6624853,
+    "totalGwh": 854.0419697,
+    "meanDomesticKwh": 3624.267397
+  },
+  {
+    "code": "E06000055",
+    "name": "Bedford",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 276.9509994,
+    "nonDomesticGwh": 398.1513668,
+    "totalGwh": 675.1023663,
+    "meanDomesticKwh": 3502.472392
+  },
+  {
+    "code": "E06000056",
+    "name": "Central Bedfordshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 468.4119393,
+    "nonDomesticGwh": 544.8301723,
+    "totalGwh": 1013.242112,
+    "meanDomesticKwh": 3560.822369
+  },
+  {
+    "code": "E07000008",
+    "name": "Cambridge",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 176.3160553,
+    "nonDomesticGwh": 566.8804928,
+    "totalGwh": 743.1965481,
+    "meanDomesticKwh": 3119.257945
+  },
+  {
+    "code": "E07000009",
+    "name": "East Cambridgeshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 157.9701399,
+    "nonDomesticGwh": 212.4936438,
+    "totalGwh": 370.4637837,
+    "meanDomesticKwh": 3872.386622
+  },
+  {
+    "code": "E07000010",
+    "name": "Fenland",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 169.6754907,
+    "nonDomesticGwh": 286.0513789,
+    "totalGwh": 455.7268696,
+    "meanDomesticKwh": 3601.610891
+  },
+  {
+    "code": "E07000011",
+    "name": "Huntingdonshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 292.5251939,
+    "nonDomesticGwh": 456.7418506,
+    "totalGwh": 749.2670445,
+    "meanDomesticKwh": 3561.343502
+  },
+  {
+    "code": "E07000012",
+    "name": "South Cambridgeshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 295.1992005,
+    "nonDomesticGwh": 465.8959636,
+    "totalGwh": 761.0951641,
+    "meanDomesticKwh": 4027.439056
+  },
+  {
+    "code": "E07000066",
+    "name": "Basildon",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 277.5255553,
+    "nonDomesticGwh": 342.2185025,
+    "totalGwh": 619.7440578,
+    "meanDomesticKwh": 3517.345001
+  },
+  {
+    "code": "E07000067",
+    "name": "Braintree",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 261.1401204,
+    "nonDomesticGwh": 236.3255535,
+    "totalGwh": 497.4656739,
+    "meanDomesticKwh": 3755.196509
+  },
+  {
+    "code": "E07000068",
+    "name": "Brentwood",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 138.1980032,
+    "nonDomesticGwh": 120.1930589,
+    "totalGwh": 258.3910621,
+    "meanDomesticKwh": 3986.672528
+  },
+  {
+    "code": "E07000069",
+    "name": "Castle Point",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 137.7849109,
+    "nonDomesticGwh": 76.68555711,
+    "totalGwh": 214.470468,
+    "meanDomesticKwh": 3631.461464
+  },
+  {
+    "code": "E07000070",
+    "name": "Chelmsford",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 302.3085871,
+    "nonDomesticGwh": 341.4615005,
+    "totalGwh": 643.7700876,
+    "meanDomesticKwh": 3801.237122
+  },
+  {
+    "code": "E07000071",
+    "name": "Colchester",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 292.4920913,
+    "nonDomesticGwh": 341.6292014,
+    "totalGwh": 634.1212927,
+    "meanDomesticKwh": 3483.334222
+  },
+  {
+    "code": "E07000072",
+    "name": "Epping Forest",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 236.0771412,
+    "nonDomesticGwh": 185.5509094,
+    "totalGwh": 421.6280506,
+    "meanDomesticKwh": 4119.588546
+  },
+  {
+    "code": "E07000073",
+    "name": "Harlow",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 123.3468061,
+    "nonDomesticGwh": 243.0465583,
+    "totalGwh": 366.3933644,
+    "meanDomesticKwh": 3080.589562
+  },
+  {
+    "code": "E07000074",
+    "name": "Maldon",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 126.7032939,
+    "nonDomesticGwh": 125.5390101,
+    "totalGwh": 252.242304,
+    "meanDomesticKwh": 4214.452298
+  },
+  {
+    "code": "E07000075",
+    "name": "Rochford",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 134.9319927,
+    "nonDomesticGwh": 99.61333945,
+    "totalGwh": 234.5453321,
+    "meanDomesticKwh": 3601.451788
+  },
+  {
+    "code": "E07000076",
+    "name": "Tendring",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 247.7161286,
+    "nonDomesticGwh": 204.4826634,
+    "totalGwh": 452.1987921,
+    "meanDomesticKwh": 3357.633526
+  },
+  {
+    "code": "E07000077",
+    "name": "Uttlesford",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 180.3367412,
+    "nonDomesticGwh": 203.7654983,
+    "totalGwh": 384.1022395,
+    "meanDomesticKwh": 4461.461647
+  },
+  {
+    "code": "E07000095",
+    "name": "Broxbourne",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 149.7800378,
+    "nonDomesticGwh": 202.071075,
+    "totalGwh": 351.8511128,
+    "meanDomesticKwh": 3551.646538
+  },
+  {
+    "code": "E07000096",
+    "name": "Dacorum",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 246.9817465,
+    "nonDomesticGwh": 486.6043583,
+    "totalGwh": 733.5861048,
+    "meanDomesticKwh": 3669.044737
+  },
+  {
+    "code": "E07000098",
+    "name": "Hertsmere",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 176.7556169,
+    "nonDomesticGwh": 243.0097813,
+    "totalGwh": 419.7653982,
+    "meanDomesticKwh": 3942.094137
+  },
+  {
+    "code": "E07000099",
+    "name": "North Hertfordshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 216.5566656,
+    "nonDomesticGwh": 215.8074707,
+    "totalGwh": 432.3641364,
+    "meanDomesticKwh": 3686.698427
+  },
+  {
+    "code": "E07000102",
+    "name": "Three Rivers",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 155.3845692,
+    "nonDomesticGwh": 173.0746653,
+    "totalGwh": 328.4592346,
+    "meanDomesticKwh": 4053.757252
+  },
+  {
+    "code": "E07000103",
+    "name": "Watford",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 145.1865154,
+    "nonDomesticGwh": 245.1319976,
+    "totalGwh": 390.318513,
+    "meanDomesticKwh": 3424.533338
+  },
+  {
+    "code": "E07000143",
+    "name": "Breckland",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 253.2175814,
+    "nonDomesticGwh": 285.3234561,
+    "totalGwh": 538.5410376,
+    "meanDomesticKwh": 3911.058653
+  },
+  {
+    "code": "E07000144",
+    "name": "Broadland",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 215.5564479,
+    "nonDomesticGwh": 197.2381704,
+    "totalGwh": 412.7946183,
+    "meanDomesticKwh": 3493.50828
+  },
+  {
+    "code": "E07000145",
+    "name": "Great Yarmouth",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 157.6857319,
+    "nonDomesticGwh": 164.8891342,
+    "totalGwh": 322.5748662,
+    "meanDomesticKwh": 3353.945165
+  },
+  {
+    "code": "E07000146",
+    "name": "King's Lynn and West Norfolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 304.7606757,
+    "nonDomesticGwh": 409.8283375,
+    "totalGwh": 714.5890132,
+    "meanDomesticKwh": 4092.285365
+  },
+  {
+    "code": "E07000147",
+    "name": "North Norfolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 220.0245541,
+    "nonDomesticGwh": 244.6315358,
+    "totalGwh": 464.6560899,
+    "meanDomesticKwh": 3910.991399
+  },
+  {
+    "code": "E07000148",
+    "name": "Norwich",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 186.5594314,
+    "nonDomesticGwh": 284.4710385,
+    "totalGwh": 471.0304699,
+    "meanDomesticKwh": 2787.631214
+  },
+  {
+    "code": "E07000149",
+    "name": "South Norfolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 257.5530898,
+    "nonDomesticGwh": 268.4489446,
+    "totalGwh": 526.0020344,
+    "meanDomesticKwh": 3898.539141
+  },
+  {
+    "code": "E07000200",
+    "name": "Babergh",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 174.736088,
+    "nonDomesticGwh": 162.1832357,
+    "totalGwh": 336.9193237,
+    "meanDomesticKwh": 4012.12546
+  },
+  {
+    "code": "E07000202",
+    "name": "Ipswich",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 190.8540733,
+    "nonDomesticGwh": 211.0082148,
+    "totalGwh": 401.8622881,
+    "meanDomesticKwh": 3126.295265
+  },
+  {
+    "code": "E07000203",
+    "name": "Mid Suffolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 207.1604658,
+    "nonDomesticGwh": 255.8995469,
+    "totalGwh": 463.0600127,
+    "meanDomesticKwh": 4175.780403
+  },
+  {
+    "code": "E07000240",
+    "name": "St Albans",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 239.1033179,
+    "nonDomesticGwh": 199.7804896,
+    "totalGwh": 438.8838075,
+    "meanDomesticKwh": 3857.127245
+  },
+  {
+    "code": "E07000241",
+    "name": "Welwyn Hatfield",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 173.4213284,
+    "nonDomesticGwh": 447.5165925,
+    "totalGwh": 620.9379209,
+    "meanDomesticKwh": 3552.041628
+  },
+  {
+    "code": "E07000242",
+    "name": "East Hertfordshire",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 272.5146825,
+    "nonDomesticGwh": 240.5120122,
+    "totalGwh": 513.0266948,
+    "meanDomesticKwh": 4041.38575
+  },
+  {
+    "code": "E07000243",
+    "name": "Stevenage",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 116.5909783,
+    "nonDomesticGwh": 223.9049919,
+    "totalGwh": 340.4959702,
+    "meanDomesticKwh": 3091.286941
+  },
+  {
+    "code": "E07000244",
+    "name": "East Suffolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 420.8876098,
+    "nonDomesticGwh": 598.8301594,
+    "totalGwh": 1019.717769,
+    "meanDomesticKwh": 3488.356138
+  },
+  {
+    "code": "E07000245",
+    "name": "West Suffolk",
+    "region": "East",
+    "year": 2024,
+    "domesticGwh": 298.6408496,
+    "nonDomesticGwh": 519.8011841,
+    "totalGwh": 818.4420336,
+    "meanDomesticKwh": 3668.9868
+  },
+  {
+    "code": "E09000001",
+    "name": "City of London",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 26.67366205,
+    "nonDomesticGwh": 1526.017344,
+    "totalGwh": 1552.691006,
+    "meanDomesticKwh": 3712.926232
+  },
+  {
+    "code": "E09000007",
+    "name": "Camden",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 320.2128298,
+    "nonDomesticGwh": 1133.437661,
+    "totalGwh": 1453.650491,
+    "meanDomesticKwh": 2999.314642
+  },
+  {
+    "code": "E09000012",
+    "name": "Hackney",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 330.8676022,
+    "nonDomesticGwh": 509.7405106,
+    "totalGwh": 840.6081128,
+    "meanDomesticKwh": 2902.602002
+  },
+  {
+    "code": "E09000013",
+    "name": "Hammersmith and Fulham",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 269.839174,
+    "nonDomesticGwh": 608.1038965,
+    "totalGwh": 877.9430705,
+    "meanDomesticKwh": 2924.230024
+  },
+  {
+    "code": "E09000014",
+    "name": "Haringey",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 338.9191865,
+    "nonDomesticGwh": 397.3816927,
+    "totalGwh": 736.3008792,
+    "meanDomesticKwh": 2997.136447
+  },
+  {
+    "code": "E09000019",
+    "name": "Islington",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 290.6781559,
+    "nonDomesticGwh": 668.6913499,
+    "totalGwh": 959.3695057,
+    "meanDomesticKwh": 2730.038844
+  },
+  {
+    "code": "E09000020",
+    "name": "Kensington and Chelsea",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 327.4648673,
+    "nonDomesticGwh": 849.2826646,
+    "totalGwh": 1176.747532,
+    "meanDomesticKwh": 3745.194969
+  },
+  {
+    "code": "E09000022",
+    "name": "Lambeth",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 408.0486791,
+    "nonDomesticGwh": 557.371203,
+    "totalGwh": 965.4198822,
+    "meanDomesticKwh": 2812.809711
+  },
+  {
+    "code": "E09000023",
+    "name": "Lewisham",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 386.4844195,
+    "nonDomesticGwh": 255.1694758,
+    "totalGwh": 641.6538953,
+    "meanDomesticKwh": 2946.034847
+  },
+  {
+    "code": "E09000025",
+    "name": "Newham",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 384.1698515,
+    "nonDomesticGwh": 940.0183835,
+    "totalGwh": 1324.188235,
+    "meanDomesticKwh": 2998.001057
+  },
+  {
+    "code": "E09000028",
+    "name": "Southwark",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 423.2222774,
+    "nonDomesticGwh": 805.5567583,
+    "totalGwh": 1228.779036,
+    "meanDomesticKwh": 2954.864429
+  },
+  {
+    "code": "E09000030",
+    "name": "Tower Hamlets",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 434.0428456,
+    "nonDomesticGwh": 1922.155806,
+    "totalGwh": 2356.198652,
+    "meanDomesticKwh": 3046.192604
+  },
+  {
+    "code": "E09000032",
+    "name": "Wandsworth",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 481.243894,
+    "nonDomesticGwh": 473.8929778,
+    "totalGwh": 955.1368718,
+    "meanDomesticKwh": 3080.374924
+  },
+  {
+    "code": "E09000033",
+    "name": "Westminster",
+    "region": "Inner London",
+    "year": 2024,
+    "domesticGwh": 460.1042303,
+    "nonDomesticGwh": 2724.339968,
+    "totalGwh": 3184.444198,
+    "meanDomesticKwh": 3648.609325
+  },
+  {
+    "code": "E09000002",
+    "name": "Barking and Dagenham",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 248.6316556,
+    "nonDomesticGwh": 328.9042999,
+    "totalGwh": 577.5359556,
+    "meanDomesticKwh": 3118.811536
+  },
+  {
+    "code": "E09000003",
+    "name": "Barnet",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 595.7221906,
+    "nonDomesticGwh": 470.0936808,
+    "totalGwh": 1065.815871,
+    "meanDomesticKwh": 3716.342004
+  },
+  {
+    "code": "E09000004",
+    "name": "Bexley",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 338.6259086,
+    "nonDomesticGwh": 400.3350019,
+    "totalGwh": 738.9609105,
+    "meanDomesticKwh": 3377.612398
+  },
+  {
+    "code": "E09000005",
+    "name": "Brent",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 409.7055434,
+    "nonDomesticGwh": 739.9681759,
+    "totalGwh": 1149.673719,
+    "meanDomesticKwh": 3239.777824
+  },
+  {
+    "code": "E09000006",
+    "name": "Bromley",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 494.7063376,
+    "nonDomesticGwh": 371.1052973,
+    "totalGwh": 865.811635,
+    "meanDomesticKwh": 3488.023251
+  },
+  {
+    "code": "E09000008",
+    "name": "Croydon",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 547.117135,
+    "nonDomesticGwh": 560.4215754,
+    "totalGwh": 1107.53871,
+    "meanDomesticKwh": 3344.114122
+  },
+  {
+    "code": "E09000009",
+    "name": "Ealing",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 465.1130637,
+    "nonDomesticGwh": 909.3260941,
+    "totalGwh": 1374.439158,
+    "meanDomesticKwh": 3211.707548
+  },
+  {
+    "code": "E09000010",
+    "name": "Enfield",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 442.2705659,
+    "nonDomesticGwh": 461.4455396,
+    "totalGwh": 903.7161055,
+    "meanDomesticKwh": 3480.061422
+  },
+  {
+    "code": "E09000011",
+    "name": "Greenwich",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 355.6324965,
+    "nonDomesticGwh": 430.4424667,
+    "totalGwh": 786.0749633,
+    "meanDomesticKwh": 2909.559078
+  },
+  {
+    "code": "E09000015",
+    "name": "Harrow",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 329.258468,
+    "nonDomesticGwh": 196.458377,
+    "totalGwh": 525.716845,
+    "meanDomesticKwh": 3483.368789
+  },
+  {
+    "code": "E09000016",
+    "name": "Havering",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 364.7477059,
+    "nonDomesticGwh": 353.2007973,
+    "totalGwh": 717.9485031,
+    "meanDomesticKwh": 3410.036235
+  },
+  {
+    "code": "E09000017",
+    "name": "Hillingdon",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 409.8558074,
+    "nonDomesticGwh": 1496.670437,
+    "totalGwh": 1906.526244,
+    "meanDomesticKwh": 3534.153724
+  },
+  {
+    "code": "E09000018",
+    "name": "Hounslow",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 375.1534508,
+    "nonDomesticGwh": 815.7865513,
+    "totalGwh": 1190.940002,
+    "meanDomesticKwh": 3454.515284
+  },
+  {
+    "code": "E09000021",
+    "name": "Kingston upon Thames",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 241.5308617,
+    "nonDomesticGwh": 274.5802489,
+    "totalGwh": 516.1111106,
+    "meanDomesticKwh": 3512.716323
+  },
+  {
+    "code": "E09000024",
+    "name": "Merton",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 291.8962944,
+    "nonDomesticGwh": 422.0821424,
+    "totalGwh": 713.9784369,
+    "meanDomesticKwh": 3382.814463
+  },
+  {
+    "code": "E09000026",
+    "name": "Redbridge",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 375.6962933,
+    "nonDomesticGwh": 223.7376473,
+    "totalGwh": 599.4339406,
+    "meanDomesticKwh": 3591.090464
+  },
+  {
+    "code": "E09000027",
+    "name": "Richmond upon Thames",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 302.4325346,
+    "nonDomesticGwh": 286.4768851,
+    "totalGwh": 588.9094197,
+    "meanDomesticKwh": 3567.304811
+  },
+  {
+    "code": "E09000029",
+    "name": "Sutton",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 292.1012723,
+    "nonDomesticGwh": 317.1084156,
+    "totalGwh": 609.2096879,
+    "meanDomesticKwh": 3436.081311
+  },
+  {
+    "code": "E09000031",
+    "name": "Waltham Forest",
+    "region": "Outer London",
+    "year": 2024,
+    "domesticGwh": 322.5361093,
+    "nonDomesticGwh": 286.7068991,
+    "totalGwh": 609.2430084,
+    "meanDomesticKwh": 2997.268928
+  },
+  {
+    "code": "E06000035",
+    "name": "Medway",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 386.0548305,
+    "nonDomesticGwh": 373.2705945,
+    "totalGwh": 759.325425,
+    "meanDomesticKwh": 3255.67622
+  },
+  {
+    "code": "E06000036",
+    "name": "Bracknell Forest",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 195.5773348,
+    "nonDomesticGwh": 261.4024191,
+    "totalGwh": 456.9797539,
+    "meanDomesticKwh": 3656.402902
+  },
+  {
+    "code": "E06000037",
+    "name": "West Berkshire",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 298.6522702,
+    "nonDomesticGwh": 513.0654777,
+    "totalGwh": 811.7177478,
+    "meanDomesticKwh": 4279.72816
+  },
+  {
+    "code": "E06000038",
+    "name": "Reading",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 247.6484507,
+    "nonDomesticGwh": 417.2107387,
+    "totalGwh": 664.8591894,
+    "meanDomesticKwh": 3381.789577
+  },
+  {
+    "code": "E06000039",
+    "name": "Slough",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 198.5598717,
+    "nonDomesticGwh": 1786.339465,
+    "totalGwh": 1984.899336,
+    "meanDomesticKwh": 3536.113971
+  },
+  {
+    "code": "E06000040",
+    "name": "Windsor and Maidenhead",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 269.7904748,
+    "nonDomesticGwh": 347.1017981,
+    "totalGwh": 616.8922729,
+    "meanDomesticKwh": 4137.129283
+  },
+  {
+    "code": "E06000041",
+    "name": "Wokingham",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 277.8963271,
+    "nonDomesticGwh": 276.3196558,
+    "totalGwh": 554.2159829,
+    "meanDomesticKwh": 3792.51214
+  },
+  {
+    "code": "E06000042",
+    "name": "Milton Keynes",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 412.5819119,
+    "nonDomesticGwh": 840.2963924,
+    "totalGwh": 1252.878304,
+    "meanDomesticKwh": 3352.770764
+  },
+  {
+    "code": "E06000043",
+    "name": "Brighton and Hove",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 391.3008398,
+    "nonDomesticGwh": 420.7240307,
+    "totalGwh": 812.0248705,
+    "meanDomesticKwh": 3011.767186
+  },
+  {
+    "code": "E06000044",
+    "name": "Portsmouth",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 269.8944934,
+    "nonDomesticGwh": 466.1902586,
+    "totalGwh": 736.0847521,
+    "meanDomesticKwh": 2994.801361
+  },
+  {
+    "code": "E06000045",
+    "name": "Southampton",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 358.9370377,
+    "nonDomesticGwh": 473.1216076,
+    "totalGwh": 832.0586453,
+    "meanDomesticKwh": 3304.459849
+  },
+  {
+    "code": "E06000046",
+    "name": "Isle of Wight",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 234.1005399,
+    "nonDomesticGwh": 237.2929843,
+    "totalGwh": 471.3935242,
+    "meanDomesticKwh": 3239.249203
+  },
+  {
+    "code": "E06000060",
+    "name": "Buckinghamshire",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 968.2743442,
+    "nonDomesticGwh": 959.4823635,
+    "totalGwh": 1927.756708,
+    "meanDomesticKwh": 4142.686868
+  },
+  {
+    "code": "E07000061",
+    "name": "Eastbourne",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 144.6581015,
+    "nonDomesticGwh": 160.1197893,
+    "totalGwh": 304.7778909,
+    "meanDomesticKwh": 2972.223167
+  },
+  {
+    "code": "E07000062",
+    "name": "Hastings",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 132.1240308,
+    "nonDomesticGwh": 117.5572306,
+    "totalGwh": 249.6812614,
+    "meanDomesticKwh": 3021.013622
+  },
+  {
+    "code": "E07000063",
+    "name": "Lewes",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 164.9544326,
+    "nonDomesticGwh": 130.8553007,
+    "totalGwh": 295.8097333,
+    "meanDomesticKwh": 3522.785533
+  },
+  {
+    "code": "E07000064",
+    "name": "Rother",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 174.8927191,
+    "nonDomesticGwh": 142.4846799,
+    "totalGwh": 317.377399,
+    "meanDomesticKwh": 3781.218928
+  },
+  {
+    "code": "E07000065",
+    "name": "Wealden",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 301.9725197,
+    "nonDomesticGwh": 194.5267742,
+    "totalGwh": 496.4992939,
+    "meanDomesticKwh": 4127.337484
+  },
+  {
+    "code": "E07000084",
+    "name": "Basingstoke and Deane",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 298.2443011,
+    "nonDomesticGwh": 400.5472554,
+    "totalGwh": 698.7915565,
+    "meanDomesticKwh": 3671.828884
+  },
+  {
+    "code": "E07000085",
+    "name": "East Hampshire",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 227.7968105,
+    "nonDomesticGwh": 171.2425626,
+    "totalGwh": 399.0393731,
+    "meanDomesticKwh": 4064.389004
+  },
+  {
+    "code": "E07000086",
+    "name": "Eastleigh",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 194.5953572,
+    "nonDomesticGwh": 260.5931217,
+    "totalGwh": 455.1884789,
+    "meanDomesticKwh": 3214.964268
+  },
+  {
+    "code": "E07000087",
+    "name": "Fareham",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 165.7463925,
+    "nonDomesticGwh": 225.2516598,
+    "totalGwh": 390.9980524,
+    "meanDomesticKwh": 3286.467046
+  },
+  {
+    "code": "E07000088",
+    "name": "Gosport",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 115.849237,
+    "nonDomesticGwh": 113.518616,
+    "totalGwh": 229.367853,
+    "meanDomesticKwh": 3095.917612
+  },
+  {
+    "code": "E07000089",
+    "name": "Hart",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 164.5765463,
+    "nonDomesticGwh": 281.9160605,
+    "totalGwh": 446.4926068,
+    "meanDomesticKwh": 3880.515582
+  },
+  {
+    "code": "E07000090",
+    "name": "Havant",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 183.9014645,
+    "nonDomesticGwh": 158.4727595,
+    "totalGwh": 342.3742241,
+    "meanDomesticKwh": 3232.522974
+  },
+  {
+    "code": "E07000091",
+    "name": "New Forest",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 294.7181365,
+    "nonDomesticGwh": 359.5326934,
+    "totalGwh": 654.2508299,
+    "meanDomesticKwh": 3605.688201
+  },
+  {
+    "code": "E07000092",
+    "name": "Rushmoor",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 133.7790782,
+    "nonDomesticGwh": 224.9903349,
+    "totalGwh": 358.7694131,
+    "meanDomesticKwh": 3212.985522
+  },
+  {
+    "code": "E07000093",
+    "name": "Test Valley",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 224.9452171,
+    "nonDomesticGwh": 288.4424444,
+    "totalGwh": 513.3876614,
+    "meanDomesticKwh": 3886.943894
+  },
+  {
+    "code": "E07000094",
+    "name": "Winchester",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 228.0627694,
+    "nonDomesticGwh": 332.1859454,
+    "totalGwh": 560.2487147,
+    "meanDomesticKwh": 3964.929927
+  },
+  {
+    "code": "E07000105",
+    "name": "Ashford",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 215.8057609,
+    "nonDomesticGwh": 249.0297006,
+    "totalGwh": 464.8354615,
+    "meanDomesticKwh": 3751.577793
+  },
+  {
+    "code": "E07000106",
+    "name": "Canterbury",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 228.9640389,
+    "nonDomesticGwh": 270.7354233,
+    "totalGwh": 499.6994622,
+    "meanDomesticKwh": 3313.661069
+  },
+  {
+    "code": "E07000107",
+    "name": "Dartford",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 163.0416521,
+    "nonDomesticGwh": 241.4946235,
+    "totalGwh": 404.5362756,
+    "meanDomesticKwh": 3254.389351
+  },
+  {
+    "code": "E07000108",
+    "name": "Dover",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 169.4206759,
+    "nonDomesticGwh": 203.5297553,
+    "totalGwh": 372.9504312,
+    "meanDomesticKwh": 3073.502456
+  },
+  {
+    "code": "E07000109",
+    "name": "Gravesham",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 148.5391131,
+    "nonDomesticGwh": 225.2042769,
+    "totalGwh": 373.74339,
+    "meanDomesticKwh": 3348.416696
+  },
+  {
+    "code": "E07000110",
+    "name": "Maidstone",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 278.0591137,
+    "nonDomesticGwh": 322.6857288,
+    "totalGwh": 600.7448424,
+    "meanDomesticKwh": 3622.542454
+  },
+  {
+    "code": "E07000111",
+    "name": "Sevenoaks",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 224.1605304,
+    "nonDomesticGwh": 168.1711976,
+    "totalGwh": 392.3317279,
+    "meanDomesticKwh": 4392.720564
+  },
+  {
+    "code": "E07000112",
+    "name": "Folkestone and Hythe",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 169.061333,
+    "nonDomesticGwh": 199.6283234,
+    "totalGwh": 368.6896564,
+    "meanDomesticKwh": 3198.284771
+  },
+  {
+    "code": "E07000113",
+    "name": "Swale",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 217.6850403,
+    "nonDomesticGwh": 383.2997384,
+    "totalGwh": 600.9847787,
+    "meanDomesticKwh": 3386.30204
+  },
+  {
+    "code": "E07000114",
+    "name": "Thanet",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 210.2177141,
+    "nonDomesticGwh": 211.2144955,
+    "totalGwh": 421.4322096,
+    "meanDomesticKwh": 3038.750402
+  },
+  {
+    "code": "E07000115",
+    "name": "Tonbridge and Malling",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 208.4169716,
+    "nonDomesticGwh": 267.528528,
+    "totalGwh": 475.9454996,
+    "meanDomesticKwh": 3694.353835
+  },
+  {
+    "code": "E07000116",
+    "name": "Tunbridge Wells",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 212.388715,
+    "nonDomesticGwh": 238.4485317,
+    "totalGwh": 450.8372466,
+    "meanDomesticKwh": 4055.077039
+  },
+  {
+    "code": "E07000177",
+    "name": "Cherwell",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 270.4341134,
+    "nonDomesticGwh": 448.3033407,
+    "totalGwh": 718.7374541,
+    "meanDomesticKwh": 3807.376049
+  },
+  {
+    "code": "E07000178",
+    "name": "Oxford",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 197.282117,
+    "nonDomesticGwh": 547.0555418,
+    "totalGwh": 744.3376588,
+    "meanDomesticKwh": 3345.579246
+  },
+  {
+    "code": "E07000179",
+    "name": "South Oxfordshire",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 281.535961,
+    "nonDomesticGwh": 430.2064454,
+    "totalGwh": 711.7424065,
+    "meanDomesticKwh": 4183.546734
+  },
+  {
+    "code": "E07000180",
+    "name": "Vale of White Horse",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 244.7832133,
+    "nonDomesticGwh": 475.3217336,
+    "totalGwh": 720.1049468,
+    "meanDomesticKwh": 3788.392814
+  },
+  {
+    "code": "E07000181",
+    "name": "West Oxfordshire",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 218.3726645,
+    "nonDomesticGwh": 277.6499758,
+    "totalGwh": 496.0226403,
+    "meanDomesticKwh": 4095.664963
+  },
+  {
+    "code": "E07000207",
+    "name": "Elmbridge",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 264.493253,
+    "nonDomesticGwh": 223.3883769,
+    "totalGwh": 487.88163,
+    "meanDomesticKwh": 4496.12003
+  },
+  {
+    "code": "E07000208",
+    "name": "Epsom and Ewell",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 120.369828,
+    "nonDomesticGwh": 79.3516977,
+    "totalGwh": 199.7215257,
+    "meanDomesticKwh": 3694.139088
+  },
+  {
+    "code": "E07000209",
+    "name": "Guildford",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 241.8675292,
+    "nonDomesticGwh": 299.5339685,
+    "totalGwh": 541.4014977,
+    "meanDomesticKwh": 4052.061136
+  },
+  {
+    "code": "E07000210",
+    "name": "Mole Valley",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 161.917186,
+    "nonDomesticGwh": 203.6734359,
+    "totalGwh": 365.5906219,
+    "meanDomesticKwh": 4252.250276
+  },
+  {
+    "code": "E07000211",
+    "name": "Reigate and Banstead",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 244.505682,
+    "nonDomesticGwh": 290.0758193,
+    "totalGwh": 534.5815013,
+    "meanDomesticKwh": 3862.710027
+  },
+  {
+    "code": "E07000212",
+    "name": "Runnymede",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 148.5499792,
+    "nonDomesticGwh": 224.1463636,
+    "totalGwh": 372.6963427,
+    "meanDomesticKwh": 4023.128025
+  },
+  {
+    "code": "E07000213",
+    "name": "Spelthorne",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 159.0999021,
+    "nonDomesticGwh": 191.6087074,
+    "totalGwh": 350.7086094,
+    "meanDomesticKwh": 3592.555256
+  },
+  {
+    "code": "E07000214",
+    "name": "Surrey Heath",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 151.3126757,
+    "nonDomesticGwh": 180.2471602,
+    "totalGwh": 331.559836,
+    "meanDomesticKwh": 4018.92897
+  },
+  {
+    "code": "E07000215",
+    "name": "Tandridge",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 161.5096023,
+    "nonDomesticGwh": 120.0161663,
+    "totalGwh": 281.5257686,
+    "meanDomesticKwh": 4324.219607
+  },
+  {
+    "code": "E07000216",
+    "name": "Waverley",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 245.2329175,
+    "nonDomesticGwh": 162.6060724,
+    "totalGwh": 407.8389899,
+    "meanDomesticKwh": 4312.773337
+  },
+  {
+    "code": "E07000217",
+    "name": "Woking",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 169.4079091,
+    "nonDomesticGwh": 324.8804719,
+    "totalGwh": 494.288381,
+    "meanDomesticKwh": 3914.683053
+  },
+  {
+    "code": "E07000223",
+    "name": "Adur",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 93.86647021,
+    "nonDomesticGwh": 114.6794662,
+    "totalGwh": 208.5459364,
+    "meanDomesticKwh": 3250.674269
+  },
+  {
+    "code": "E07000224",
+    "name": "Arun",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 260.1081292,
+    "nonDomesticGwh": 191.4777173,
+    "totalGwh": 451.5858466,
+    "meanDomesticKwh": 3305.226813
+  },
+  {
+    "code": "E07000225",
+    "name": "Chichester",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 253.0561947,
+    "nonDomesticGwh": 290.485494,
+    "totalGwh": 543.5416887,
+    "meanDomesticKwh": 4129.439708
+  },
+  {
+    "code": "E07000226",
+    "name": "Crawley",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 147.7640246,
+    "nonDomesticGwh": 425.4115393,
+    "totalGwh": 573.1755638,
+    "meanDomesticKwh": 3174.989784
+  },
+  {
+    "code": "E07000227",
+    "name": "Horsham",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 264.6014196,
+    "nonDomesticGwh": 228.6459147,
+    "totalGwh": 493.2473343,
+    "meanDomesticKwh": 4056.437523
+  },
+  {
+    "code": "E07000228",
+    "name": "Mid Sussex",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 260.9591253,
+    "nonDomesticGwh": 247.4241008,
+    "totalGwh": 508.3832261,
+    "meanDomesticKwh": 3761.193469
+  },
+  {
+    "code": "E07000229",
+    "name": "Worthing",
+    "region": "South East",
+    "year": 2024,
+    "domesticGwh": 162.1660848,
+    "nonDomesticGwh": 130.2689407,
+    "totalGwh": 292.4350255,
+    "meanDomesticKwh": 3164.710292
+  },
+  {
+    "code": "E06000022",
+    "name": "Bath and North East Somerset",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 299.2497227,
+    "nonDomesticGwh": 300.4030777,
+    "totalGwh": 599.6528005,
+    "meanDomesticKwh": 3497.215346
+  },
+  {
+    "code": "E06000023",
+    "name": "Bristol, City of",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 634.3206969,
+    "nonDomesticGwh": 993.6815925,
+    "totalGwh": 1628.002289,
+    "meanDomesticKwh": 3089.605358
+  },
+  {
+    "code": "E06000024",
+    "name": "North Somerset",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 331.1448609,
+    "nonDomesticGwh": 362.2193121,
+    "totalGwh": 693.3641731,
+    "meanDomesticKwh": 3304.278325
+  },
+  {
+    "code": "E06000025",
+    "name": "South Gloucestershire",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 423.2177617,
+    "nonDomesticGwh": 676.3183591,
+    "totalGwh": 1099.536121,
+    "meanDomesticKwh": 3320.136202
+  },
+  {
+    "code": "E06000026",
+    "name": "Plymouth",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 343.0236294,
+    "nonDomesticGwh": 429.8070247,
+    "totalGwh": 772.8306541,
+    "meanDomesticKwh": 2860.771182
+  },
+  {
+    "code": "E06000027",
+    "name": "Torbay",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 207.2315045,
+    "nonDomesticGwh": 189.5766961,
+    "totalGwh": 396.8082006,
+    "meanDomesticKwh": 3112.285117
+  },
+  {
+    "code": "E06000030",
+    "name": "Swindon",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 323.057258,
+    "nonDomesticGwh": 559.6620122,
+    "totalGwh": 882.7192702,
+    "meanDomesticKwh": 3189.901338
+  },
+  {
+    "code": "E06000052",
+    "name": "Cornwall",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 1168.913929,
+    "nonDomesticGwh": 1163.406685,
+    "totalGwh": 2332.320614,
+    "meanDomesticKwh": 4080.719462
+  },
+  {
+    "code": "E06000053",
+    "name": "Isles of Scilly",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 7.3335018,
+    "nonDomesticGwh": 8.77546785,
+    "totalGwh": 16.10896965,
+    "meanDomesticKwh": 6220.103308
+  },
+  {
+    "code": "E06000054",
+    "name": "Wiltshire",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 902.3739632,
+    "nonDomesticGwh": 1313.674017,
+    "totalGwh": 2216.04798,
+    "meanDomesticKwh": 3950.935717
+  },
+  {
+    "code": "E06000058",
+    "name": "Bournemouth, Christchurch and Poole",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 589.326489,
+    "nonDomesticGwh": 677.3959401,
+    "totalGwh": 1266.722429,
+    "meanDomesticKwh": 3191.690437
+  },
+  {
+    "code": "E06000059",
+    "name": "Dorset",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 658.546589,
+    "nonDomesticGwh": 669.8766543,
+    "totalGwh": 1328.423243,
+    "meanDomesticKwh": 3546.2165
+  },
+  {
+    "code": "E06000066",
+    "name": "Somerset",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 974.5888891,
+    "nonDomesticGwh": 1261.48684,
+    "totalGwh": 2236.075729,
+    "meanDomesticKwh": 3645.939849
+  },
+  {
+    "code": "E07000040",
+    "name": "East Devon",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 252.5210008,
+    "nonDomesticGwh": 220.5246882,
+    "totalGwh": 473.0456889,
+    "meanDomesticKwh": 3403.614955
+  },
+  {
+    "code": "E07000041",
+    "name": "Exeter",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 166.4031644,
+    "nonDomesticGwh": 335.8803501,
+    "totalGwh": 502.2835145,
+    "meanDomesticKwh": 2948.476432
+  },
+  {
+    "code": "E07000042",
+    "name": "Mid Devon",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 146.5974068,
+    "nonDomesticGwh": 180.2784304,
+    "totalGwh": 326.8758372,
+    "meanDomesticKwh": 3954.397033
+  },
+  {
+    "code": "E07000043",
+    "name": "North Devon",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 172.2800412,
+    "nonDomesticGwh": 210.4567852,
+    "totalGwh": 382.7368264,
+    "meanDomesticKwh": 3596.360246
+  },
+  {
+    "code": "E07000044",
+    "name": "South Hams",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 192.2384352,
+    "nonDomesticGwh": 217.2184824,
+    "totalGwh": 409.4569177,
+    "meanDomesticKwh": 3964.087746
+  },
+  {
+    "code": "E07000045",
+    "name": "Teignbridge",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 224.4492053,
+    "nonDomesticGwh": 199.8377973,
+    "totalGwh": 424.2870026,
+    "meanDomesticKwh": 3469.129435
+  },
+  {
+    "code": "E07000046",
+    "name": "Torridge",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 127.9492316,
+    "nonDomesticGwh": 117.050519,
+    "totalGwh": 244.9997505,
+    "meanDomesticKwh": 3811.870094
+  },
+  {
+    "code": "E07000047",
+    "name": "West Devon",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 106.1900837,
+    "nonDomesticGwh": 103.4029959,
+    "totalGwh": 209.5930797,
+    "meanDomesticKwh": 3950.376984
+  },
+  {
+    "code": "E07000078",
+    "name": "Cheltenham",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 180.1036307,
+    "nonDomesticGwh": 271.0752382,
+    "totalGwh": 451.1788689,
+    "meanDomesticKwh": 3169.10895
+  },
+  {
+    "code": "E07000079",
+    "name": "Cotswold",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 215.4107436,
+    "nonDomesticGwh": 204.1305844,
+    "totalGwh": 419.5413279,
+    "meanDomesticKwh": 4686.204093
+  },
+  {
+    "code": "E07000080",
+    "name": "Forest of Dean",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 157.0588396,
+    "nonDomesticGwh": 212.8735459,
+    "totalGwh": 369.9323854,
+    "meanDomesticKwh": 3904.314007
+  },
+  {
+    "code": "E07000081",
+    "name": "Gloucester",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 183.5534122,
+    "nonDomesticGwh": 286.1102851,
+    "totalGwh": 469.6636974,
+    "meanDomesticKwh": 3125.643461
+  },
+  {
+    "code": "E07000082",
+    "name": "Stroud",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 212.8170536,
+    "nonDomesticGwh": 253.4808853,
+    "totalGwh": 466.2979388,
+    "meanDomesticKwh": 3756.368433
+  },
+  {
+    "code": "E07000083",
+    "name": "Tewkesbury",
+    "region": "South West",
+    "year": 2024,
+    "domesticGwh": 157.5190031,
+    "nonDomesticGwh": 241.9480235,
+    "totalGwh": 399.4670266,
+    "meanDomesticKwh": 3431.039057
+  },
+  {
+    "code": "W06000001",
+    "name": "Isle of Anglesey / Ynys M\u00f4n",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 132.4331484,
+    "nonDomesticGwh": 128.7992192,
+    "totalGwh": 261.2323675,
+    "meanDomesticKwh": 3739.359283
+  },
+  {
+    "code": "W06000002",
+    "name": "Gwynedd / Gwynedd",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 220.0688916,
+    "nonDomesticGwh": 265.0538586,
+    "totalGwh": 485.1227502,
+    "meanDomesticKwh": 3638.645055
+  },
+  {
+    "code": "W06000003",
+    "name": "Conwy / Conwy",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 175.5496576,
+    "nonDomesticGwh": 175.4454165,
+    "totalGwh": 350.9950741,
+    "meanDomesticKwh": 3100.598001
+  },
+  {
+    "code": "W06000004",
+    "name": "Denbighshire / Sir Ddinbych",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 150.7430175,
+    "nonDomesticGwh": 178.5367495,
+    "totalGwh": 329.279767,
+    "meanDomesticKwh": 3389.235278
+  },
+  {
+    "code": "W06000005",
+    "name": "Flintshire / Sir y Fflint",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 222.7430697,
+    "nonDomesticGwh": 657.6588167,
+    "totalGwh": 880.4018864,
+    "meanDomesticKwh": 3219.156125
+  },
+  {
+    "code": "W06000006",
+    "name": "Wrexham / Wrecsam",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 189.9124248,
+    "nonDomesticGwh": 541.7316479,
+    "totalGwh": 731.6440727,
+    "meanDomesticKwh": 3154.534239
+  },
+  {
+    "code": "W06000008",
+    "name": "Ceredigion / Ceredigion",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 144.5508185,
+    "nonDomesticGwh": 172.9996257,
+    "totalGwh": 317.5504442,
+    "meanDomesticKwh": 4231.952996
+  },
+  {
+    "code": "W06000009",
+    "name": "Pembrokeshire / Sir Benfro",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 213.7132355,
+    "nonDomesticGwh": 536.834637,
+    "totalGwh": 750.5478726,
+    "meanDomesticKwh": 3424.891595
+  },
+  {
+    "code": "W06000010",
+    "name": "Carmarthenshire / Sir Gaerfyrddin",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 291.9463695,
+    "nonDomesticGwh": 527.9876771,
+    "totalGwh": 819.9340466,
+    "meanDomesticKwh": 3362.701361
+  },
+  {
+    "code": "W06000011",
+    "name": "Swansea / Abertawe",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 327.699591,
+    "nonDomesticGwh": 474.0259563,
+    "totalGwh": 801.7255472,
+    "meanDomesticKwh": 2896.305513
+  },
+  {
+    "code": "W06000012",
+    "name": "Neath Port Talbot / Castell-nedd Port Talbot",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 186.9821086,
+    "nonDomesticGwh": 878.8963371,
+    "totalGwh": 1065.878446,
+    "meanDomesticKwh": 2848.860477
+  },
+  {
+    "code": "W06000013",
+    "name": "Bridgend / Pen-y-bont ar Ogwr",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 188.9566111,
+    "nonDomesticGwh": 310.5335205,
+    "totalGwh": 499.4901315,
+    "meanDomesticKwh": 2908.770047
+  },
+  {
+    "code": "W06000014",
+    "name": "Vale of Glamorgan / Bro Morgannwg",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 195.5619834,
+    "nonDomesticGwh": 333.876917,
+    "totalGwh": 529.4389003,
+    "meanDomesticKwh": 3201.420675
+  },
+  {
+    "code": "W06000015",
+    "name": "Cardiff / Caerdydd",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 489.9453484,
+    "nonDomesticGwh": 894.8185406,
+    "totalGwh": 1384.763889,
+    "meanDomesticKwh": 3063.153952
+  },
+  {
+    "code": "W06000016",
+    "name": "Rhondda Cynon Taf / Rhondda Cynon Taf",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 305.3566817,
+    "nonDomesticGwh": 336.6283015,
+    "totalGwh": 641.9849832,
+    "meanDomesticKwh": 2782.191826
+  },
+  {
+    "code": "W06000018",
+    "name": "Caerphilly / Caerffili",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 228.445037,
+    "nonDomesticGwh": 314.7697009,
+    "totalGwh": 543.2147379,
+    "meanDomesticKwh": 2868.471083
+  },
+  {
+    "code": "W06000019",
+    "name": "Blaenau Gwent / Blaenau Gwent",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 87.98449022,
+    "nonDomesticGwh": 128.8325548,
+    "totalGwh": 216.817045,
+    "meanDomesticKwh": 2713.979155
+  },
+  {
+    "code": "W06000020",
+    "name": "Torfaen / Torfaen",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 120.091149,
+    "nonDomesticGwh": 242.3524607,
+    "totalGwh": 362.4436097,
+    "meanDomesticKwh": 2828.535907
+  },
+  {
+    "code": "W06000021",
+    "name": "Monmouthshire / Sir Fynwy",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 154.7240059,
+    "nonDomesticGwh": 203.9261777,
+    "totalGwh": 358.6501836,
+    "meanDomesticKwh": 3553.850883
+  },
+  {
+    "code": "W06000022",
+    "name": "Newport / Casnewydd",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 211.6517813,
+    "nonDomesticGwh": 778.8918667,
+    "totalGwh": 990.543648,
+    "meanDomesticKwh": 2990.403398
+  },
+  {
+    "code": "W06000023",
+    "name": "Powys / Powys",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 239.9024748,
+    "nonDomesticGwh": 299.8259323,
+    "totalGwh": 539.7284071,
+    "meanDomesticKwh": 3795.685002
+  },
+  {
+    "code": "W06000024",
+    "name": "Merthyr Tydfil / Merthyr Tudful",
+    "region": "Wales",
+    "year": 2024,
+    "domesticGwh": 74.90626466,
+    "nonDomesticGwh": 104.4151802,
+    "totalGwh": 179.3214449,
+    "meanDomesticKwh": 2777.804074
+  },
+  {
+    "code": "S12000005",
+    "name": "Clackmannanshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 73.89828288,
+    "nonDomesticGwh": 175.3019426,
+    "totalGwh": 249.2002255,
+    "meanDomesticKwh": 2913.855246
+  },
+  {
+    "code": "S12000006",
+    "name": "Dumfries and Galloway",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 273.6754968,
+    "nonDomesticGwh": 438.4561251,
+    "totalGwh": 712.131622,
+    "meanDomesticKwh": 3535.356691
+  },
+  {
+    "code": "S12000008",
+    "name": "East Ayrshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 166.2617748,
+    "nonDomesticGwh": 218.4415019,
+    "totalGwh": 384.7032767,
+    "meanDomesticKwh": 2822.349297
+  },
+  {
+    "code": "S12000010",
+    "name": "East Lothian",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 178.2340197,
+    "nonDomesticGwh": 264.7193092,
+    "totalGwh": 442.9533289,
+    "meanDomesticKwh": 3242.682065
+  },
+  {
+    "code": "S12000011",
+    "name": "East Renfrewshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 139.4186429,
+    "nonDomesticGwh": 70.22032053,
+    "totalGwh": 209.6389634,
+    "meanDomesticKwh": 3371.182969
+  },
+  {
+    "code": "S12000013",
+    "name": "Na h-Eileanan Siar",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 80.55811942,
+    "nonDomesticGwh": 62.38730651,
+    "totalGwh": 142.9454259,
+    "meanDomesticKwh": 4506.495828
+  },
+  {
+    "code": "S12000014",
+    "name": "Falkirk",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 228.1966912,
+    "nonDomesticGwh": 284.7515151,
+    "totalGwh": 512.9482063,
+    "meanDomesticKwh": 2916.624377
+  },
+  {
+    "code": "S12000017",
+    "name": "Highland",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 607.3829638,
+    "nonDomesticGwh": 848.4812677,
+    "totalGwh": 1455.864232,
+    "meanDomesticKwh": 4275.17712
+  },
+  {
+    "code": "S12000018",
+    "name": "Inverclyde",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 107.3590913,
+    "nonDomesticGwh": 154.531606,
+    "totalGwh": 261.8906974,
+    "meanDomesticKwh": 2716.851183
+  },
+  {
+    "code": "S12000019",
+    "name": "Midlothian",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 134.2473516,
+    "nonDomesticGwh": 203.1258347,
+    "totalGwh": 337.3731863,
+    "meanDomesticKwh": 2995.656527
+  },
+  {
+    "code": "S12000020",
+    "name": "Moray",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 167.7555624,
+    "nonDomesticGwh": 291.723565,
+    "totalGwh": 459.4791273,
+    "meanDomesticKwh": 3463.519405
+  },
+  {
+    "code": "S12000021",
+    "name": "North Ayrshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 207.3663494,
+    "nonDomesticGwh": 361.8683894,
+    "totalGwh": 569.2347388,
+    "meanDomesticKwh": 2890.445616
+  },
+  {
+    "code": "S12000023",
+    "name": "Orkney Islands",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 79.44024272,
+    "nonDomesticGwh": 56.44656975,
+    "totalGwh": 135.8868125,
+    "meanDomesticKwh": 5513.6204
+  },
+  {
+    "code": "S12000026",
+    "name": "Scottish Borders",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 215.2072746,
+    "nonDomesticGwh": 269.5175106,
+    "totalGwh": 484.7247852,
+    "meanDomesticKwh": 3478.378448
+  },
+  {
+    "code": "S12000027",
+    "name": "Shetland Islands",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 90.77888455,
+    "nonDomesticGwh": 85.73739095,
+    "totalGwh": 176.5162755,
+    "meanDomesticKwh": 5435.535869
+  },
+  {
+    "code": "S12000028",
+    "name": "South Ayrshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 171.485278,
+    "nonDomesticGwh": 251.9592093,
+    "totalGwh": 423.4444873,
+    "meanDomesticKwh": 2983.909484
+  },
+  {
+    "code": "S12000029",
+    "name": "South Lanarkshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 504.5831668,
+    "nonDomesticGwh": 494.0894286,
+    "totalGwh": 998.6725954,
+    "meanDomesticKwh": 3145.898019
+  },
+  {
+    "code": "S12000030",
+    "name": "Stirling",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 160.5667435,
+    "nonDomesticGwh": 257.3976346,
+    "totalGwh": 417.9643781,
+    "meanDomesticKwh": 3626.168552
+  },
+  {
+    "code": "S12000033",
+    "name": "Aberdeen City",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 343.0556573,
+    "nonDomesticGwh": 568.9261324,
+    "totalGwh": 911.9817897,
+    "meanDomesticKwh": 2712.202594
+  },
+  {
+    "code": "S12000034",
+    "name": "Aberdeenshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 497.1493569,
+    "nonDomesticGwh": 614.1666347,
+    "totalGwh": 1111.315992,
+    "meanDomesticKwh": 3931.992667
+  },
+  {
+    "code": "S12000035",
+    "name": "Argyll and Bute",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 238.5413536,
+    "nonDomesticGwh": 219.4129998,
+    "totalGwh": 457.9543534,
+    "meanDomesticKwh": 4208.340307
+  },
+  {
+    "code": "S12000036",
+    "name": "City of Edinburgh",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 764.335013,
+    "nonDomesticGwh": 1224.157029,
+    "totalGwh": 1988.492042,
+    "meanDomesticKwh": 2821.548857
+  },
+  {
+    "code": "S12000038",
+    "name": "Renfrewshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 249.1076868,
+    "nonDomesticGwh": 413.3075728,
+    "totalGwh": 662.4152595,
+    "meanDomesticKwh": 2708.222117
+  },
+  {
+    "code": "S12000039",
+    "name": "West Dunbartonshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 119.0248772,
+    "nonDomesticGwh": 186.8791068,
+    "totalGwh": 305.903984,
+    "meanDomesticKwh": 2574.846996
+  },
+  {
+    "code": "S12000040",
+    "name": "West Lothian",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 257.0910449,
+    "nonDomesticGwh": 425.454772,
+    "totalGwh": 682.5458169,
+    "meanDomesticKwh": 2996.01502
+  },
+  {
+    "code": "S12000041",
+    "name": "Angus",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 206.3915804,
+    "nonDomesticGwh": 260.3596047,
+    "totalGwh": 466.7511851,
+    "meanDomesticKwh": 3418.437465
+  },
+  {
+    "code": "S12000042",
+    "name": "Dundee City",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 241.6881901,
+    "nonDomesticGwh": 332.4834165,
+    "totalGwh": 574.1716065,
+    "meanDomesticKwh": 2988.564381
+  },
+  {
+    "code": "S12000045",
+    "name": "East Dunbartonshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 152.6322816,
+    "nonDomesticGwh": 136.0516657,
+    "totalGwh": 288.6839473,
+    "meanDomesticKwh": 3157.21251
+  },
+  {
+    "code": "S12000047",
+    "name": "Fife",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 534.5987245,
+    "nonDomesticGwh": 813.6367373,
+    "totalGwh": 1348.235462,
+    "meanDomesticKwh": 2889.707215
+  },
+  {
+    "code": "S12000048",
+    "name": "Perth and Kinross",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 310.7850929,
+    "nonDomesticGwh": 358.7904597,
+    "totalGwh": 669.5755526,
+    "meanDomesticKwh": 3819.077785
+  },
+  {
+    "code": "S12000049",
+    "name": "Glasgow City",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 832.5294139,
+    "nonDomesticGwh": 1500.090787,
+    "totalGwh": 2332.620201,
+    "meanDomesticKwh": 2577.243094
+  },
+  {
+    "code": "S12000050",
+    "name": "North Lanarkshire",
+    "region": "Scotland",
+    "year": 2024,
+    "domesticGwh": 459.0678517,
+    "nonDomesticGwh": 696.3640626,
+    "totalGwh": 1155.431914,
+    "meanDomesticKwh": 2855.006105
+  }
+]

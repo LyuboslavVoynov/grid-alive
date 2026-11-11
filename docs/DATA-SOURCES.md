@@ -27,3 +27,18 @@ Publisher: NESO. GB DNO Licence Areas, version 20240503, retrieved 11 November 2
 - Attribution: Supported by National Energy SO Open Data.
 
 Convert the EPSG:27700 source with the same approximate Helmert conversion and simplify in its metre-based source CRS with a 400m tolerance. Preserve polygon holes. Match the source GSP letters to NESO Carbon Intensity region IDs explicitly. Boundary ID is not the Carbon Intensity region ID. These are approximate service areas; NESO notes they can be outdated and are not 100% accurate. Do not use for operational connection decisions.
+
+## Local consumption and postcode context (v2)
+
+DESNZ stacked local authority electricity consumption, 2005–2024; latest year 2024 extracted into data/annual-consumption.json. Published 18 December 2025, retrieved 11 November 2026. Units GWh/year and kWh per domestic meter. Domestic and non-domestic are meter classifications; not real-time demand or a detailed industry decomposition. No geographic reassignment is inferred when boundaries change.
+
+- Page: https://www.gov.uk/government/statistical-data-sets/stacked-electricity-consumption-statistics-data
+- CSV: https://assets.publishing.service.gov.uk/media/694295bd9273c48f554cf4ef/elec_LA_stacked_2005-2024.csv
+- OGL v3.0; contains public sector information © Crown copyright 2025.
+- Rebuild: python3 scripts/prepare-annual-consumption.py /path/to/source.csv
+
+Postcodes.io outward-code lookup provides an approximate centroid and a list of intersecting local authorities. Only the outward code is transmitted. Source: https://postcodes.io/docs/outcode/lookup/ ; geographic data contains OS and ONS open data (see https://postcodes.io/about/). Do not assume one authority per outward code. NESO postcode modelled mix is a separate grid-region classification, including imports and embedded generation; nearby sites do not imply direct supply.
+
+## Britain insights (v2)
+
+Elexon public system/frequency, datasets/INDO, forecast/demand/day-ahead/latest (nationalDemand), forecast/generation/wind/latest, remit/list/by-event/stream and individual remit/{id} messages. Requests are bounded to recent history / next 48 hours, cached per process, with partial results. Frequency is a timestamped observation, not a real-time guarantee. Demand comparison aligns UTC intervals 24 hours apart. REMIT is a selected set of five latest overlapping published messages, not exhaustive station availability; status and event window are shown. Declared unavailable capacity is not actual unit output. NESO /intensity/{from}/fw48h supplies national carbon forecasts. Published forecast gaps remain gaps.
