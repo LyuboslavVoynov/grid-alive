@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { type Tariff, validateTariff, money } from "@/lib/home/energy";
+import { RegionSelect } from "./region-select";
+import { tariffForRegion } from "@/lib/geo/regions";
 import { localTime } from "./series-chart";
 export function TariffEditor({
   tariff,
@@ -29,9 +31,10 @@ export function TariffEditor({
   const [products, setProducts] = useState<{ code: string; name: string }[]>(
       [],
     ),
+    [supplier, setSupplier] = useState(""),
+    [regionId, setRegionId] = useState(""),
     [product, setProduct] = useState(""),
     [codes, setCodes] = useState<string[]>([]),
-    [code, setCode] = useState(""),
     [busy, setBusy] = useState(false);
   useEffect(() => {
     const c = new AbortController();
@@ -46,7 +49,6 @@ export function TariffEditor({
   async function loadProduct(v: string) {
     setProduct(v);
     setCodes([]);
-    setCode("");
     setError("");
     if (!v) return;
     setBusy(true);
@@ -61,12 +63,13 @@ export function TariffEditor({
       setBusy(false);
     }
   }
+  const code = tariffForRegion(codes, regionId);
   async function importTariff() {
     setBusy(true);
     setError("");
     try {
       const r = await fetch(
-        `/api/tariffs?product=${encodeURIComponent(product)}&tariff=${encodeURIComponent(code)}`,
+        `/api/tariffs?product=${encodeURIComponent(product)}&tariff=${encodeURIComponent(code ?? "")}`,
       );
       const d = await r.json();
       if (!r.ok) throw Error(d.error);
@@ -96,7 +99,11 @@ export function TariffEditor({
         );
       onSave(
         validateTariff({
-          name,
+          name:
+            name.trim() ||
+            (kind === "single"
+              ? "My single-rate tariff"
+              : "My peak/off-peak tariff"),
           kind,
           unit: Number(unit),
           standing: Number(standing),
@@ -113,151 +120,90 @@ export function TariffEditor({
     }
   }
   return (
-    <div className="tariff-editor">
-      <section>
-        <p className="eyebrow">YOUR HOUSEHOLD RATES</p>
-        <h2>Start with your tariff</h2>
+    <div className="tariff-editor selection-tariff">
+      <section className="supplier-import selection-supplier wide">
+        <p className="eyebrow">CHOOSE, THEN LOAD</p>
+        <h2>Choose your supplier and tariff</h2>
         <p className="section-copy">
-          Use VAT-inclusive rates from your bill. Standing charges are shown
-          separately from energy costs.
-        </p>
-        <form className="field-grid" onSubmit={save}>
-          <label className="wide">
-            Tariff name
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your tariff name"
-              required
-              maxLength={80}
-            />
-          </label>
-          <label className="wide">
-            Tariff type
-            <select
-              value={kind}
-              onChange={(e) => setKind(e.target.value as "single" | "tou")}
-            >
-              <option value="single">Single rate</option>
-              <option value="tou">Peak / off-peak schedule</option>
-            </select>
-          </label>
-          <label>
-            {kind === "tou" ? "Peak rate" : "Unit rate"} · p/kWh
-            <input
-              type="number"
-              min="-100"
-              max="1000"
-              step="0.001"
-              value={unit}
-              onChange={(e) => setUnit(e.target.value)}
-              placeholder="From your bill"
-              required
-            />
-          </label>
-          <label>
-            Standing charge · p/day
-            <input
-              type="number"
-              min="0"
-              max="1000"
-              step="0.001"
-              value={standing}
-              onChange={(e) => setStanding(e.target.value)}
-              placeholder="From your bill"
-              required
-            />
-          </label>
-          {kind === "tou" && (
-            <>
-              <label className="wide">
-                Off-peak rate · p/kWh
-                <input
-                  type="number"
-                  min="-100"
-                  max="1000"
-                  step="0.001"
-                  value={offPeak}
-                  onChange={(e) => setOffPeak(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Off-peak begins
-                <input
-                  type="time"
-                  step="1800"
-                  value={offStart}
-                  onChange={(e) => setStart(e.target.value)}
-                  required
-                />
-              </label>
-              <label>
-                Off-peak ends
-                <input
-                  type="time"
-                  step="1800"
-                  value={offEnd}
-                  onChange={(e) => setEnd(e.target.value)}
-                  required
-                />
-              </label>
-              <p className="small wide">
-                Schedule repeats daily in Europe/London, including clock
-                changes. Use a separate scenario if your tariff has more than
-                two rates or different weekend schedules.
-              </p>
-            </>
-          )}
-          <button className="action-button wide" type="submit">
-            Use these rates ↗
-          </button>
-        </form>
-      </section>
-      <section className="supplier-import">
-        <p className="eyebrow">OR LOAD PUBLISHED RATES</p>
-        <h2>Already on Agile Octopus?</h2>
-        <p className="section-copy">
-          Load public import rates using your existing product and tariff code.
-          No account or API key is needed. This does not switch your supplier.
+          Select your current supplier, tariff version and electricity region.
+          Load supported public rates from your choices; no tariff codes or API
+          keys to type.
         </p>
         <div className="field-grid">
           <label className="wide">
-            Product
+            Electricity supplier
             <select
-              value={product}
-              onChange={(e) => void loadProduct(e.target.value)}
+              value={supplier}
+              onChange={(e) => {
+                setSupplier(e.target.value);
+                setProduct("");
+                setCodes([]);
+                setError("");
+                setMessage("");
+              }}
               disabled={busy}
             >
-              <option value="">Choose your existing product</option>
-              {products.map((p) => (
-                <option key={p.code} value={p.code}>
-                  {p.name} · {p.code}
-                </option>
-              ))}
+              <option value="">Choose your supplier</option>
+              <option value="octopus">
+                Octopus Energy · public Agile rates
+              </option>
+              <option value="other">Another supplier</option>
+              <option value="unknown">I'm not sure</option>
             </select>
           </label>
-          <label className="wide">
-            Exact tariff code from your bill
-            <select
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
-              disabled={!codes.length || busy}
-            >
-              <option value="">Choose the matching region code</option>
-              {codes.map((c) => (
-                <option key={c}>{c}</option>
-              ))}
-            </select>
-          </label>
-          <button
-            className="action-button wide"
-            onClick={() => void importTariff()}
-            disabled={!code || busy}
-          >
-            {busy ? "Loading…" : "Load my published rates ↗"}
-          </button>
+          {supplier === "octopus" && (
+            <>
+              <label>
+                Current tariff version
+                <select
+                  value={product}
+                  onChange={(e) => void loadProduct(e.target.value)}
+                  disabled={busy}
+                >
+                  <option value="">Choose your tariff</option>
+                  {products.map((p) => (
+                    <option key={p.code} value={p.code}>
+                      {p.name} · {p.code.replace(/^AGILE-/, "")}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <RegionSelect
+                id="tariff-region"
+                value={regionId}
+                onChange={setRegionId}
+                disabled={busy}
+              />
+              <button
+                className="action-button wide"
+                onClick={() => void importTariff()}
+                disabled={!code || busy}
+              >
+                {busy ? "Loading…" : "Load my tariff rates ↗"}
+              </button>
+              {!products.length && (
+                <p className="small wide">
+                  No supported public tariff is currently available. You can
+                  explore carbon timing without a tariff or use the optional
+                  bill-rate form below.
+                </p>
+              )}
+              {product && regionId && !busy && !code && (
+                <p className="small wide">
+                  This product has no matching regional rate available. Choose
+                  another supported version or continue with carbon timing only.
+                </p>
+              )}
+            </>
+          )}
         </div>
+        {(supplier === "other" || supplier === "unknown") && (
+          <p className="selection-notice">
+            Public price import is currently available for Agile Octopus only.
+            You can explore the grid and carbon task windows without entering
+            rates. Exact bill rates remain optional below.
+          </p>
+        )}
         <p className="small">
           Other suppliers, smart charging rewards and personalised discounts can
           be entered manually where the schedule is known. Published future
@@ -284,6 +230,108 @@ export function TariffEditor({
           </div>
         )}
       </section>
+      <details className="manual-tariff wide">
+        <summary>Optional: enter exact rates from your bill</summary>
+        <section>
+          <p className="eyebrow">YOUR HOUSEHOLD RATES</p>
+          <h2>Start with your tariff</h2>
+          <p className="section-copy">
+            Use VAT-inclusive rates from your bill. Standing charges are shown
+            separately from energy costs.
+          </p>
+          <form className="field-grid" onSubmit={save}>
+            <label className="wide">
+              Tariff name · optional
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="A name is generated if left blank"
+                maxLength={80}
+              />
+            </label>
+            <label className="wide">
+              Tariff type
+              <select
+                value={kind}
+                onChange={(e) => setKind(e.target.value as "single" | "tou")}
+              >
+                <option value="single">Single rate</option>
+                <option value="tou">Peak / off-peak schedule</option>
+              </select>
+            </label>
+            <label>
+              {kind === "tou" ? "Peak rate" : "Unit rate"} · p/kWh
+              <input
+                type="number"
+                min="-100"
+                max="1000"
+                step="0.001"
+                value={unit}
+                onChange={(e) => setUnit(e.target.value)}
+                placeholder="From your bill"
+                required
+              />
+            </label>
+            <label>
+              Standing charge · p/day
+              <input
+                type="number"
+                min="0"
+                max="1000"
+                step="0.001"
+                value={standing}
+                onChange={(e) => setStanding(e.target.value)}
+                placeholder="From your bill"
+                required
+              />
+            </label>
+            {kind === "tou" && (
+              <>
+                <label className="wide">
+                  Off-peak rate · p/kWh
+                  <input
+                    type="number"
+                    min="-100"
+                    max="1000"
+                    step="0.001"
+                    value={offPeak}
+                    onChange={(e) => setOffPeak(e.target.value)}
+                    required
+                  />
+                </label>
+                <label>
+                  Off-peak begins
+                  <input
+                    type="time"
+                    step="1800"
+                    value={offStart}
+                    onChange={(e) => setStart(e.target.value)}
+                    required
+                  />
+                </label>
+                <label>
+                  Off-peak ends
+                  <input
+                    type="time"
+                    step="1800"
+                    value={offEnd}
+                    onChange={(e) => setEnd(e.target.value)}
+                    required
+                  />
+                </label>
+                <p className="small wide">
+                  Schedule repeats daily in Europe/London, including clock
+                  changes. Use a separate scenario if your tariff has more than
+                  two rates or different weekend schedules.
+                </p>
+              </>
+            )}
+            <button className="action-button wide" type="submit">
+              Use these rates ↗
+            </button>
+          </form>
+        </section>
+      </details>
       {error && (
         <p className="form-message wide" role="alert">
           {error}

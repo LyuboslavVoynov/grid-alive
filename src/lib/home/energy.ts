@@ -110,7 +110,7 @@ export function weightedValue(
   return null;
 }
 export function taskWindows(
-  tariff: Tariff,
+  tariff: Tariff | null,
   kwh: number,
   durationHours: number,
   carbon: CarbonRate[],
@@ -130,7 +130,7 @@ export function taskWindows(
   const start = Math.ceil(now / halfHour) * halfHour,
     end = Math.min(deadline, now + 48 * 3600000),
     duration = durationHours * 3600000,
-    rates = tariffRates(tariff, start, end).map((r) => ({
+    rates = (tariff ? tariffRates(tariff, start, end) : []).map((r) => ({
       ...r,
       value: r.pence,
     }));

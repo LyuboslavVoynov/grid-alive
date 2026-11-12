@@ -70,3 +70,19 @@ describe("household cost arithmetic", () => {
     expect(() => validateTariff({ ...t, offEnd: t.offStart })).toThrow();
   });
 });
+
+it("supports carbon planning without inventing a household tariff", () => {
+  const from = "2026-11-12T12:00Z",
+    to = "2026-11-12T13:00Z";
+  const windows = taskWindows(
+    null,
+    2,
+    1,
+    [{ from, to, intensity: 100 }],
+    Date.parse(from),
+  );
+  expect(windows[0].cost).toBeNull();
+  expect(windows[0].carbon).toBe(200);
+  expect(cheapest(windows)).toBeNull();
+  expect(cleanest(windows)?.carbon).toBe(200);
+});

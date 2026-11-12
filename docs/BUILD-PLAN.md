@@ -125,3 +125,7 @@ Use public Elexon, NESO, DESNZ and supported supplier APIs without secrets. Manu
 ### Validation
 
 Check interval coverage, gaps, DST, negative unit prices, standing-charge accounting, single-rate zero timing savings, CSV overlap/duplicates/invalid timestamps, postcode errors, provider outages, and no fixture data in live views. User-facing forecasts only cover published periods. Savings estimates show assumptions and exclude automatically extrapolated annual claims. No appliance control.
+
+### V2.7 — selection-led refinement (12 November 2026)
+
+Owner decision: avoid typing wherever possible across location, supplier, tariff and tasks. Branch codex/v2-selection-first builds on v2. Replace the primary postcode input with a region selector; replace tariff-code selection with human-readable regions; make public supplier selection primary and exact bill-rate entry optional. Use selectable task amounts, durations and annual scenario presets with optional exact refinements. Keep personal readings behind authorised access or local file import; selecting a supplier is not access consent. Enable carbon-only task planning when no price is available. No deployment.

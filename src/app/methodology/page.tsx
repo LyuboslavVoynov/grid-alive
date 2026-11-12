@@ -127,13 +127,15 @@ export default function Methodology() {
       </p>
       <h2>Your area and annual consumption</h2>
       <p>
-        Only the outward postcode is sent to NESO and Postcodes.io. NESO
-        supplies a modelled regional mix, including imports and embedded
-        generation; this differs from the national metered generation table.
-        Postcodes.io supplies approximate outward-code centres and intersecting
-        local authorities. An outward postcode can span multiple authorities.
-        Nearby projects are selected from our dated inventory and do not imply a
-        direct power supply connection.
+        The main location journey selects one of fourteen electricity regions;
+        no postcode or address is needed. NESO supplies a modelled regional mix,
+        including imports and embedded generation, which differs from the
+        national metered generation table. The map focuses on the approximate
+        DNO area's bounding-box centre. Featured-project distances are from that
+        reference point, not from your home. Postal, local-authority and
+        grid-region boundaries differ. A separate legacy postcode API remains
+        available and sends only an outward code to NESO and Postcodes.io; it is
+        not used by the region-selection journey.
       </p>
       <p>
         DESNZ 2024 local authority consumption is annual metered-consumption
@@ -155,12 +157,12 @@ export default function Methodology() {
         p/day. Two-rate schedules repeat daily in Europe/London, including clock
         changes. More complicated schedules, discounts and personalised smart
         charging rewards are not inferred. The public Octopus integration loads
-        an explicitly selected Agile import tariff for direct-debit payment,
-        without signing into an account or switching supplier. It uses
-        value_inc_vat and each rate's validity interval. Rates are available for
-        at most the previous 14 days and next 48 hours, limited to periods
-        actually published. The current standing charge is used, not a
-        historical charge schedule.
+        an Agile import tariff selected by supplier, published version and
+        region name for direct-debit payment, without signing into an account or
+        switching supplier. It uses value_inc_vat and each rate's validity
+        interval. Rates are available for at most the previous 14 days and next
+        48 hours, limited to periods actually published. The current standing
+        charge is used, not a historical charge schedule.
       </p>
       <p>
         The separate Elexon APXMIDP market index includes observations with
@@ -186,6 +188,15 @@ export default function Methodology() {
         They exclude exit fees, discounts, rewards and future changes; they are
         not quotes or eligibility checks. Unpublished dynamic prices cannot
         support a reliable annual projection.
+      </p>
+      <p>
+        The main controls use selections for regions, supplier tariffs, task
+        presets and example annual assumptions. Task and annual numeric presets
+        are illustrative inputs, not measured appliance use, personal
+        consumption or supplier offers. Optional exact-value fields refine those
+        assumptions. Without a tariff, carbon-only planning is available while
+        household costs and savings remain unknown. Selecting a supplier does
+        not grant access to a personal meter.
       </p>
       <h2>Personal readings and privacy</h2>
       <p>

@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { RegionSelect } from "./region-select";
 import { Workspace } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
@@ -20,7 +21,7 @@ const colors: Record<string, string> = {
   other: "#8ba19c",
 };
 export default function AreaApp() {
-  const [input, setInput] = useState(""),
+  const [regionId, setRegionId] = useState(""),
     [area, setArea] = useState<AreaData | null>(null),
     [loading, setLoading] = useState(false),
     [error, setError] = useState(""),
@@ -87,7 +88,7 @@ export default function AreaApp() {
     setAsset(null);
     setAuthority("");
     try {
-      const r = await fetch("/api/area?postcode=" + encodeURIComponent(input));
+      const r = await fetch("/api/area?region=" + encodeURIComponent(regionId));
       const value = await r.json();
       if (!r.ok) throw Error(value.error);
       setArea(value);
@@ -105,25 +106,22 @@ export default function AreaApp() {
       title="Understand your area"
       intro="A regional view of your electricity mix, the generation nearby and how your community uses energy."
     >
-      <form className="postcode-form" onSubmit={explore}>
-        <label htmlFor="postcode">Outward postcode</label>
+      <form className="postcode-form selection-location" onSubmit={explore}>
         <div>
-          <input
-            id="postcode"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            maxLength={9}
-            placeholder="e.g. SW1A"
-            required
-            autoComplete="postal-code"
+          <RegionSelect
+            id="area-region"
+            value={regionId}
+            onChange={setRegionId}
+            disabled={loading}
           />
-          <button className="action-button" disabled={loading}>
-            {loading ? "Exploring…" : "Explore your area ↗"}
+          <button className="action-button" disabled={loading || !regionId}>
+            {loading ? "Exploring…" : "Explore your region ↗"}
           </button>
         </div>
         <p>
-          Only the outward code is sent to NESO and Postcodes.io. It represents
-          a broad area, not your home’s direct power supply.
+          Choose a broad electricity region. No address or postcode is needed.
+          Regional boundaries are approximate and do not identify your home's
+          direct power supply.
         </p>
       </form>
       {error && (
@@ -179,8 +177,8 @@ export default function AreaApp() {
             </>
           ) : (
             <p>
-              Enter a postcode above to see regional forecasts and nearby sites.
-              The map shows approximate DNO carbon regions.
+              Choose a region above to see forecasts and featured sites. The map
+              shows approximate DNO carbon regions.
             </p>
           )}
         </div>
@@ -279,12 +277,12 @@ export default function AreaApp() {
             </>
           ) : (
             <p className="empty-state">
-              Explore a postcode to see its published regional forecast.
+              Choose a region to see its published regional forecast.
             </p>
           )}
         </section>
         <section className="nearby-sites">
-          <p className="eyebrow">NEARBY GENERATION</p>
+          <p className="eyebrow">GENERATION AROUND THE REGION</p>
           <h2>Explore the landscape</h2>
           {nearby.length ? (
             <>
@@ -318,7 +316,7 @@ export default function AreaApp() {
             </>
           ) : (
             <p className="empty-state">
-              Nearby sites appear after a postcode lookup.
+              Featured sites appear after choosing a region.
             </p>
           )}
         </section>

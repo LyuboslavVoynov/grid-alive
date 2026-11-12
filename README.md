@@ -33,9 +33,16 @@ See [the build plan](docs/BUILD-PLAN.md) for branches, sprint acceptance criteri
 ## V2 product views
 
 - Britain: live supply, demand trends, timestamped frequency, published demand/wind/carbon forecasts and selected REMIT notices.
-- Your area: outward postcode, modelled regional mix/carbon, nearby selected renewable sites and official 2024 local consumption.
-- Your home: manual single/two-rate tariffs or public Agile import, household task cost/carbon planner, local CSV readings, daily/week usage, baseline insight, explainable actions and annual tariff scenarios.
+- Your area: region selection, modelled regional mix/carbon, featured projects around the regional map centre and official 2024 local consumption.
+- Your home: supplier/tariff/region selection for public Agile import, optional exact bill rates, household task cost/carbon planner, local CSV readings, daily/week usage, baseline insight, explainable actions and annual tariff scenarios.
 
 Personal readings never upload to the server. The workspace is in memory unless the visitor opts into browser-local storage. Download an empty CSV template in My usage; accepted columns are interval_start, interval_end, consumption (kWh), with explicit-offset ISO timestamps and aligned half-hour intervals. Authenticated supplier meter linking is not configured: file import is the supported personal-data path. Calendar downloads and in-page reminders work without notification services; there are no closed-page push alerts or appliance controls.
 
 No API keys required for current features. Public tariff integration supports Agile direct-debit import only, not every supplier, personalised reward or smart charging schedule. Calculations never fill unpublished prices or missing readings with zero. Wholesale context is separate from household rates. See docs/DATA-SOURCES.md and /methodology for assumptions.
+
+
+## Selection-led setup
+
+The main journey uses selection controls: electricity region, supplier, supported tariff version, task, energy/duration presets and annual comparison assumptions. No postcode, tariff code or API key is required. Numeric presets are explicitly illustrative assumptions, not personal measurements or supplier quotes. Exact values remain available in optional disclosures, and local CSV import remains a file-picker action.
+
+Without a supported tariff, task windows can still be compared by forecast carbon. Household prices and savings remain unknown. Region lookup calls NESO directly by its published region ID and uses the approximate DNO bounding-box centre for map focus and nearby-project context, not a user's location. Public supplier selection currently supports Agile Octopus only; it does not authorise personal meter access.
