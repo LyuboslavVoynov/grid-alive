@@ -34,3 +34,9 @@ Desktop and a 390 × 844 mobile viewport in the in-app browser:
 - Read-only live API smoke checks verified /api/insights, /api/area?postcode=SW1A, /api/market and public tariff code validation/import.
 - Fixed a zero-dimension Canvas drawImage error during route changes. Fresh browser after fix: no console errors. Reminders and browser storage start off. Clear workspace resets active form state as well as saved data.
 - Do not infer supplier-account linking, background push delivery, detailed per-sector current demand or individual station output from these checks. These are unconfigured/unavailable, clearly labelled paths.
+
+## Selection-led refinement — 12 November 2026
+
+38 tests, TypeScript and production build pass. Public region-ID lookup returns the selected regional mix without transmitting a postcode; invalid IDs and mismatched responses are rejected. Regional tariff mapping requires an exact unique published suffix. Missing tariff prices remain null during carbon-only planning.
+
+Browser checks used selection controls only: supplier → version → region → public rates; task → energy → duration → forecast region; regional map lookup; annual example assumptions. A 2500 kWh/year scenario at 25p/kWh with 50p/day standing gives £807.50. At 390px, there is no document overflow; optional exact-value controls start closed and no text/number entry fields appear in the primary journey. No console errors were captured. Personal meter linking remains unconfigured; supplier selection is not account authorisation.

@@ -73,3 +73,15 @@ Validation: 33 tests, TypeScript and production build pass. Browser checks inclu
 Live server smoke results: 96 observed demand points, 73 published demand forecast points, 48 wind forecast points, 96 national carbon points, four parsed REMIT messages, postcode SW1A/London with 96 regional intervals and two intersecting authorities, 48 market index points, current Agile public rates. Counts vary with provider publication. Tests cover annual source reconciliation, revisions, forecast expiry, postcode validation, missing prices, negative prices, DST and CSV invalid/overlapping/future intervals.
 
 Limits: authenticated meter linking is not configured; file import is the supported personal-data path. No closed-page push service; calendar export and in-page reminders are provided. Tariff provider import supports public Agile/direct-debit import only. Unit output remains unavailable where no matched observation exists; notices are not measured output. No exhaustive grid outage feed, detailed live sector consumption or guaranteed savings. These limitations are visible in product copy and methodology.
+
+## V2.7 — selection-led journey (12 November 2026)
+
+Owner clarified: use selection controls wherever possible for location, supplier, tariff and tasks. Branch codex/v2-selection-first builds on the previous v2 sprint chain.
+
+- Region selection replaces postcode entry in Your area and the planner. NESO lookup uses a validated region ID; no address or geocoder is needed. Project distances are explicitly measured from the approximate regional map centre.
+- Supplier choice and published tariff version are primary. Human-readable electricity regions resolve to exactly one published tariff code. Public Agile import is supported; other suppliers remain explicitly unavailable for automatic prices, with optional exact bill-rate entry.
+- Task energy/duration and annual scenario assumptions use dropdown presets. Optional disclosures allow exact values. Presets are examples, never personal measurements or actual supplier offers.
+- Without a tariff, users can plan forecast carbon windows; household cost stays unknown and no price saving is invented. Selecting a supplier does not grant access to personal meter readings.
+- Validation: 38 tests, TypeScript and production build pass. Added region/schema/request tests, geographic/tariff mapping checks and missing-tariff carbon arithmetic. Test configuration resolves the application's source alias.
+- Browser: selected Octopus / Agile version / London and loaded live prices without typing; selected an EV example, energy, duration and carbon region; selected London regional insights without a postcode; verified carbon-only planning and a 2500 kWh / 25p / 50p hypothetical annual scenario (£807.50). Desktop and 390px checks show no document overflow. Main controls expose zero visible textboxes or numeric-entry fields unless optional exact-value sections are opened. No console errors in the reviewed session.
+- Local-only remains in force. No account connection, API-key field, hosted deployment or notification service was introduced.

@@ -50,3 +50,9 @@ Octopus public API: https://api.octopus.energy/v1/products/ and product electric
 Elexon /balancing/pricing/market-index supplies APXMIDP observations with positive traded volume. Display the latest reported index and past 24 hours in GBP/MWh. Divide by 10 for the equivalent p/kWh energy-only scale, not a retail tariff. No future wholesale-price forecast. No combination of different index providers.
 
 Task planner integrates constant power across fully covered rate intervals. A gap produces unknown cost/carbon, never free electricity. Compare half-hour start windows, at most 48 hours, bounded by user deadline; estimates use editable task energy/duration. Standing charges cancel in task timing comparisons and are excluded. Carbon uses NESO forecasts with their own coverage; no claim that cheap and clean coincide. These are consumption estimates, not financial or appliance-control services.
+
+## Selection-led region lookup (12 November 2026)
+
+NESO /regional/intensity/{from}/fw48h/regionid/{id}, restricted to the fourteen grid regions. Shared IDs/GSP letters are the same mapping as the licensed DNO boundary preparation. No postcode or geocoder request occurs for selected regions. Regional map focus and featured-site distances use the centre of the simplified boundary's longitude/latitude bounding box, explicitly labelled a regional reference point rather than the visitor's location. Selecting a human-readable tariff region matches exactly one published product tariff suffix; missing or ambiguous matches are unavailable, never guessed.
+
+Task/annual selection presets are illustrative assumptions, not reported personal readings, supplier quotes or guaranteed consumption. Exact values are optional. In carbon-only planning an absent tariff produces null cost and no price savings; forecast carbon still uses compatible published periods. Supplier selection supports public Agile tariffs only and does not establish account access.
