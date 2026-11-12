@@ -1,8 +1,13 @@
+import { gridRegions } from "@/lib/geo/regions";
 import { z } from "zod";
 import { validateTariff, type Tariff, type TaskWindow } from "./energy";
 import { parseReadings, type Reading } from "./usage";
 const ts = z.string().refine((v) => Number.isFinite(Date.parse(v)));
 const tariffSchema = z.object({
+  regionId: z.string().optional(),
+  productCode: z.string().max(80).optional(),
+  tariffCode: z.string().max(100).optional(),
+  supplier: z.string().max(80).optional(),
   name: z.string().max(150),
   kind: z.enum(["single", "tou", "published"]),
   unit: z.number().finite(),
@@ -25,7 +30,21 @@ const windowSchema = z
     carbon: z.number().finite().nonnegative().nullable(),
   })
   .nullable();
+export const defaultTaskDraft = {
+  task: "Laundry" as const,
+  kwh: "1",
+  hours: "1.5",
+  deadline: "24" as const,
+};
+const taskDraftSchema = z.object({
+  task: z.enum(["Laundry", "Dishwasher", "EV charging", "Custom task"]),
+  kwh: z.string().max(24),
+  hours: z.string().max(24),
+  deadline: z.enum(["6", "12", "24", "48"]),
+});
 export type HomeState = {
+  taskDraft: z.infer<typeof taskDraftSchema>;
+  regionId: string;
   tariff: Tariff | null;
   readings: Reading[];
   pricePlan: TaskWindow | null;
@@ -37,6 +56,11 @@ export function decodeHomeState(text: string): HomeState {
   const raw = z
     .object({
       version: z.literal(1),
+      taskDraft: taskDraftSchema.default(defaultTaskDraft),
+      regionId: z
+        .string()
+        .refine((v) => v === "" || gridRegions.some((r) => String(r.id) === v))
+        .default(""),
       tariff: tariffSchema.nullable(),
       readings: z
         .array(z.object({ from: ts, to: ts, kwh: z.number().finite() }))
@@ -53,6 +77,8 @@ export function decodeHomeState(text: string): HomeState {
       )
     : [];
   return {
+    regionId: raw.regionId,
+    taskDraft: raw.taskDraft,
     tariff,
     readings,
     pricePlan: raw.pricePlan,

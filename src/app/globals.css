@@ -2881,3 +2881,61 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+.reading-method {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #96b1bb;
+  border-left: 2px solid #416b70;
+  padding-left: 15px;
+  margin: 20px 0;
+}
+.csv-mapping {
+  padding: 25px;
+  border: 1px solid #43656d;
+  background: #0c263044;
+  border-radius: 8px;
+  margin: 25px 0;
+}
+.csv-mapping h3 {
+  font:
+    25px Georgia,
+    serif;
+  margin: 12px 0;
+}
+.csv-mapping > p:not(.eyebrow) {
+  font:
+    13px/1.8 Georgia,
+    serif;
+  color: #abc4cd;
+}
+.mapping-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #bad3d5;
+}
+.mapping-confirm input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.mapping-actions {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .csv-mapping {
+    padding: 18px;
+  }
+  .csv-mapping .field-grid {
+    grid-template-columns: 1fr;
+  }
+  .mapping-actions {
+    gap: 12px;
+  }
+}

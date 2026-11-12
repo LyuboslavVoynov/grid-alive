@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Insights } from "@/types/insights";
 import { SeriesChart, localTime } from "./series-chart";
@@ -148,7 +149,7 @@ export function BritainInsights({
           <p className="insight-caption">
             Observed electricity demand varies across the day. This national
             series does not identify live household, business or city demand.{" "}
-            <a href="/area">Explore annual local consumption ↗</a>
+            <Link href="/area">Explore annual local consumption ↗</Link>
           </p>
         </>
       ) : (

@@ -1,5 +1,9 @@
 export type Rate = { from: string; to: string; pence: number };
 export type Tariff = {
+  regionId?: string;
+  productCode?: string;
+  tariffCode?: string;
+  supplier?: string;
   name: string;
   kind: "single" | "tou" | "published";
   unit: number;
