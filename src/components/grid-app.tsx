@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   BritainInsights,
@@ -210,9 +211,9 @@ export default function GridApp() {
       />
       <div className="vignette" />
       <header>
-        <a className="brand" href="/" aria-label="GRID ALIVE home">
+        <Link className="brand" href="/" aria-label="GRID ALIVE home">
           GRID <i>/</i> ALIVE
-        </a>
+        </Link>
         <ProductNav active="britain" />
         <div className="status">
           <span /> {status}{" "}
@@ -328,7 +329,7 @@ export default function GridApp() {
               </>
             ) : null}
             <br />
-            <a href="/methodology">Coverage & definitions</a>
+            <Link href="/methodology">Coverage & definitions</Link>
           </p>
         </div>
       </aside>
@@ -656,7 +657,7 @@ export default function GridApp() {
             GREAT BRITAIN <em>·</em> Metered observations <em>·</em> Flow paths
             illustrative
           </span>
-          <a href="/methodology">Sources & methodology</a>
+          <Link href="/methodology">Sources & methodology</Link>
         </div>
       </footer>
     </main>
