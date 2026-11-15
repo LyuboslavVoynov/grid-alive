@@ -1,4 +1,5 @@
 "use client";
+import { NumberChoice } from "./number-choice";
 import { useEffect, useState } from "react";
 import { type Tariff, type TaskWindow, money } from "@/lib/home/energy";
 import { type Reading, summarize } from "@/lib/home/usage";
@@ -196,55 +197,61 @@ export function HomePlan({
           <div>
             <p>
               Compare a hypothetical single-rate alternative over 365 days,
-              including standing charges. Enter annual imported kWh from your
+              including standing charges. Choose clearly labelled example
+              assumptions, or optionally refine them with exact values from your
               bill. This is a scenario, not a supplier quote or eligibility
               check.
             </p>
             <div className="field-grid">
-              <label>
-                Annual electricity · kWh
-                <input
-                  type="number"
-                  min="1"
-                  max="100000"
-                  value={annualKwh}
-                  onChange={(e) => setAnnualKwh(e.target.value)}
-                />
-              </label>
-              <label>
-                Alternative rate · p/kWh
-                <input
-                  type="number"
-                  min="-100"
-                  max="1000"
-                  step="0.001"
-                  value={alternativeRate}
-                  onChange={(e) => setAlternative(e.target.value)}
-                />
-              </label>
-              <label>
-                Alternative standing · p/day
-                <input
-                  type="number"
-                  min="0"
-                  max="1000"
-                  step="0.001"
-                  value={alternativeStanding}
-                  onChange={(e) => setStanding(e.target.value)}
-                />
-              </label>
+              <NumberChoice
+                id="annual-kwh"
+                label="Annual electricity assumption · kWh"
+                value={annualKwh}
+                onChange={setAnnualKwh}
+                values={[1500, 2500, 3500, 4500, 6000, 10000]}
+                unit="kWh/year"
+                min={1}
+                max={100000}
+                step={1}
+                scenario
+              />
+              <NumberChoice
+                id="alternative-rate"
+                label="Alternative rate assumption · p/kWh"
+                value={alternativeRate}
+                onChange={setAlternative}
+                values={[15, 20, 25, 30, 35, 40, 50, 60]}
+                unit="p/kWh"
+                min={-100}
+                max={1000}
+                step={0.001}
+                scenario
+              />
+              <NumberChoice
+                id="alternative-standing"
+                label="Alternative standing assumption · p/day"
+                value={alternativeStanding}
+                onChange={setStanding}
+                values={[0, 25, 40, 50, 60, 75, 100]}
+                unit="p/day"
+                min={0}
+                max={1000}
+                step={0.001}
+                scenario
+              />
               {tariff?.kind === "tou" && (
-                <label>
-                  Assumed off-peak use · %
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value={offShare}
-                    onChange={(e) => setShare(e.target.value)}
-                  />
-                </label>
+                <NumberChoice
+                  id="annual-offpeak"
+                  label="Assumed off-peak use · %"
+                  value={offShare}
+                  onChange={setShare}
+                  values={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}
+                  unit="%"
+                  min={0}
+                  max={100}
+                  step={1}
+                  scenario
+                />
               )}
             </div>
             {alternativeAnnual !== null ? (
@@ -273,7 +280,7 @@ export function HomePlan({
               </div>
             ) : (
               <p className="small">
-                Enter annual consumption and both alternative rates to
+                Choose annual consumption and both alternative rates to
                 calculate.
               </p>
             )}

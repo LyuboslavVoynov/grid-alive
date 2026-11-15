@@ -1,9 +1,13 @@
-import { getArea, outwardCode } from "@/lib/data/area";
+import { validRegionId } from "@/lib/geo/regions";
+import { getArea, getRegionArea, outwardCode } from "@/lib/data/area";
 export const dynamic = "force-dynamic";
 export async function GET(request: Request) {
-  const input = new URL(request.url).searchParams.get("postcode") ?? "";
+  const query = new URL(request.url).searchParams;
+  const region = query.get("region");
+  const input = query.get("postcode") ?? "";
   try {
-    outwardCode(input);
+    if (region !== null) validRegionId(region);
+    else outwardCode(input);
   } catch (e) {
     return Response.json(
       { error: e instanceof Error ? e.message : "Invalid postcode" },
@@ -11,14 +15,17 @@ export async function GET(request: Request) {
     );
   }
   try {
-    return Response.json(await getArea(input), {
-      headers: { "Cache-Control": "public, s-maxage=300" },
-    });
+    return Response.json(
+      region !== null ? await getRegionArea(region) : await getArea(input),
+      {
+        headers: { "Cache-Control": "public, s-maxage=300" },
+      },
+    );
   } catch {
     return Response.json(
       {
         error:
-          "Regional lookup is unavailable or this postcode is not covered. Try again shortly.",
+          "Regional lookup is unavailable or this location is not covered. Try again shortly.",
       },
       { status: 503 },
     );

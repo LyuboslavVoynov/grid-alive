@@ -2,7 +2,6 @@
 import { useMemo, useState } from "react";
 import {
   type Reading,
-  parseReadings,
   dailyGroups,
   selectPeriod,
   summarize,
@@ -15,6 +14,11 @@ import {
   weightedValue,
   money,
 } from "@/lib/home/energy";
+import {
+  inspectConsumptionCsv,
+  detectConsumptionColumns,
+  parseMappedReadings,
+} from "@/lib/home/csv-import";
 import { SeriesChart, localTime } from "./series-chart";
 export function UsageView({
   readings,
@@ -31,7 +35,18 @@ export function UsageView({
     [message, setMessage] = useState(""),
     [ending, setEnding] = useState(""),
     [days, setDays] = useState(1),
-    [busy, setBusy] = useState(false);
+    [busy, setBusy] = useState(false),
+    [pending, setPending] = useState<{
+      text: string;
+      headers: string[];
+      sample: string[][];
+      count: number;
+    } | null>(null),
+    [fromColumn, setFromColumn] = useState(""),
+    [toColumn, setToColumn] = useState(""),
+    [energyColumn, setEnergyColumn] = useState(""),
+    [unit, setUnit] = useState<"kwh" | "wh" | "">(""),
+    [intervalEnergy, setIntervalEnergy] = useState(false);
   const dates = dailyGroups(readings),
     lastComplete = [...dates]
       .reverse()
@@ -79,10 +94,27 @@ export function UsageView({
     if (!file) return;
     setError("");
     setMessage("");
+    setPending(null);
     setBusy(true);
     try {
       if (file.size > 2_000_000) throw Error("Use a CSV smaller than 2 MB.");
-      const value = parseReadings(await file.text());
+      const text = await file.text(),
+        info = inspectConsumptionCsv(text),
+        mapping = detectConsumptionColumns(info.headers);
+      if (!mapping) {
+        setPending({ text, ...info });
+        setFromColumn("");
+        setToColumn("");
+        setEnergyColumn("");
+        setUnit("");
+        setIntervalEnergy(false);
+        setMessage(
+          "Choose your reading columns below. Existing readings are kept until import succeeds.",
+        );
+        return;
+      }
+      const value = parseMappedReadings(text, mapping);
+      setPending(null);
       onReadings(value);
       setEnding("");
       setMessage(
@@ -93,6 +125,49 @@ export function UsageView({
     } finally {
       setBusy(false);
     }
+  }
+  function importMapped() {
+    if (!pending) return;
+    setError("");
+    try {
+      if (!fromColumn || !toColumn || !energyColumn || !unit || !intervalEnergy)
+        throw Error(
+          "Choose all columns and units, and confirm these are half-hour interval energy values.",
+        );
+      const value = parseMappedReadings(pending.text, {
+        from: Number(fromColumn) - 1,
+        to: Number(toColumn) - 1,
+        energy: Number(energyColumn) - 1,
+        unit,
+      });
+      onReadings(value);
+      setEnding("");
+      setPending(null);
+      setMessage(
+        `Imported ${value.length.toLocaleString()} half-hour readings using your column selections. Nothing was uploaded.`,
+      );
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Import failed");
+    }
+  }
+  function columnSelect(
+    label: string,
+    value: string,
+    change: (v: string) => void,
+  ) {
+    return (
+      <label>
+        {label}
+        <select value={value} onChange={(e) => change(e.target.value)}>
+          <option value="">Choose a column</option>
+          {pending?.headers.map((h, i) => (
+            <option key={i} value={i + 1}>
+              {i + 1}. {h || "Unnamed column"}
+            </option>
+          ))}
+        </select>
+      </label>
+    );
   }
   return (
     <section>
@@ -128,15 +203,103 @@ export function UsageView({
           </a>
         </div>
       </div>
+      <p className="reading-method">
+        Reading source: local CSV · supplier tariff selection loads prices, not
+        personal meter readings. No meter account is connected.
+      </p>
+      {pending && (
+        <section className="csv-mapping">
+          <p className="eyebrow">MATCH YOUR COLUMNS · FILE STAYS LOCAL</p>
+          <h3>Choose how to read this file</h3>
+          <p>
+            {pending.count.toLocaleString()} rows found. No header editing is
+            needed. Select interval start, interval end and energy in each half
+            hour.
+          </p>
+          <div className="field-grid">
+            {columnSelect("Interval start column", fromColumn, setFromColumn)}
+            {columnSelect("Interval end column", toColumn, setToColumn)}
+            {columnSelect(
+              "Interval energy column",
+              energyColumn,
+              setEnergyColumn,
+            )}
+            <label>
+              Energy unit
+              <select
+                value={unit}
+                onChange={(e) => setUnit(e.target.value as "kwh" | "wh" | "")}
+              >
+                <option value="">Choose a unit</option>
+                <option value="kwh">kWh · kilowatt-hours</option>
+                <option value="wh">Wh · watt-hours (converted to kWh)</option>
+              </select>
+            </label>
+          </div>
+          <label className="mapping-confirm">
+            <input
+              type="checkbox"
+              checked={intervalEnergy}
+              onChange={(e) => setIntervalEnergy(e.target.checked)}
+            />
+            These are half-hour interval energy values, not cumulative meter
+            totals or power readings.
+          </label>
+          <p className="small">
+            Times must include Z or an explicit UTC offset. Ambiguous local
+            times are not guessed.
+          </p>
+          <div className="mapping-actions">
+            <button className="action-button" onClick={importMapped}>
+              Import selected columns ↗
+            </button>
+            <button
+              className="text-button"
+              onClick={() => {
+                setPending(null);
+                setMessage("");
+                setError("");
+              }}
+            >
+              Cancel file selection
+            </button>
+          </div>
+          <details className="import-guide">
+            <summary>Preview the first three rows</summary>
+            <div className="scroll-table">
+              <table>
+                <thead>
+                  <tr>
+                    {pending.headers.map((h, i) => (
+                      <th key={i}>
+                        {i + 1}. {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {pending.sample.map((row, i) => (
+                    <tr key={i}>
+                      {pending.headers.map((_, j) => (
+                        <td key={j}>{row[j] ?? ""}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+      )}
       <details className="import-guide">
         <summary>How to prepare your readings</summary>
         <p>
-          Download half-hour import consumption from your supplier. Accepted
+          Download half-hour import consumption from your supplier. Recognised
           headers: interval_start, interval_end, consumption; or Interval Start,
           Interval End, Consumption (kWh). Use ISO timestamps with Z or UTC
           offsets, e.g. 2026-11-10T00:00:00Z. Each row must cover 30 minutes and
-          contain interval energy in kWh, not cumulative meter readings or
-          watts.
+          contain interval energy, not cumulative meter readings or watts. Other
+          headers can be matched with dropdowns; Wh values are converted to kWh.
         </p>
         <p>
           Gaps are allowed and shown as incomplete. Duplicates, overlaps,

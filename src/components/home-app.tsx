@@ -6,74 +6,46 @@ import { TaskPlanner } from "./task-planner";
 import { WholesaleContext } from "./wholesale-context";
 import { UsageView } from "./usage-view";
 import { HomePlan } from "./home-plan";
-import {
-  type HomeState,
-  decodeHomeState,
-  storageKey,
-} from "@/lib/home/storage";
-const empty: HomeState = {
-  tariff: null,
-  readings: [],
-  pricePlan: null,
-  carbonPlan: null,
-};
+import { useEnergyWorkspace } from "./energy-workspace";
+import { gridRegions } from "@/lib/geo/regions";
 type Tab = "tariff" | "planner" | "usage" | "plan";
 export default function HomeApp() {
-  const [tab, setTab] = useState<Tab>("tariff"),
-    [state, setState] = useState<HomeState>(empty),
-    [remember, setRemember] = useState(false),
-    [ready, setReady] = useState(false),
-    [storageError, setStorageError] = useState(""),
-    [resetKey, setResetKey] = useState(0);
+  const [tab, setTab] = useState<Tab>("tariff");
+  const {
+    state,
+    setState,
+    remember,
+    setRemember,
+    ready,
+    storageError,
+    tariffStatus,
+    resetKey,
+    clear,
+    changeRegion,
+  } = useEnergyWorkspace();
   useEffect(() => {
-    try {
-      const value = localStorage.getItem(storageKey);
-      if (value) {
-        setState(decodeHomeState(value));
-        setRemember(true);
-      }
-    } catch {
-      setStorageError(
-        "Saved workspace could not be restored. You can import your file again or clear saved data.",
-      );
-    }
-    setReady(true);
-    const value = new URL(location.href).searchParams.get("view");
-    if (["tariff", "planner", "usage", "plan"].includes(value ?? ""))
-      setTab(value as Tab);
-  }, []);
-  useEffect(() => {
-    if (!ready) return;
-    try {
-      if (remember)
-        localStorage.setItem(
-          storageKey,
-          JSON.stringify({ version: 1, ...state }),
-        );
-      else localStorage.removeItem(storageKey);
-    } catch {
-      setStorageError(
-        "This browser could not save the workspace. Your current session still works; download or keep your original file.",
-      );
-    }
-  }, [remember, state, ready]);
+    const query = new URL(location.href).searchParams;
+    const view = query.get("view");
+    if (["tariff", "planner", "usage", "plan"].includes(view ?? ""))
+      setTab(view as Tab);
+    const region = query.get("region");
+    if (ready && region && gridRegions.some((r) => String(r.id) === region))
+      changeRegion(region);
+  }, [ready, changeRegion]);
   function changeTab(value: Tab) {
     setTab(value);
     history.replaceState(null, "", "/home?view=" + value);
   }
-  function clear() {
-    setResetKey((v) => v + 1);
-    setState(empty);
-    setRemember(false);
-    setStorageError("");
-    try {
-      localStorage.removeItem(storageKey);
-    } catch {
-      setStorageError(
-        "Browser storage could not be cleared. Clear site data in your browser settings.",
-      );
-    }
-  }
+  if (!ready)
+    return (
+      <Workspace
+        active="home"
+        title="Make your energy work for you"
+        intro="Your workspace stays private on this device."
+      >
+        <p role="status">Restoring your workspace…</p>
+      </Workspace>
+    );
   return (
     <Workspace
       active="home"
@@ -98,6 +70,11 @@ export default function HomeApp() {
           </button>
         ))}
       </div>
+      {tariffStatus && (
+        <p className="coverage-note" role="status">
+          {tariffStatus}
+        </p>
+      )}
       {tab === "tariff" ? (
         <>
           <TariffEditor
@@ -107,6 +84,7 @@ export default function HomeApp() {
               setState((s) => ({
                 ...s,
                 tariff,
+                regionId: s.regionId || tariff.regionId || "",
                 pricePlan: null,
                 carbonPlan: null,
               }))
@@ -163,13 +141,14 @@ export default function HomeApp() {
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
             />{" "}
-            Remember my tariff, imported readings and saved windows on this
-            browser
+            Remember my region, tariff, task choices, imported readings and
+            saved windows on this browser
           </label>
           <p>
             Off by default. Data stays on this device; use carefully on shared
-            computers. Leaving or reloading clears an unsaved workspace.
-            Clearing data removes the saved workspace and current inputs.
+            computers. Reloading or closing the site clears an unsaved
+            workspace; navigation keeps it in memory. Clearing data removes the
+            saved workspace and current inputs.
           </p>
         </div>
         <button className="subtle-button" onClick={clear}>

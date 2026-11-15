@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { validRegionId } from "@/lib/geo/regions";
+import regionBoundaries from "../../../public/geo/regions.json";
 import { fetchJson, observationCache } from "./cache";
 import type { AreaData } from "@/types/area";
 export function outwardCode(input: string) {
@@ -90,6 +92,40 @@ export async function getArea(input: string): Promise<AreaData> {
     data.warnings.push(
       "Postcode geography is unavailable. You can choose a local authority below.",
     );
+  }
+  return data;
+}
+
+/** Region selection does not require a postcode or a geocoder request. */
+export async function getRegionArea(input: string): Promise<AreaData> {
+  const id = validRegionId(input),
+    at = new Date().toISOString();
+  const cached = await observationCache.read(
+    "area-region-" + id,
+    async () => {
+      const raw = await fetchJson(
+        `https://api.carbonintensity.org.uk/regional/intensity/${at}/fw48h/regionid/${id}`,
+      );
+      const parsed = parseArea(raw, "", at);
+      if (parsed.regionId !== id) throw Error("Region response mismatch");
+      return raw;
+    },
+    300000,
+  );
+  const data = parseArea(cached.value, "", cached.retrievedAt);
+  data.stale =
+    cached.stale || data.intervals.every((r) => Date.parse(r.to) < Date.now());
+  const geometry = regionBoundaries.features.find(
+    (f) => f.properties.regionId === id,
+  )?.geometry;
+  if (geometry) {
+    const points = geometry.coordinates.flat(2);
+    const lon = points.map((p) => p[0]),
+      lat = points.map((p) => p[1]);
+    data.point = [
+      (Math.min(...lon) + Math.max(...lon)) / 2,
+      (Math.min(...lat) + Math.max(...lat)) / 2,
+    ];
   }
   return data;
 }

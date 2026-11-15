@@ -73,3 +73,28 @@ Validation: 33 tests, TypeScript and production build pass. Browser checks inclu
 Live server smoke results: 96 observed demand points, 73 published demand forecast points, 48 wind forecast points, 96 national carbon points, four parsed REMIT messages, postcode SW1A/London with 96 regional intervals and two intersecting authorities, 48 market index points, current Agile public rates. Counts vary with provider publication. Tests cover annual source reconciliation, revisions, forecast expiry, postcode validation, missing prices, negative prices, DST and CSV invalid/overlapping/future intervals.
 
 Limits: authenticated meter linking is not configured; file import is the supported personal-data path. No closed-page push service; calendar export and in-page reminders are provided. Tariff provider import supports public Agile/direct-debit import only. Unit output remains unavailable where no matched observation exists; notices are not measured output. No exhaustive grid outage feed, detailed live sector consumption or guaranteed savings. These limitations are visible in product copy and methodology.
+
+## V2.7 — selection-led journey (12 November 2026)
+
+Owner clarified: use selection controls wherever possible for location, supplier, tariff and tasks. Branch codex/v2-selection-first builds on the previous v2 sprint chain.
+
+- Region selection replaces postcode entry in Your area and the planner. NESO lookup uses a validated region ID; no address or geocoder is needed. Project distances are explicitly measured from the approximate regional map centre.
+- Supplier choice and published tariff version are primary. Human-readable electricity regions resolve to exactly one published tariff code. Public Agile import is supported; other suppliers remain explicitly unavailable for automatic prices, with optional exact bill-rate entry.
+- Task energy/duration and annual scenario assumptions use dropdown presets. Optional disclosures allow exact values. Presets are examples, never personal measurements or actual supplier offers.
+- Without a tariff, users can plan forecast carbon windows; household cost stays unknown and no price saving is invented. Selecting a supplier does not grant access to personal meter readings.
+- Validation: 38 tests, TypeScript and production build pass. Added region/schema/request tests, geographic/tariff mapping checks and missing-tariff carbon arithmetic. Test configuration resolves the application's source alias.
+- Browser: selected Octopus / Agile version / London and loaded live prices without typing; selected an EV example, energy, duration and carbon region; selected London regional insights without a postcode; verified carbon-only planning and a 2500 kWh / 25p / 50p hypothetical annual scenario (£807.50). Desktop and 390px checks show no document overflow. Main controls expose zero visible textboxes or numeric-entry fields unless optional exact-value sections are opened. No console errors in the reviewed session.
+- Local-only remains in force. No account connection, API-key field, hosted deployment or notification service was introduced.
+
+## V2.8 — household continuity and public tariffs (12 November 2026)
+
+Branch codex/v2-household-continuity builds on the selection-led milestone.
+
+- Added a root browser-memory workspace for region, tariff, task draft, validated readings and saved windows. Internal navigation preserves it; reload/close clears unsaved data. Remember remains opt-in, existing saved workspaces migrate, and clear resets the shared state.
+- Region selection pre-fills tariff setup and follows users into the planner. Exploring another carbon region does not silently change the tariff's regional prices; a visible message explains any difference.
+- Expanded the public catalogue to validated ordinary Octopus Agile/Flexible/fixed, Co-op Flexible/fixed and London Power Flexible plans. Live checks returned eight currently supported offers. Product direction is checked against the catalogue; product detail's missing direction is handled from that already-validated source. Direct-debit and varying code structures are supported; non-DD and conflicting price intervals are excluded/rejected.
+- Public tariffs with product metadata refresh at most every five minutes while visible, with delayed-state messages on failure. The planner advances its clock each minute while visible so past start windows fall away. Saved windows remain labelled saved estimates.
+- Added local CSV column selectors, three-row preview, interval-energy confirmation and explicit Wh/kWh conversion. Known headers auto-map; unfamiliar headers require no file editing. Existing readings are kept until a replacement succeeds. Raw files/previews never upload or persist.
+- Validation: 54 tests, TypeScript and optimized build pass. New tests cover supported/excluded families, catalogue paging bounds, payment methods, actual Flexible response structure, CSV mapping/units, legacy storage and task-draft migration.
+- Browser: London selection carried from Your area into the planner; Co-op Flexible loaded, and remained selected after visiting Britain and returning. Changing the carbon region left London household prices intact. Synthetic unfamiliar-header CSV values of 500 Wh and 750 Wh imported as 1.25 kWh, survived internal navigation, and task amounts survived tab changes. Mobile review at 390px found no horizontal overflow in tariff setup or CSV mapping. A cancelled-request catalogue warning was fixed and rechecked after reload; no console errors remained.
+- Personal meter authorisation is still unconfigured. Public tariff selection never grants consumption access. No account, credentials, deployment or background push service was added.

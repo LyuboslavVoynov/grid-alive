@@ -1,5 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { RegionSelect } from "./region-select";
+import { useEnergyWorkspace } from "./energy-workspace";
 import { Workspace } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
@@ -20,8 +23,10 @@ const colors: Record<string, string> = {
   other: "#8ba19c",
 };
 export default function AreaApp() {
-  const [input, setInput] = useState(""),
-    [area, setArea] = useState<AreaData | null>(null),
+  const { state, changeRegion, ready } = useEnergyWorkspace();
+  const regionId = state.regionId,
+    setRegionId = changeRegion;
+  const [area, setArea] = useState<AreaData | null>(null),
     [loading, setLoading] = useState(false),
     [error, setError] = useState(""),
     [authority, setAuthority] = useState(""),
@@ -79,25 +84,39 @@ export default function AreaApp() {
     [area],
   );
   const local = annual.find((a) => a.code === authority);
-  async function explore(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  const [refreshId, setRefreshId] = useState(0);
+  useEffect(() => {
     setArea(null);
+    setError("");
     setAsset(null);
-    setAuthority("");
-    try {
-      const r = await fetch("/api/area?postcode=" + encodeURIComponent(input));
-      const value = await r.json();
-      if (!r.ok) throw Error(value.error);
-      setArea(value);
-      const matches = annual.filter((a) => value.authorities.includes(a.name));
-      if (matches.length === 1) setAuthority(matches[0].code);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Lookup unavailable");
-    } finally {
+    if (!ready || !regionId) {
       setLoading(false);
+      return;
     }
+    const controller = new AbortController();
+    setLoading(true);
+    fetch("/api/area?region=" + encodeURIComponent(regionId), {
+      signal: controller.signal,
+    })
+      .then(async (response) => {
+        const value = await response.json();
+        if (!response.ok) throw Error(value.error);
+        if (!controller.signal.aborted) setArea(value);
+      })
+      .catch((e) => {
+        if (!controller.signal.aborted)
+          setError(
+            e instanceof Error ? e.message : "Regional lookup unavailable",
+          );
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+    return () => controller.abort();
+  }, [ready, regionId, refreshId]);
+  function explore(e: React.FormEvent) {
+    e.preventDefault();
+    setRefreshId((v) => v + 1);
   }
   return (
     <Workspace
@@ -105,25 +124,21 @@ export default function AreaApp() {
       title="Understand your area"
       intro="A regional view of your electricity mix, the generation nearby and how your community uses energy."
     >
-      <form className="postcode-form" onSubmit={explore}>
-        <label htmlFor="postcode">Outward postcode</label>
+      <form className="postcode-form selection-location" onSubmit={explore}>
         <div>
-          <input
-            id="postcode"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            maxLength={9}
-            placeholder="e.g. SW1A"
-            required
-            autoComplete="postal-code"
+          <RegionSelect
+            id="area-region"
+            value={regionId}
+            onChange={setRegionId}
           />
-          <button className="action-button" disabled={loading}>
-            {loading ? "Exploring…" : "Explore your area ↗"}
+          <button className="action-button" disabled={loading || !regionId}>
+            {loading ? "Exploring…" : "Refresh regional insights ↻"}
           </button>
         </div>
         <p>
-          Only the outward code is sent to NESO and Postcodes.io. It represents
-          a broad area, not your home’s direct power supply.
+          Choose a broad electricity region. No address or postcode is needed.
+          Regional boundaries are approximate and do not identify your home's
+          direct power supply.
         </p>
       </form>
       {error && (
@@ -179,8 +194,8 @@ export default function AreaApp() {
             </>
           ) : (
             <p>
-              Enter a postcode above to see regional forecasts and nearby sites.
-              The map shows approximate DNO carbon regions.
+              Choose a region above to see forecasts and featured sites. The map
+              shows approximate DNO carbon regions.
             </p>
           )}
         </div>
@@ -273,25 +288,25 @@ export default function AreaApp() {
                 Forecasts can change. Lower-carbon electricity does not
                 necessarily cost less on your tariff.
               </p>
-              <a className="text-link" href="/home">
+              <Link className="text-link" href="/home?view=planner">
                 Compare useful task windows ↗
-              </a>
+              </Link>
             </>
           ) : (
             <p className="empty-state">
-              Explore a postcode to see its published regional forecast.
+              Choose a region to see its published regional forecast.
             </p>
           )}
         </section>
         <section className="nearby-sites">
-          <p className="eyebrow">NEARBY GENERATION</p>
+          <p className="eyebrow">GENERATION AROUND THE REGION</p>
           <h2>Explore the landscape</h2>
           {nearby.length ? (
             <>
               <p className="small">
                 Nearest among our {energyAssets.length} selected renewable
-                projects, from the outward-code centre; not a complete
-                inventory.
+                projects, from the selected region’s approximate map centre, not
+                your home; this is not a complete inventory.
               </p>
               {nearby.map(({ asset: a, km }) => (
                 <button
@@ -318,7 +333,7 @@ export default function AreaApp() {
             </>
           ) : (
             <p className="empty-state">
-              Nearby sites appear after a postcode lookup.
+              Featured sites appear after choosing a region.
             </p>
           )}
         </section>
