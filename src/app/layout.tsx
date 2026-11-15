@@ -1,3 +1,4 @@
+import { EnergyWorkspaceProvider } from "@/components/energy-workspace";
 import type { Metadata } from "next";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./globals.css";
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <EnergyWorkspaceProvider>{children}</EnergyWorkspaceProvider>
+      </body>
     </html>
   );
 }

@@ -27,3 +27,40 @@ Publisher: NESO. GB DNO Licence Areas, version 20240503, retrieved 11 November 2
 - Attribution: Supported by National Energy SO Open Data.
 
 Convert the EPSG:27700 source with the same approximate Helmert conversion and simplify in its metre-based source CRS with a 400m tolerance. Preserve polygon holes. Match the source GSP letters to NESO Carbon Intensity region IDs explicitly. Boundary ID is not the Carbon Intensity region ID. These are approximate service areas; NESO notes they can be outdated and are not 100% accurate. Do not use for operational connection decisions.
+
+## Local consumption and postcode context (v2)
+
+DESNZ stacked local authority electricity consumption, 2005–2024; latest year 2024 extracted into data/annual-consumption.json. Published 18 December 2025, retrieved 11 November 2026. Units GWh/year and kWh per domestic meter. Domestic and non-domestic are meter classifications; not real-time demand or a detailed industry decomposition. No geographic reassignment is inferred when boundaries change.
+
+- Page: https://www.gov.uk/government/statistical-data-sets/stacked-electricity-consumption-statistics-data
+- CSV: https://assets.publishing.service.gov.uk/media/694295bd9273c48f554cf4ef/elec_LA_stacked_2005-2024.csv
+- OGL v3.0; contains public sector information © Crown copyright 2025.
+- Rebuild: python3 scripts/prepare-annual-consumption.py /path/to/source.csv
+
+Postcodes.io outward-code lookup provides an approximate centroid and a list of intersecting local authorities. Only the outward code is transmitted. Source: https://postcodes.io/docs/outcode/lookup/ ; geographic data contains OS and ONS open data (see https://postcodes.io/about/). Do not assume one authority per outward code. NESO postcode modelled mix is a separate grid-region classification, including imports and embedded generation; nearby sites do not imply direct supply.
+
+## Britain insights (v2)
+
+Elexon public system/frequency, datasets/INDO, forecast/demand/day-ahead/latest (nationalDemand), forecast/generation/wind/latest, remit/list/by-event/stream and individual remit/{id} messages. Requests are bounded to recent history / next 48 hours, cached per process, with partial results. Frequency is a timestamped observation, not a real-time guarantee. Demand comparison aligns UTC intervals 24 hours apart. REMIT is a selected set of five latest overlapping published messages, not exhaustive station availability; status and event window are shown. Declared unavailable capacity is not actual unit output. NESO /intensity/{from}/fw48h supplies national carbon forecasts. Published forecast gaps remain gaps.
+
+## Household tariffs and wholesale context (v2)
+
+Octopus public API: https://api.octopus.energy/v1/products/ and product electricity-tariffs/{code}/standard-unit-rates/ and standing-charges/. Support public Agile import, direct-debit tariffs only; exact code must be selected from the product response. Use value_inc_vat in p/kWh and p/day; preserve negative prices, explicit valid_from/valid_to, and unreported future intervals. Fetch at most the previous 14 days plus the next 48 hours. Standing charge is current, not a historical standing-charge schedule. Does not handle personalised intelligent charging, export tariffs, supplier switching or account consumption. Public tariff availability does not establish user eligibility. Manual rates must be VAT-inclusive; recurring two-rate schedules use Europe/London with half-hour boundaries.
+
+Elexon /balancing/pricing/market-index supplies APXMIDP observations with positive traded volume. Display the latest reported index and past 24 hours in GBP/MWh. Divide by 10 for the equivalent p/kWh energy-only scale, not a retail tariff. No future wholesale-price forecast. No combination of different index providers.
+
+Task planner integrates constant power across fully covered rate intervals. A gap produces unknown cost/carbon, never free electricity. Compare half-hour start windows, at most 48 hours, bounded by user deadline; estimates use editable task energy/duration. Standing charges cancel in task timing comparisons and are excluded. Carbon uses NESO forecasts with their own coverage; no claim that cheap and clean coincide. These are consumption estimates, not financial or appliance-control services.
+
+## Selection-led region lookup (12 November 2026)
+
+NESO /regional/intensity/{from}/fw48h/regionid/{id}, restricted to the fourteen grid regions. Shared IDs/GSP letters are the same mapping as the licensed DNO boundary preparation. No postcode or geocoder request occurs for selected regions. Regional map focus and featured-site distances use the centre of the simplified boundary's longitude/latitude bounding box, explicitly labelled a regional reference point rather than the visitor's location. Selecting a human-readable tariff region matches exactly one published product tariff suffix; missing or ambiguous matches are unavailable, never guessed.
+
+Task/annual selection presets are illustrative assumptions, not reported personal readings, supplier quotes or guaranteed consumption. Exact values are optional. In carbon-only planning an absent tariff produces null cost and no price savings; forecast carbon still uses compatible published periods. Supplier selection supports public Agile tariffs only and does not establish account access.
+
+## Broader public tariff catalogue and CSV mapping (12 November 2026)
+
+Public Octopus product catalogue metadata identifies brand, direction, availability and eligibility flags. Explicit supported families: AGILE/VAR/OE-FIX for OCTOPUS_ENERGY; COOP-VAR/COOP-FIX for COOP_ENERGY; LP-VAR for LONDON_POWER. Only current import, non-business, non-prepay, non-restricted, non-Tracker offers are eligible. Unknown, personalised smart-charging and export families stay excluded. Product detail may omit direction; the already-validated catalogue supplies it, while any explicit contradiction is rejected.
+
+The catalogue is bounded to four constructed pages; arbitrary next URLs are not followed. Product detail accepts direct_debit_monthly or varying code structures. Explicit DIRECT_DEBIT prices take precedence over overlapping generic rows; NON_DIRECT_DEBIT rates are excluded. Conflicting/overlapping intervals and truncated responses are unavailable. Every published tariff retains its supplier/product/tariff/region identifiers, enabling public refresh at most every five minutes while visible. No customer account is read and no supplier switch occurs.
+
+CSV header matching is local-only. Recognised headers auto-map; otherwise visitors select three distinct columns and the energy unit, and confirm interval-energy semantics. Wh is divided by 1000 before the existing half-hour, timezone, overlap, sign and range validation. Missing explicit timezone information is rejected rather than inferred. Raw files and three-row previews are not uploaded or persisted; only validated readings are optionally saved on-device.

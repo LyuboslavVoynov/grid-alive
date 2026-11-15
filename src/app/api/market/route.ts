@@ -1,0 +1,52 @@
+import { z } from "zod";
+import { fetchJson, observationCache } from "@/lib/data/cache";
+export const dynamic = "force-dynamic";
+export async function GET() {
+  try {
+    const now = Date.now(),
+      from = new Date(now - 24 * 3600000).toISOString(),
+      to = new Date(now).toISOString();
+    const cached = await observationCache.read(
+      "market-index",
+      () =>
+        fetchJson(
+          `https://data.elexon.co.uk/bmrs/api/v1/balancing/pricing/market-index?from=${from}&to=${to}`,
+        ),
+      300000,
+    );
+    const raw = z
+      .object({
+        data: z.array(
+          z.object({
+            startTime: z.string().refine((v) => Number.isFinite(Date.parse(v))),
+            dataProvider: z.string(),
+            price: z.number().finite(),
+            volume: z.number().finite(),
+          }),
+        ),
+      })
+      .parse(cached.value);
+    const points = raw.data
+      .filter(
+        (r) =>
+          r.dataProvider === "APXMIDP" &&
+          r.volume > 0 &&
+          Date.parse(r.startTime) <= now,
+      )
+      .sort((a, b) => Date.parse(a.startTime) - Date.parse(b.startTime))
+      .map((r) => ({ at: r.startTime, value: r.price }));
+    if (!points.length) throw Error();
+    return Response.json({
+      provider: "Elexon MID · APXMIDP",
+      units: "GBP/MWh",
+      retrievedAt: cached.retrievedAt,
+      stale: cached.stale || now - Date.parse(points.at(-1)!.at) > 90 * 60000,
+      points,
+    });
+  } catch {
+    return Response.json(
+      { error: "Wholesale market index unavailable" },
+      { status: 503 },
+    );
+  }
+}

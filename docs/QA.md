@@ -24,3 +24,25 @@ Desktop and a 390 × 844 mobile viewport in the in-app browser:
 - Cross-browser checks outside the in-app browser have not been performed. Reduced-motion behavior is implemented through the browser media query but has not been exercised with a changed OS preference in this session.
 - Geographic reference coordinates are approximate and inventory coverage is intentionally selected, not comprehensive. Individual site output is not provided.
 - Process-local caching is not durable across server restarts or shared across instances; cold-start provider outages show unavailable data.
+
+## V2 integration evidence — 11 November 2026
+
+- 33 unit/data tests pass; TypeScript and Next.js optimized build pass.
+- Browser desktop and 390 × 844 narrow view: route navigation, tariff form, task planner, supply/demand/outlook, regional postcode and personal usage. Narrow views have no horizontal document overflow; map pitch remains locked at zero.
+- Synthetic QA CSV only (outside repository and never a default): 336 half-hour records imported locally; one complete day correctly showed 14.80 kWh, £3.93 energy on the test schedule, £0.50 standing, 300 W overnight median. No personal meter data was accessed.
+- Manual task test: 2 kWh costs 60p peak / 20p off-peak, 40p saving; separate published-rate import also checked through the UI. Lowest-cost and lowest-carbon windows can differ and both can be saved.
+- Read-only live API smoke checks verified /api/insights, /api/area?postcode=SW1A, /api/market and public tariff code validation/import.
+- Fixed a zero-dimension Canvas drawImage error during route changes. Fresh browser after fix: no console errors. Reminders and browser storage start off. Clear workspace resets active form state as well as saved data.
+- Do not infer supplier-account linking, background push delivery, detailed per-sector current demand or individual station output from these checks. These are unconfigured/unavailable, clearly labelled paths.
+
+## Selection-led refinement — 12 November 2026
+
+38 tests, TypeScript and production build pass. Public region-ID lookup returns the selected regional mix without transmitting a postcode; invalid IDs and mismatched responses are rejected. Regional tariff mapping requires an exact unique published suffix. Missing tariff prices remain null during carbon-only planning.
+
+Browser checks used selection controls only: supplier → version → region → public rates; task → energy → duration → forecast region; regional map lookup; annual example assumptions. A 2500 kWh/year scenario at 25p/kWh with 50p/day standing gives £807.50. At 390px, there is no document overflow; optional exact-value controls start closed and no text/number entry fields appear in the primary journey. No console errors were captured. Personal meter linking remains unconfigured; supplier selection is not account authorisation.
+
+## Household continuity and CSV mapping — 12 November 2026
+
+54 tests, TypeScript and optimized build pass. Live smoke checks imported Flexible Octopus, Co-op Flexible and an Octopus fixed product with correct direct-debit rates. Eight eligible current public offers were present at verification; this count changes with provider publication.
+
+Browser checks verified memory-only workspace continuity across app routes, region prefill, task-draft persistence, separation of forecast region and tariff region, and selector-only CSV mapping. A synthetic file with unfamiliar headers and Wh values 500/750 correctly yielded 1.25 kWh; readings survived navigation. No personal account data was used. 390px tariff/mapping views had no document overflow. Cancelled catalogue requests no longer generate false unavailable warnings; a fresh reviewed session reported no console errors. Public refresh timers are implemented; no physical-device performance or closed-page background delivery claim is made.
