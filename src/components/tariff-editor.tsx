@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { type Tariff, validateTariff, money } from "@/lib/home/energy";
+import { useEnergyWorkspace } from "./energy-workspace";
 import { RegionSelect } from "./region-select";
 import { tariffForRegion } from "@/lib/geo/regions";
 import { localTime } from "./series-chart";
@@ -11,6 +12,7 @@ export function TariffEditor({
   tariff: Tariff | null;
   onSave: (t: Tariff) => void;
 }) {
+  const { state } = useEnergyWorkspace();
   const [kind, setKind] = useState<"single" | "tou">(
       tariff?.kind === "tou" ? "tou" : "single",
     ),
@@ -28,12 +30,18 @@ export function TariffEditor({
     [offEnd, setEnd] = useState(tariff?.offEnd ?? "07:30"),
     [message, setMessage] = useState(""),
     [error, setError] = useState("");
-  const [products, setProducts] = useState<{ code: string; name: string }[]>(
-      [],
-    ),
-    [supplier, setSupplier] = useState(""),
-    [regionId, setRegionId] = useState(""),
-    [product, setProduct] = useState(""),
+  const [products, setProducts] = useState<
+      {
+        code: string;
+        name: string;
+        supplier: string;
+        supplierName: string;
+        family: string;
+      }[]
+    >([]),
+    [supplier, setSupplier] = useState(tariff?.supplier ?? ""),
+    [regionId, setRegionId] = useState(tariff?.regionId ?? state.regionId),
+    [product, setProduct] = useState(tariff?.productCode ?? ""),
     [codes, setCodes] = useState<string[]>([]),
     [busy, setBusy] = useState(false);
   useEffect(() => {
@@ -41,9 +49,16 @@ export function TariffEditor({
     fetch("/api/tariffs", { signal: c.signal })
       .then((r) => r.json())
       .then((v) => {
+        if (c.signal.aborted) return;
         setProducts(v.products ?? []);
+        if (v.error) setError(v.error);
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!c.signal.aborted)
+          setError(
+            "The public catalogue is unavailable. You can still explore carbon timing.",
+          );
+      });
     return () => c.abort();
   }, []);
   async function loadProduct(v: string) {
@@ -63,6 +78,12 @@ export function TariffEditor({
       setBusy(false);
     }
   }
+  useEffect(() => {
+    if (tariff?.productCode) void loadProduct(tariff.productCode);
+  }, []);
+  const suppliers = [
+    ...new Map(products.map((p) => [p.supplier, p.supplierName])).entries(),
+  ];
   const code = tariffForRegion(codes, regionId);
   async function importTariff() {
     setBusy(true);
@@ -144,14 +165,16 @@ export function TariffEditor({
               disabled={busy}
             >
               <option value="">Choose your supplier</option>
-              <option value="octopus">
-                Octopus Energy · public Agile rates
-              </option>
+              {suppliers.map(([id, name]) => (
+                <option key={id} value={id}>
+                  {name}
+                </option>
+              ))}
               <option value="other">Another supplier</option>
               <option value="unknown">I'm not sure</option>
             </select>
           </label>
-          {supplier === "octopus" && (
+          {suppliers.some(([id]) => id === supplier) && (
             <>
               <label>
                 Current tariff version
@@ -161,11 +184,14 @@ export function TariffEditor({
                   disabled={busy}
                 >
                   <option value="">Choose your tariff</option>
-                  {products.map((p) => (
-                    <option key={p.code} value={p.code}>
-                      {p.name} · {p.code.replace(/^AGILE-/, "")}
-                    </option>
-                  ))}
+                  {products
+                    .filter((p) => p.supplier === supplier)
+                    .map((p) => (
+                      <option key={p.code} value={p.code}>
+                        {p.name} ·{" "}
+                        {p.code.match(/\d{2}-\d{2}-\d{2}$/)?.[0] ?? p.code}
+                      </option>
+                    ))}
                 </select>
               </label>
               <RegionSelect
@@ -199,15 +225,18 @@ export function TariffEditor({
         </div>
         {(supplier === "other" || supplier === "unknown") && (
           <p className="selection-notice">
-            Public price import is currently available for Agile Octopus only.
-            You can explore the grid and carbon task windows without entering
-            rates. Exact bill rates remain optional below.
+            Public price import is available for selected Octopus Energy, Co-op
+            Energy and London Power plans. You can explore the grid and carbon
+            task windows without entering rates. Exact bill rates remain
+            optional below.
           </p>
         )}
         <p className="small">
-          Other suppliers, smart charging rewards and personalised discounts can
-          be entered manually where the schedule is known. Published future
-          prices appear only when released.
+          Choose your existing tariff; this does not change your supplier or
+          confirm eligibility. Only direct-debit, single-register import rates
+          are supported. Other suppliers, smart charging rewards and
+          personalised discounts can be entered manually where the schedule is
+          known. Published future prices appear only when released.
         </p>
         {tariff && (
           <div className="active-tariff">

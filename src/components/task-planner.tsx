@@ -9,6 +9,8 @@ import {
   cleanest,
   money,
 } from "@/lib/home/energy";
+import { useEnergyWorkspace } from "./energy-workspace";
+import { gridRegions } from "@/lib/geo/regions";
 import { RegionSelect } from "./region-select";
 import { NumberChoice } from "./number-choice";
 import { useInsights } from "./britain-insights";
@@ -23,16 +25,30 @@ export function TaskPlanner({
   onTariff: () => void;
   onPlan?: (window: TaskWindow, kind: "price" | "carbon") => void;
 }) {
+  const { state, setState, changeRegion } = useEnergyWorkspace();
+  const regionId = state.regionId,
+    setRegionId = changeRegion;
   const { data, error } = useInsights();
-  const [kwh, setKwh] = useState("1"),
-    [hours, setHours] = useState("1.5"),
-    [deadline, setDeadline] = useState("24"),
-    [task, setTask] = useState("Laundry"),
-    [regionId, setRegionId] = useState(""),
-    [area, setArea] = useState<AreaData | null>(null),
+  const { task, kwh, hours, deadline } = state.taskDraft;
+  const updateDraft = (patch: Partial<typeof state.taskDraft>) =>
+    setState((s) => ({ ...s, taskDraft: { ...s.taskDraft, ...patch } }));
+  const setKwh = (value: string) => updateDraft({ kwh: value }),
+    setHours = (value: string) => updateDraft({ hours: value });
+  const [area, setArea] = useState<AreaData | null>(null),
     [regionError, setRegionError] = useState(""),
     [regionBusy, setBusy] = useState(false),
     [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const refreshClock = () => {
+      if (!document.hidden) setNow(Date.now());
+    };
+    const timer = setInterval(refreshClock, 60000);
+    document.addEventListener("visibilitychange", refreshClock);
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener("visibilitychange", refreshClock);
+    };
+  }, []);
   const carbon: CarbonRate[] = useMemo(
     () =>
       area
@@ -97,7 +113,6 @@ export function TaskPlanner({
     return () => controller.abort();
   }, [regionId]);
   function preset(value: string) {
-    setTask(value);
     const values: Record<string, [string, string]> = {
       Laundry: ["1", "1.5"],
       Dishwasher: ["1.5", "2"],
@@ -105,8 +120,7 @@ export function TaskPlanner({
       "Custom task": ["2", "1"],
     };
     const [k, h] = values[value];
-    setKwh(k);
-    setHours(h);
+    updateDraft({ task: value as typeof task, kwh: k, hours: h });
   }
   const windowBlock = (
     title: string,
@@ -185,6 +199,15 @@ export function TaskPlanner({
           {tariff?.name ?? "Carbon planning · no household tariff selected"} ·
           standing charge excluded from task comparisons
         </p>
+        {tariff?.regionId && regionId && tariff.regionId !== regionId && (
+          <p className="small" role="status">
+            The carbon forecast uses your selected region. Household prices
+            remain tied to{" "}
+            {gridRegions.find((r) => String(r.id) === tariff.regionId)?.name ??
+              "your tariff region"}
+            ; exploring another region does not change your tariff.
+          </p>
+        )}
         <div className="planner-controls field-grid">
           <label>
             Task
@@ -221,7 +244,9 @@ export function TaskPlanner({
             Finish within
             <select
               value={deadline}
-              onChange={(e) => setDeadline(e.target.value)}
+              onChange={(e) =>
+                updateDraft({ deadline: e.target.value as typeof deadline })
+              }
             >
               {[6, 12, 24, 48].map((v) => (
                 <option key={v} value={v}>

@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { RegionSelect } from "./region-select";
+import { useEnergyWorkspace } from "./energy-workspace";
 import { Workspace } from "./product-nav";
 import { EnergyMap, type MapControls } from "./map/energy-map";
 import { energyAssets, type EnergyAsset } from "@/lib/geo/assets";
@@ -21,8 +23,10 @@ const colors: Record<string, string> = {
   other: "#8ba19c",
 };
 export default function AreaApp() {
-  const [regionId, setRegionId] = useState(""),
-    [area, setArea] = useState<AreaData | null>(null),
+  const { state, changeRegion, ready } = useEnergyWorkspace();
+  const regionId = state.regionId,
+    setRegionId = changeRegion;
+  const [area, setArea] = useState<AreaData | null>(null),
     [loading, setLoading] = useState(false),
     [error, setError] = useState(""),
     [authority, setAuthority] = useState(""),
@@ -80,25 +84,39 @@ export default function AreaApp() {
     [area],
   );
   const local = annual.find((a) => a.code === authority);
-  async function explore(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  const [refreshId, setRefreshId] = useState(0);
+  useEffect(() => {
     setArea(null);
+    setError("");
     setAsset(null);
-    setAuthority("");
-    try {
-      const r = await fetch("/api/area?region=" + encodeURIComponent(regionId));
-      const value = await r.json();
-      if (!r.ok) throw Error(value.error);
-      setArea(value);
-      const matches = annual.filter((a) => value.authorities.includes(a.name));
-      if (matches.length === 1) setAuthority(matches[0].code);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Lookup unavailable");
-    } finally {
+    if (!ready || !regionId) {
       setLoading(false);
+      return;
     }
+    const controller = new AbortController();
+    setLoading(true);
+    fetch("/api/area?region=" + encodeURIComponent(regionId), {
+      signal: controller.signal,
+    })
+      .then(async (response) => {
+        const value = await response.json();
+        if (!response.ok) throw Error(value.error);
+        if (!controller.signal.aborted) setArea(value);
+      })
+      .catch((e) => {
+        if (!controller.signal.aborted)
+          setError(
+            e instanceof Error ? e.message : "Regional lookup unavailable",
+          );
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setLoading(false);
+      });
+    return () => controller.abort();
+  }, [ready, regionId, refreshId]);
+  function explore(e: React.FormEvent) {
+    e.preventDefault();
+    setRefreshId((v) => v + 1);
   }
   return (
     <Workspace
@@ -112,10 +130,9 @@ export default function AreaApp() {
             id="area-region"
             value={regionId}
             onChange={setRegionId}
-            disabled={loading}
           />
           <button className="action-button" disabled={loading || !regionId}>
-            {loading ? "Exploring…" : "Explore your region ↗"}
+            {loading ? "Exploring…" : "Refresh regional insights ↻"}
           </button>
         </div>
         <p>
@@ -271,9 +288,9 @@ export default function AreaApp() {
                 Forecasts can change. Lower-carbon electricity does not
                 necessarily cost less on your tariff.
               </p>
-              <a className="text-link" href="/home">
+              <Link className="text-link" href="/home?view=planner">
                 Compare useful task windows ↗
-              </a>
+              </Link>
             </>
           ) : (
             <p className="empty-state">
@@ -288,8 +305,8 @@ export default function AreaApp() {
             <>
               <p className="small">
                 Nearest among our {energyAssets.length} selected renewable
-                projects, from the outward-code centre; not a complete
-                inventory.
+                projects, from the selected region’s approximate map centre, not
+                your home; this is not a complete inventory.
               </p>
               {nearby.map(({ asset: a, km }) => (
                 <button

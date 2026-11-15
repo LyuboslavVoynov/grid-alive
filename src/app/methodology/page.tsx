@@ -1,7 +1,8 @@
+import Link from "next/link";
 export default function Methodology() {
   return (
     <article className="document">
-      <a href="/">← Return to GRID / ALIVE</a>
+      <Link href="/">← Return to GRID / ALIVE</Link>
       <h1>Sources & methodology</h1>
       <h2>Generation and storage</h2>
       <p>
@@ -157,12 +158,12 @@ export default function Methodology() {
         p/day. Two-rate schedules repeat daily in Europe/London, including clock
         changes. More complicated schedules, discounts and personalised smart
         charging rewards are not inferred. The public Octopus integration loads
-        an Agile import tariff selected by supplier, published version and
-        region name for direct-debit payment, without signing into an account or
-        switching supplier. It uses value_inc_vat and each rate's validity
-        interval. Rates are available for at most the previous 14 days and next
-        48 hours, limited to periods actually published. The current standing
-        charge is used, not a historical charge schedule.
+        a supported public import tariff selected by supplier, published version
+        and region name for direct-debit payment, without signing into an
+        account or switching supplier. It uses value_inc_vat and each rate's
+        validity interval. Rates are available for at most the previous 14 days
+        and next 48 hours, limited to periods actually published. The current
+        standing charge is used, not a historical charge schedule.
       </p>
       <p>
         The separate Elexon APXMIDP market index includes observations with
@@ -170,6 +171,19 @@ export default function Methodology() {
         energy-only p/kWh scale. This is not a retail tariff or a future price
         forecast; household rates also reflect networks, policy costs, supplier
         costs, VAT and standing charges.
+      </p>
+      <p>
+        Supported catalogue families are Octopus Energy Agile, Flexible and
+        ordinary fixed plans; Co-op Flexible/fixed; and London Power Flexible.
+        Only current public offers with validated metadata are listed, and only
+        direct-debit single-register import rates are used. Export, Tracker,
+        personalised smart charging, restricted offers and unknown families are
+        excluded. Different catalogue/detail payment structures are handled
+        explicitly; overlapping or conflicting price intervals are rejected.
+        Selecting a published tariff does not establish eligibility or switch
+        supplier. Public rates with saved product metadata refresh at most every
+        five minutes while visible; failures retain labelled last-received rates
+        without filling gaps.
       </p>
       <h2>Task planning and estimates</h2>
       <p>
@@ -218,12 +232,21 @@ export default function Methodology() {
         avoidable.
       </p>
       <p>
-        The workspace lives in memory by default. You can opt into local browser
-        storage for rates, readings and saved windows, or clear it.
-        Authenticated meter linking is not configured. In-page reminders work
-        while My plan is open; calendar exports let your calendar manage
-        notifications. No push notification service or automatic appliance
-        control is connected.
+        Unknown CSV headers can be matched with selection controls for interval
+        start, interval end and energy. Wh is converted to kWh; choosing columns
+        does not relax timestamp, overlap, negative-import or future-reading
+        validation. Mapping previews and raw files remain in the browser.
+        Cumulative meter totals and power readings are not interval energy.
+      </p>
+      <p>
+        The workspace lives in memory by default and survives navigation between
+        app pages. Reloading or closing clears unsaved state. Region choices,
+        task drafts and tariff metadata can be remembered with the rest of the
+        workspace. You can opt into local browser storage for rates, readings
+        and saved windows, or clear it. Authenticated meter linking is not
+        configured. In-page reminders work while My plan is open; calendar
+        exports let your calendar manage notifications. No push notification
+        service or automatic appliance control is connected.
       </p>
       <h2>Attribution and source documentation</h2>
       <ul>
