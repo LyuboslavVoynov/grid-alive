@@ -98,3 +98,53 @@ Branch codex/v2-household-continuity builds on the selection-led milestone.
 - Validation: 54 tests, TypeScript and optimized build pass. New tests cover supported/excluded families, catalogue paging bounds, payment methods, actual Flexible response structure, CSV mapping/units, legacy storage and task-draft migration.
 - Browser: London selection carried from Your area into the planner; Co-op Flexible loaded, and remained selected after visiting Britain and returning. Changing the carbon region left London household prices intact. Synthetic unfamiliar-header CSV values of 500 Wh and 750 Wh imported as 1.25 kWh, survived internal navigation, and task amounts survived tab changes. Mobile review at 390px found no horizontal overflow in tariff setup or CSV mapping. A cancelled-request catalogue warning was fixed and rechecked after reload; no console errors remained.
 - Personal meter authorisation is still unconfigured. Public tariff selection never grants consumption access. No account, credentials, deployment or background push service was added.
+
+### Night Atlas landing and source motion — 15 November 2026
+
+Branch `codex/night-atlas-power-flow`, based on the existing local household-continuity branch. Implemented the approved flat night-atlas direction with warm geographic settlement artwork, restrained coastlines, top-down rotors, clear directional packet trails, renewable-source/site selectors and national observation summaries. The full generation mix remains available, including gas/nuclear and explicit missing solar output. Selected-site capacity and dated metadata are separate from national observations; source paths are labelled schematic and site output unavailable. No new API keys, personal inputs, hosting or deployments.
+
+Replaced independent canvas animation timing with MapLibre render-event drawing, geographically anchored light points and cached static texture. Added focused regression coverage for stable lights during pan, pause/hidden/destroy lifecycle, no texture rebakes during animation/speed changes, zero-size surfaces, selected-site route origins and independence from installed capacity. Browser QA covers desktop and narrow layouts, solar missing data, long site labels and matching map/overlay bounds. Verification details are recorded in docs/QA.md.
+
+### Regional Balance single-page consolidation — 16 November 2026
+
+Branch `codex/regional-balance-single-page`. Implemented the selected Regional Balance layout: region selector, national/regional headline context, one flat selectable map and persistent generation split. Demand, forecast/replay, named generating sites, tariff/task/annual/usage/plan tools, display settings and methodology open in accessible native dialogs. Household state remains in the root provider across pop-ups. Old area/home/methodology URLs have lightweight redirects to root-page tools.
+
+Removed the previous GridApp/AreaApp/HomeApp/Workspace/navigation controllers, the obsolete standalone dist prototype, typed-postcode/geocoder APIs and unused data fields, and replaced page-specific/night-atlas styling with the shared-tool and Regional Balance styles. Kept the active renderer, licensed geometry/data, data adapters, privacy controls and household calculations. Extracted annual cost comparison as a shared component. No live regional MW values are invented: modelled supply percentages and clearly labelled GB demand context are displayed.
+
+Checks: 67 tests pass; TypeScript also passes noUnusedLocals/noUnusedParameters. Browser checks confirm regional selection, matching map/canvas bounds, modal dismissal and focus restoration, task choices across reopen, and the unchanged annual cost scenario. Further local verification is recorded in docs/QA.md. No deployment or account changes.
+
+### Interactive generation ring and country flows — 16 November 2026
+
+Branch `codex/country-flows-generation-ring`, following the approved interaction direction. Replaced the generation bar with a keyboard/touch/hover ring, animated selected-source icons, explanations and renewable map selection. Added a compact GB import-country strip plus country cards with independent gross imports/exports, shares of inward transfers, individual cable details and 24-hour net-transfer trends. Country scope remains GB-wide when a regional mix is selected.
+
+Consolidated cable metadata and expanded the map from four to ten schematic links. Positive/negative observations drive direction, mint/amber styling and bounded absolute-MW widths. Retired the old transfer list and stack styles. Missing readings remain unavailable, unrecognised codes remain unmapped, and opposite-direction cables never cancel out of gross totals. All 71 tests, unused-code TypeScript checks and production build pass; desktop/mobile/narrow browser evidence is in docs/QA.md. Local only; no extra API keys or account changes.
+
+### Mobile overview redesign — 16 November 2026
+
+Branch `codex/mobile-overview-design`. Replaced the phone's map-first vertical stack with compact demand/carbon cards, source ring beside touch-sized fuel buttons, country cards, a fixed five-item tool bar and More menu. The default mobile page has no map canvas. Explore map is optional and lazily imports the map component; full-width native sheets hold map and other tools. National generation totals remain in the mobile supply caption; regional shares and GB demand context remain distinct.
+
+Adapted generating-site focus, international-flow navigation and replay to open the optional map. Deferred focus survives initial load/resize; closing destroys the map and clears controls. Removed the superseded imperative focus control and old phone layout rules. Hover selection is restricted to desktop pointer layouts, preventing mobile source changes caused by incidental mouse events. Development indicator no longer overlaps the bottom navigation. Existing privacy/workspace controls remain intact; no API, account or deployment changes. Browser and check evidence is in docs/QA.md.
+
+### Shared interaction motion — 16 November 2026
+
+Branch `codex/interaction-motion`. Added a restrained interaction language across desktop and mobile: control press/hover/focus, keyboard feedback, selected navigation, field feedback, chart/result and source changes, native disclosure expansion, desktop dialog entrances and phone sheet entrances. Internal household-tool navigation also animates and moves focus to the selected tab when its action removes the previous focused control. No animation package or provider changes.
+
+Dialog exit now retains the last committed view while the native modal stays active, then releases body scrolling, unmounts tool content and restores opener focus (or region selection if the opener has gone). Pending dismissals can be cancelled; fallback completion avoids a stuck modal when an animation API fails. Reduced-motion and hidden-page paths bypass dismissal animation. Hover feedback is restricted to appropriate pointers, and map surfaces never scale during transitions. Added five regression checks for completion, cancellation, dropped animation promises and reduced-motion/unavailable APIs. All 76 tests, unused-code TypeScript checks and production build pass. Detailed timing is in docs/INTERACTIONS.md; browser evidence is in docs/QA.md. Local only.
+
+### Quiet Atlas and animation integrity — 17 November 2026
+
+Branch `codex/quiet-atlas-map`. Implemented the approved quiet map direction: separate Sources, Imports & exports, and Regional carbon views; up to three screen-spaced source markers; slower plan-view rotors with stable per-site phases; reduced-density geographic settlement lights; details on selection. Removed the full-inventory dot layers, invented domestic junctions/paths, per-cable control points, magnitude widths, permanent canvas labels and their obsolete styles/helpers.
+
+International motion follows one selected country corridor, with explicit import/export selection and both gross totals retained. The selected corridor uses representative grid anchors, not surveyed cable routes. A single projected polyline drives both stroke and packet positions; distance sampling avoids uneven motion, while normalized progress survives camera changes. Missing, partial, zero and stale readings suppress packets. Drawing and hit testing share one visible marker set. Resize preserves user camera position; reset/refitting includes Shetland, and mobile transfer framing leaves room for controls/details. Static views do not keep an animation loop running.
+
+All 82 tests across 19 files, unused-code TypeScript checks and optimized production build pass. Desktop and mobile browser review is recorded in docs/QA.md. Local only; no provider, credential, account or hosting changes.
+
+### Generation split controls the map — 18 November 2026
+
+Branch `codex/source-linked-map`. Replaced the generation ring with labelled source tiles and proportional share meters. A click/keyboard activation selects the source, updates the map heading, fits its recorded sites and synchronizes the selected tile. Hover and focus no longer change the selection. Removed map View/Site/Country/Direction dropdowns and retired their styles/helpers; source directory uses buttons and named records. All-source reset is one action. Demand is the first national metric and remains visible on mobile.
+
+Imported all 49 natural-gas, five nuclear and 14 diesel/gas-oil GB Major Power Producer records from DESNZ DUKES 5.11 (May 2026). Retained 105 featured REPD renewable records, for 173 records total. The reproducible offline import validates source coordinates and stable site codes; it does not geocode, guess sites, allocate national output or claim current operation. The in-app source/methodology text states the limited register coverage and dated operational status.
+
+Replaced the three-site cap with deterministic screen-space groups shared by canvas symbols and accessible native 44px buttons. Groups zoom in; co-located records such as Heysham 1/2 expose a named list with focus transfer. Country import/export buttons directly select the signed corridor, preserve gross directions and clear source markers. Missing/zero/stale transfer motion rules remain. Unknown source categories show no matched locations instead of retaining a previous fuel's sites.
+
+Mobile fuel/country choices open the optional map sheet; the mobile overview remains map-free and closes/reclaims the map. No new runtime dependency, key, account access or deployment. All 85 tests across 20 files, unused-code TypeScript checks and production build pass. Browser evidence is in docs/QA.md.

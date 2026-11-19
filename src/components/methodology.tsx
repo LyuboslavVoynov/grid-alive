@@ -1,9 +1,32 @@
-import Link from "next/link";
-export default function Methodology() {
+export function Methodology() {
   return (
-    <article className="document">
-      <Link href="/">← Return to GRID / ALIVE</Link>
-      <h1>Sources & methodology</h1>
+    <article className="methodology">
+      <section>
+        <h2>Country transfers and the generation ring</h2>
+        <p>
+          The ring shows the selected dataset's fuel shares. GB metered
+          generation excludes imports and pumped storage; regional modelled
+          mixes have different coverage and include imports. Selecting a source
+          highlights dated featured sites, not their live output.
+        </p>
+        <p>
+          Country transfers group signed Elexon FUELINST readings by
+          neighbouring grid. Positive readings enter GB; negative readings
+          leave. Gross imports and exports are kept separate even within one
+          country. Missing cable readings are unavailable, never assumed zero.
+          Country import percentages divide by reported gross imports to GB, not
+          regional supply. Unknown cable codes remain unmapped.
+        </p>
+        <p>
+          International map paths are schematic. Mint indicates import to GB;
+          amber indicates export. Only the selected country corridor moves. A
+          corridor joins representative grid anchors, not surveyed cable
+          landfalls. Missing, partial, zero or stale readings produce no moving
+          packets. Packet speed is illustrative. Trends use complete country
+          readings at each archived half-hour, leave gaps for unavailable
+          observations, and label each chart's own scale and period.
+        </p>
+      </section>
       <h2>Generation and storage</h2>
       <p>
         Generation uses Elexon FUELINST five-minute observations. The total and
@@ -58,10 +81,38 @@ export default function Methodology() {
         station inventory. Capacity and status are dated source facts, not
         current output. Coordinates use an approximate OSGB36-to-WGS84
         conversion. Turbine symbols do not depict individual turbine positions
-        or the recorded turbine count. Energy paths remain illustrative.
-        National wind observations affect visual activity; they do not establish
-        individual turbine speed or farm output. International routes are
-        schematic, with direction driven by reported link measurements.
+        or the recorded turbine count. Settlement lights are fixed geographic
+        artwork, not measured demand. All loaded source records are represented
+        by individual markers or numbered groups. Groups zoom into nearby sites;
+        co-located records can be selected by name. The generation split and
+        country cards control the map directly. Selecting a site reveals its
+        name and details. There are no domestic flow paths: the feeds do not
+        identify actual transmission routes or a site's customers. Rotor speed
+        is illustrative, independent of capacity and national fuel totals.
+        Individual site output is unavailable. Solar remains unreported in the
+        national metered feed even when solar sites are selected. Imports and
+        exports have a separate map view and retain separate gross totals, even
+        when a country sends and receives power.
+      </p>
+      <h2>Gas, nuclear and oil station locations</h2>
+      <p>
+        DESNZ DUKES 5.11, operational at the end of May 2026, supplies 49
+        natural-gas records, five nuclear records and 14 diesel/gas-oil records
+        for England, Scotland and Wales. The register covers major power
+        producers and excludes many smaller generators; this is not an
+        exhaustive inventory of every GB station. Natural gas and diesel/gas oil
+        are kept separate. Coordinates are generator-supplied, not verified by
+        DESNZ, and use an approximate OSGB36-to-WGS84 conversion. Co-located
+        units retain distinct records. Installed capacity and dated register
+        status do not establish present output or whether a station is running
+        now. No national fuel output is allocated to individual stations.
+      </p>
+      <p>
+        <a href="https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes">
+          DESNZ DUKES power-station register, table 5.11
+        </a>
+        . Contains public sector information licensed under the Open Government
+        Licence v3.0.
       </p>
       <h2>Renewable-site attribution</h2>
       <p>
@@ -82,13 +133,12 @@ export default function Methodology() {
       </p>
       <p>
         Replay samples observations at half-hour steps over the preceding 24
-        complete settlement periods. Each layer uses observations valid at the
-        selected UTC instant; gaps remain unavailable. A historical generation
-        observation is not labelled stale simply because it is historical.
-        Geographic asset metadata remains the dated REPD snapshot; replay does
-        not claim to reconstruct historical site operational status. Display
-        times include date and GMT/BST to distinguish repeated local clock
-        hours.
+        hours. Each layer uses observations valid at the selected UTC instant;
+        gaps remain unavailable. A historical generation observation is not
+        labelled stale simply because it is historical. Geographic asset
+        metadata remains the dated REPD snapshot; replay does not claim to
+        reconstruct historical site operational status. Display times include
+        date and GMT/BST to distinguish repeated local clock hours.
       </p>
       <p>
         <a href="https://www.neso.energy/data-portal/gis-boundaries-gb-dno-license-areas">
@@ -131,12 +181,14 @@ export default function Methodology() {
         The main location journey selects one of fourteen electricity regions;
         no postcode or address is needed. NESO supplies a modelled regional mix,
         including imports and embedded generation, which differs from the
-        national metered generation table. The map focuses on the approximate
-        DNO area's bounding-box centre. Featured-project distances are from that
-        reference point, not from your home. Postal, local-authority and
-        grid-region boundaries differ. A separate legacy postcode API remains
-        available and sends only an outward code to NESO and Postcodes.io; it is
-        not used by the region-selection journey.
+        national metered generation table. Selecting a region highlights its
+        approximate boundary. Featured projects are ordered from the DNO area's
+        approximate map centre, not from your home. Postal, local-authority and
+        grid-region boundaries differ. Typed-postcode lookup has been retired;
+        the API accepts only validated electricity-region IDs. Live regional
+        generation and demand in MW are not available from the connected feeds.
+        The page shows modelled regional percentages and labels national demand
+        as GB context. Neither is allocated to a particular station or customer.
       </p>
       <p>
         DESNZ 2024 local authority consumption is annual metered-consumption
@@ -149,8 +201,7 @@ export default function Methodology() {
         <a href="https://www.gov.uk/government/statistical-data-sets/stacked-electricity-consumption-statistics-data">
           Official annual dataset
         </a>
-        . Postcode geographic data contains OS and ONS open data; see{" "}
-        <a href="https://postcodes.io/about/">Postcodes.io attribution</a>.
+        .
       </p>
       <h2>Household tariffs and wholesale context</h2>
       <p>
@@ -239,14 +290,15 @@ export default function Methodology() {
         Cumulative meter totals and power readings are not interval energy.
       </p>
       <p>
-        The workspace lives in memory by default and survives navigation between
-        app pages. Reloading or closing clears unsaved state. Region choices,
-        task drafts and tariff metadata can be remembered with the rest of the
-        workspace. You can opt into local browser storage for rates, readings
-        and saved windows, or clear it. Authenticated meter linking is not
-        configured. In-page reminders work while My plan is open; calendar
-        exports let your calendar manage notifications. No push notification
-        service or automatic appliance control is connected.
+        The workspace lives in memory by default and survives switching between
+        tools and closing pop-ups on this single page. Reloading or closing the
+        site clears unsaved state. Region choices, task drafts and tariff
+        metadata can be remembered with the rest of the workspace. You can opt
+        into local browser storage for rates, readings and saved windows, or
+        clear it. Authenticated meter linking is not configured. In-page
+        reminders work while My plan is open; calendar exports let your calendar
+        manage notifications. No push notification service or automatic
+        appliance control is connected.
       </p>
       <h2>Attribution and source documentation</h2>
       <ul>

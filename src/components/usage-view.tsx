@@ -407,7 +407,7 @@ export function UsageView({
             >
               <svg viewBox="0 0 1000 190">
                 <line x1="30" x2="980" y1="158" y2="158" stroke="#45616a" />
-                {selected.map((r, i) => {
+                {selected.map((r) => {
                   const a = selected.length ? Date.parse(selected[0].from) : 0,
                     b = selected.length ? Date.parse(selected.at(-1)!.to) : 1;
                   const x = 30 + ((Date.parse(r.from) - a) / (b - a)) * 950,

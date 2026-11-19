@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Insights } from "@/types/insights";
 import { SeriesChart, localTime } from "./series-chart";
@@ -55,10 +54,12 @@ export function BritainInsights({
   view,
   data,
   error,
+  onLocal,
 }: {
   view: "demand" | "outlook";
   data: Insights | null;
   error: string;
+  onLocal?: () => void;
 }) {
   const now = Date.now(),
     start = now - 24 * 3600000;
@@ -84,7 +85,7 @@ export function BritainInsights({
         : data?.carbonForecast;
   return (
     <section
-      className="insight-drawer"
+      className="grid-insights"
       aria-label={
         view === "demand" ? "National demand insights" : "Forecast outlook"
       }
@@ -149,7 +150,11 @@ export function BritainInsights({
           <p className="insight-caption">
             Observed electricity demand varies across the day. This national
             series does not identify live household, business or city demand.{" "}
-            <Link href="/area">Explore annual local consumption ↗</Link>
+            {onLocal && (
+              <button className="text-button" onClick={onLocal}>
+                Explore annual local consumption ↗
+              </button>
+            )}
           </p>
         </>
       ) : (

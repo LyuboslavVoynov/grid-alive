@@ -5,7 +5,6 @@ export type AreaInterval = {
   mix: { fuel: string; perc: number }[];
 };
 export type AreaData = {
-  postcode: string;
   name: string;
   regionId: number;
   dno: string;
@@ -13,6 +12,5 @@ export type AreaData = {
   stale: boolean;
   intervals: AreaInterval[];
   point: [number, number] | null;
-  authorities: string[];
   warnings: string[];
 };

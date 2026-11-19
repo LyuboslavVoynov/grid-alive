@@ -58,7 +58,7 @@ it("loads a selected region without transmitting a postcode or using a geocoder"
   });
   const r = await getRegionArea("13");
   expect(r.name).toBe("London");
-  expect(r.postcode).toBe("");
+  expect(r).not.toHaveProperty("postcode");
   expect(r.point).not.toBeNull();
   expect(mocks.fetch).toHaveBeenCalledTimes(1);
   expect(mocks.fetch.mock.calls[0][0]).toMatch(/fw48h\/regionid\/13$/);

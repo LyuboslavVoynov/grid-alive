@@ -2,7 +2,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   type Tariff,
-  type CarbonRate,
   type TaskWindow,
   taskWindows,
   cheapest,
@@ -13,31 +12,31 @@ import { useEnergyWorkspace } from "./energy-workspace";
 import { gridRegions } from "@/lib/geo/regions";
 import { RegionSelect } from "./region-select";
 import { NumberChoice } from "./number-choice";
-import { useInsights } from "./britain-insights";
 import { SeriesChart, localTime } from "./series-chart";
-import type { AreaData } from "@/types/area";
+import {
+  planningCarbon,
+  type PlanningForecast,
+} from "@/lib/home/carbon-source";
 export function TaskPlanner({
   tariff,
+  forecast,
   onTariff,
   onPlan,
 }: {
   tariff: Tariff | null;
+  forecast: PlanningForecast;
   onTariff: () => void;
   onPlan?: (window: TaskWindow, kind: "price" | "carbon") => void;
 }) {
   const { state, setState, changeRegion } = useEnergyWorkspace();
   const regionId = state.regionId,
     setRegionId = changeRegion;
-  const { data, error } = useInsights();
   const { task, kwh, hours, deadline } = state.taskDraft;
   const updateDraft = (patch: Partial<typeof state.taskDraft>) =>
     setState((s) => ({ ...s, taskDraft: { ...s.taskDraft, ...patch } }));
   const setKwh = (value: string) => updateDraft({ kwh: value }),
     setHours = (value: string) => updateDraft({ hours: value });
-  const [area, setArea] = useState<AreaData | null>(null),
-    [regionError, setRegionError] = useState(""),
-    [regionBusy, setBusy] = useState(false),
-    [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const refreshClock = () => {
       if (!document.hidden) setNow(Date.now());
@@ -49,19 +48,23 @@ export function TaskPlanner({
       document.removeEventListener("visibilitychange", refreshClock);
     };
   }, []);
-  const carbon: CarbonRate[] = useMemo(
+  const carbonSource = useMemo(
     () =>
-      area
-        ? area.intervals
-            .filter((r) => r.intensity !== null)
-            .map((r) => ({ from: r.from, to: r.to, intensity: r.intensity! }))
-        : (data?.carbonForecast ?? []).map((p) => ({
-            from: p.at,
-            to: new Date(Date.parse(p.at) + 1800000).toISOString(),
-            intensity: p.value,
-          })),
-    [area, data],
+      planningCarbon(
+        regionId,
+        forecast.area,
+        forecast.national,
+        forecast.regionalLoading || !!forecast.regionalError,
+      ),
+    [
+      regionId,
+      forecast.area,
+      forecast.national,
+      forecast.regionalLoading,
+      forecast.regionalError,
+    ],
   );
+  const carbon = carbonSource.rates;
   const windows = useMemo(
     () =>
       taskWindows(
@@ -84,34 +87,6 @@ export function TaskPlanner({
     best?.cost !== undefined
       ? baseline.cost - best.cost
       : null;
-  useEffect(() => {
-    setArea(null);
-    setRegionError("");
-    if (!regionId) {
-      setBusy(false);
-      return;
-    }
-    const controller = new AbortController();
-    setBusy(true);
-    fetch("/api/area?region=" + encodeURIComponent(regionId), {
-      signal: controller.signal,
-    })
-      .then(async (r) => {
-        const v = await r.json();
-        if (!r.ok) throw Error(v.error);
-        if (v.stale)
-          throw Error("Regional data is delayed. National forecast retained.");
-        if (!controller.signal.aborted) setArea(v);
-      })
-      .catch((e) => {
-        if (!controller.signal.aborted)
-          setRegionError(e instanceof Error ? e.message : "Region unavailable");
-      })
-      .finally(() => {
-        if (!controller.signal.aborted) setBusy(false);
-      });
-    return () => controller.abort();
-  }, [regionId]);
   function preset(value: string) {
     const values: Record<string, [string, string]> = {
       Laundry: ["1", "1.5"],
@@ -158,7 +133,7 @@ export function TaskPlanner({
                 onPlan(
                   {
                     ...w,
-                    assumptions: `${task} · ${kwh} kWh over ${hours} hours · ${tariff?.name ?? "tariff not selected"}`,
+                    assumptions: `${task} · ${kwh} kWh over ${hours} hours · ${tariff?.name ?? "tariff not selected"} · ${w.carbon === null ? "carbon unavailable" : carbonSource.label}`,
                   },
                   kind === "best" ? "price" : "carbon",
                 )
@@ -356,26 +331,23 @@ export function TaskPlanner({
           onChange={setRegionId}
           national
         />
-        {regionBusy && (
+        {forecast.regionalLoading && (
           <p className="small" role="status">
-            Loading regional forecast…
+            Loading selected regional forecast…
           </p>
         )}
         <p className="small">
-          {area
-            ? `Using ${area.name} regional forecast.`
-            : "Using the Great Britain forecast."}{" "}
-          No address or postcode is needed.
+          {carbonSource.label}. No address or postcode is needed.
         </p>
       </div>
-      {regionError && (
+      {forecast.regionalError && (
         <p role="alert" className="form-message">
-          {regionError}
+          {forecast.regionalError}
         </p>
       )}
-      {error && (
+      {forecast.error && (
         <p className="small" role="status">
-          {error}
+          {forecast.error}
         </p>
       )}
       <p className="small">

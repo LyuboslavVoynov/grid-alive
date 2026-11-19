@@ -1,13 +1,7 @@
 import { expect, it } from "vitest";
-import { outwardCode, parseArea } from "../src/lib/data/area";
+import { parseArea } from "../src/lib/data/area";
 import { distanceKm } from "../src/lib/geo/distance";
 import annual from "../data/annual-consumption.json";
-it("accepts outward and complete GB postcodes while withholding inward code", () => {
-  expect(outwardCode("sw1a 1aa")).toBe("SW1A");
-  expect(outwardCode("EH1")).toBe("EH1");
-  expect(() => outwardCode("BT1")).toThrow(/Northern Ireland/);
-  expect(() => outwardCode("../api")).toThrow();
-});
 it("keeps modelled solar and imports separate and missing intensity null", () => {
   const r = parseArea(
     {
@@ -28,7 +22,6 @@ it("keeps modelled solar and imports separate and missing intensity null", () =>
         ],
       },
     },
-    "SW1A",
     "2026-11-11T12:10Z",
   );
   expect(r.intervals[0].intensity).toBeNull();
