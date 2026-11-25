@@ -1,10 +1,12 @@
 # GRID / ALIVE — delivery plan
 
+Historical delivery plan, updated 11 November 2026. The one-page Regional Balance interface supersedes its former page layout and standalone prototype; see README.md and the 16 November sprint log for the current implementation.
+
 Updated 11 November 2026. Owner decisions: public website, no sign-in; GitHub repository under LyuboslavVoynov; initial map release delivered; the approved v2 storyboard now includes costs and household tools. Hosting decision: keep the application local for now; do not deploy.
 
 ## Product baseline
 
-Preserve the approved top-down night-map design, cyan coastal and energy lighting, warm city lights, restrained overlays, and animated turbines. The existing dist/ motion study is a design reference, not production architecture or a source of measured data. Keep it runnable throughout migration.
+Preserve the approved top-down night-map design, cyan coastal and energy lighting, warm city lights, restrained overlays, and animated turbines. The original motion study informed the design. Its standalone dist/ runtime was retired after consolidation into the production application; visual references remain in design/.
 
 Initial release: GB generation by fuel in GW and percentages; clearly defined demand and imports/exports; national carbon intensity; interactive map and licensed asset locations; conceptual animated energy activity; interconnector measurements; historical replay of the preceding 24 hours; mobile, keyboard, reduced-motion and outage support. No prices, household tariffs, accounts, payments, or database unless a concrete need appears.
 

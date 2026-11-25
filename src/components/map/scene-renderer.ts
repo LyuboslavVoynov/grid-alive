@@ -1,30 +1,52 @@
-import type { Map as LibreMap } from "maplibre-gl";
-import { offshoreAssets } from "@/lib/geo/assets";
+import { sourceMarkers, type SourceMarker } from "@/lib/geo/source-map";
 import {
-  cities,
-  connectionPaths,
-  type Coast,
-  type Point,
-} from "@/lib/geo/scene";
+  countryCorridors,
+  geographicArc,
+  projectArc,
+  pointAlong,
+  transferState,
+  type AtlasRoute,
+  type TransferDirection,
+} from "@/lib/geo/quiet-atlas";
+import type { Map as LibreMap } from "maplibre-gl";
+import { cities, type Coast, type Point } from "@/lib/geo/scene";
+import {
+  settlementLights,
+  sourceFuels,
+  type SourceFuel,
+} from "@/lib/geo/night-atlas";
+
 export type SceneSettings = {
   playing: boolean;
   speed: number;
   wind: boolean;
   connections: boolean;
   cities: boolean;
-  windActivity: number;
+  sourceFuel: SourceFuel;
+  allSources?: boolean;
+  selectedId: string | null;
   flows: Record<string, number>;
+  country: string;
+  direction: TransferDirection;
+  stale: boolean;
 };
 export class SceneRenderer {
   private ctx: CanvasRenderingContext2D;
   private backdrop = document.createElement("canvas");
+  private lights = settlementLights().filter((_, i) => i % 3 === 0);
   private settings: SceneSettings;
-  private frame = 0;
   private elapsed = 0;
   private last = 0;
-  private seed = 7143;
   private dirty = true;
+  private geometryDirty = true;
   private disposed = false;
+  private width = 0;
+  private height = 0;
+  private dpr = 1;
+  private route: AtlasRoute | null = null;
+  private progress = 0;
+  private markers: SourceMarker[] = [];
+
   constructor(
     private canvas: HTMLCanvasElement,
     private map: LibreMap,
@@ -34,16 +56,10 @@ export class SceneRenderer {
     this.ctx = canvas.getContext("2d")!;
     this.settings = settings;
     this.resize();
-    this.redraw();
-    this.schedule();
   }
-  private random() {
-    this.seed = (this.seed * 1664525 + 1013904223) >>> 0;
-    return this.seed / 4294967296;
-  }
-  private project(p: Point) {
+  private project(p: Point): Point {
     const q = this.map.project(p);
-    return [q.x, q.y] as Point;
+    return [q.x, q.y];
   }
   private dot(
     c: CanvasRenderingContext2D,
@@ -63,267 +79,251 @@ export class SceneRenderer {
     y: number,
     r: number,
     color: string,
-    power: number,
+    alpha: number,
   ) {
-    const g = c.createRadialGradient(x, y, 0, x, y, r);
-    g.addColorStop(0, color);
-    g.addColorStop(1, "transparent");
+    const gradient = c.createRadialGradient(x, y, 0, x, y, r);
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(1, "transparent");
     c.save();
-    c.globalAlpha = power;
-    c.fillStyle = g;
+    c.globalAlpha = alpha;
+    c.fillStyle = gradient;
     c.fillRect(x - r, y - r, r * 2, r * 2);
     c.restore();
   }
-  private path(rings: Point[][]) {
-    const p = new Path2D();
-    for (const ring of rings) {
-      ring.forEach((ll, i) => {
-        const [x, y] = this.project(ll);
-        if (i) p.lineTo(x, y);
-        else p.moveTo(x, y);
-      });
-      p.closePath();
-    }
-    return p;
-  }
   resize = () => {
     const { width, height } = this.canvas.getBoundingClientRect();
-    if (width < 1 || height < 1) return;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    this.canvas.width = Math.round(width * dpr);
-    this.canvas.height = Math.round(height * dpr);
+    if (width < 1 || height < 1 || this.disposed) return;
+    this.width = width;
+    this.height = height;
+    this.dpr = Math.min(devicePixelRatio || 1, 2);
+    this.canvas.width = Math.round(width * this.dpr);
+    this.canvas.height = Math.round(height * this.dpr);
     this.backdrop.width = this.canvas.width;
     this.backdrop.height = this.canvas.height;
-    this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    this.dirty = true;
+    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
     this.redraw();
   };
   redraw = () => {
     if (this.disposed) return;
     this.dirty = true;
-    this.draw();
+    this.geometryDirty = true;
+    this.map.triggerRepaint();
   };
   update(settings: SceneSettings) {
+    if (settings.cities !== this.settings.cities) this.dirty = true;
+    if (
+      settings.allSources !== this.settings.allSources ||
+      settings.sourceFuel !== this.settings.sourceFuel ||
+      settings.selectedId !== this.settings.selectedId ||
+      settings.country !== this.settings.country
+    )
+      this.geometryDirty = true;
+    if (
+      settings.country !== this.settings.country ||
+      settings.direction !== this.settings.direction
+    )
+      this.progress = 0;
     this.settings = settings;
-    this.dirty = true;
-    this.draw();
-    this.schedule();
+    this.last = 0;
+    this.map.triggerRepaint();
+  }
+  private landPath() {
+    const path = new Path2D();
+    for (const ring of this.coasts.find((c) => c.name === "United Kingdom")
+      ?.rings ?? []) {
+      ring.forEach((p, i) => {
+        const [x, y] = this.project(p);
+        if (i) path.lineTo(x, y);
+        else path.moveTo(x, y);
+      });
+      path.closePath();
+    }
+    return path;
   }
   private bake() {
     const c = this.backdrop.getContext("2d")!;
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    c.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const { width: w, height: h } = this.canvas.getBoundingClientRect();
-    c.clearRect(0, 0, w, h);
-    this.seed = 7143;
-    const uk = this.coasts.find((x) => x.name === "United Kingdom");
-    if (!uk) return;
-    const path = this.path(uk.rings);
-    c.save();
-    c.clip(path);
-    for (let i = 0; i < Math.min(12000, Math.round((w * h) / 80)); i++) {
-      const x = this.random() * w,
-        y = this.random() * h;
-      c.globalAlpha = this.random() * 0.13;
-      c.fillStyle = this.random() > 0.65 ? "#829895" : "#010b12";
-      c.fillRect(x, y, 1.2, 0.8);
-    }
-    c.globalAlpha = 1;
+    c.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    c.clearRect(0, 0, this.width, this.height);
     if (this.settings.cities) {
-      const corridors = [
-        [0, 1],
-        [0, 8],
-        [0, 10],
-        [1, 2],
-        [1, 11],
-        [1, 12],
-        [2, 3],
-        [2, 4],
-        [4, 5],
-        [5, 7],
-        [7, 6],
-        [8, 9],
-        [8, 13],
-        [7, 14],
-        [6, 15],
-        [0, 16],
-      ];
-      for (const [from, to] of corridors) {
-        const a = this.project([cities[from][0], cities[from][1]]),
-          b = this.project([cities[to][0], cities[to][1]]);
-        for (let j = 0; j < 100; j++) {
-          const t = j / 100;
-          this.dot(
-            c,
-            a[0] + (b[0] - a[0]) * t + (this.random() - 0.5) * 2,
-            b[1] * t + a[1] * (1 - t) + (this.random() - 0.5) * 2,
-            0.2 + this.random() * 0.3,
-            "#c39b60",
-          );
-        }
-      }
+      c.save();
+      c.clip(this.landPath());
       for (const [lon, lat, power] of cities) {
         const [x, y] = this.project([lon, lat]);
-        this.glow(c, x, y, 35 * Math.sqrt(power), "#ed9f50", 0.22);
-        this.glow(c, x, y, 13 * power, "#ffc777", 0.4);
-        for (let j = 0; j < 220 * power; j++) {
-          const a = this.random() * Math.PI * 2,
-            r = Math.pow(this.random(), 1.8) * 24 * Math.sqrt(power);
-          this.dot(
-            c,
-            x + Math.cos(a) * r,
-            y + Math.sin(a) * r * 0.7,
-            0.2 + this.random() * 0.65,
-            this.random() > 0.35 ? "#edbd78" : "#856c4b",
-          );
-        }
-        this.dot(c, x, y, 1.2, "#ffe2ab");
+        const edge = this.project([lon + 0.22 * Math.sqrt(power), lat]);
+        this.glow(c, x, y, Math.max(3, Math.abs(edge[0] - x)), "#f1ad65", 0.1);
       }
-    }
-    c.restore();
-    if (this.settings.cities) {
-      c.font = "8px Arial";
-      c.fillStyle = "#a1b7b9";
-      for (const index of [0, 2, 7]) {
-        const city = cities[index],
-          p = this.project([city[0], city[1]]);
-        c.fillText(city[3].toUpperCase(), p[0] + 10, p[1] - 8);
+      for (const light of this.lights) {
+        const [x, y] = this.project(light.point);
+        if (x < 0 || y < 0 || x > this.width || y > this.height) continue;
+        c.globalAlpha = light.brightness * 0.65;
+        this.dot(c, x, y, light.radius, "#f6c786");
       }
+      c.restore();
     }
     this.dirty = false;
   }
-  private curve(points: Point[], t: number) {
-    const [a, b, c] = points,
-      q = 1 - t;
-    return [
-      q * q * a[0] + 2 * q * t * b[0] + t * t * c[0],
-      q * q * a[1] + 2 * q * t * b[1] + t * t * c[1],
-    ] as Point;
+  private projectRoutes() {
+    this.markers = sourceMarkers(
+      this.settings.allSources ? null : this.settings.sourceFuel,
+      (p) => this.project(p),
+      this.width,
+      this.height,
+    );
+    const corridor = countryCorridors.find(
+      (c) => c.country === this.settings.country,
+    );
+    this.route = corridor
+      ? projectArc(geographicArc(corridor.from, corridor.to), (p) =>
+          this.project(p),
+        )
+      : null;
+    this.geometryDirty = false;
   }
-  private flow(points: Point[], index: number, value?: number) {
-    const c = this.ctx,
-      [a, b, d] = points.map((p) => this.project(p));
+  private drawTransfer() {
+    const route = this.route;
+    if (!route) return;
+    const c = this.ctx;
+    const state = transferState(
+      this.settings.flows,
+      this.settings.country,
+      this.settings.direction,
+      this.settings.stale,
+    );
+    const color = this.settings.direction === "import" ? "#9ae4dd" : "#edb685";
     c.beginPath();
-    c.moveTo(...a);
-    c.quadraticCurveTo(...b, ...d);
-    c.strokeStyle = value === undefined ? "#50d8d528" : "#8bdfeb65";
-    c.lineWidth = 0.7;
+    route.points.forEach((p, i) => (i ? c.lineTo(...p) : c.moveTo(...p)));
+    c.strokeStyle = color;
+    c.lineWidth = 1;
+    c.globalAlpha = state.active ? 0.45 : 0.16;
     c.stroke();
-    const direction = value !== undefined && value < 0 ? -1 : 1;
-    const strength =
-      value === undefined
-        ? this.settings.windActivity
-        : Math.min(Math.abs(value) / 1500, 1);
-    if (strength <= 0) return;
-    const count = Math.max(1, Math.round(2 + strength * 4));
-    for (let i = 0; i < count; i++) {
-      const raw =
-        (this.elapsed * (0.035 + strength * 0.035) + i / count + index * 0.17) %
-        1;
-      const t = direction > 0 ? raw : 1 - raw;
-      for (let k = 0; k < 12; k++) {
-        const u = t - direction * k * 0.004;
-        if (u < 0 || u > 1) continue;
-        const [x, y] = this.curve([a, b, d], u);
-        c.globalAlpha = (1 - k / 12) * 0.85;
-        this.dot(c, x, y, k === 0 ? 1.5 : 0.8, "#8df5e5");
+    c.globalAlpha = 0.7;
+    for (const p of [route.points[0], route.points.at(-1)!])
+      this.dot(c, ...p, 3, color);
+    // Missing, partial, stale and zero readings never imply flowing power.
+    if (state.active) {
+      const sign = this.settings.direction === "import" ? 1 : -1;
+      const head = sign === 1 ? this.progress : 1 - this.progress;
+      for (let j = 9; j >= 0; j--) {
+        const t = head - (sign * j * 2) / Math.max(1, route.length);
+        if (t < 0 || t > 1) continue;
+        c.globalAlpha = (1 - j / 10) * 0.95;
+        this.dot(c, ...pointAlong(route, t), j === 0 ? 2.5 : 1.1, color);
       }
-      c.globalAlpha = 1;
     }
-  }
-  private turbine(x: number, y: number, index: number) {
-    const c = this.ctx,
-      size = 4.5;
-    c.save();
-    c.translate(x, y);
-    c.strokeStyle = "#9bd9d7";
-    c.lineWidth = 0.8;
-    c.beginPath();
-    c.moveTo(0, 0);
-    c.lineTo(0, 8);
-    c.stroke();
-    c.rotate(this.elapsed * 0.8 + index * 1.7);
-    for (let i = 0; i < 3; i++) {
-      c.rotate((Math.PI * 2) / 3);
-      c.beginPath();
-      c.moveTo(-0.6, 0);
-      c.lineTo(-0.4, -size * 0.4);
-      c.lineTo(0.5, -size);
-      c.lineTo(1.1, -size * 0.25);
-      c.closePath();
-      c.fillStyle = "#b9e9e3";
-      c.fill();
-    }
-    this.dot(c, 0, 0, 1, "#effff9");
-    c.restore();
+    c.globalAlpha = 1;
   }
   private draw() {
-    if (
-      this.disposed ||
-      !this.canvas.width ||
-      !this.canvas.height ||
-      !this.backdrop.width ||
-      !this.backdrop.height
-    )
-      return;
+    if (this.disposed || !this.width || !this.height) return;
     if (this.dirty) this.bake();
-    const { width: w, height: h } = this.canvas.getBoundingClientRect();
-    this.ctx.clearRect(0, 0, w, h);
-    this.ctx.drawImage(this.backdrop, 0, 0, w, h);
+    if (this.geometryDirty) this.projectRoutes();
+    const c = this.ctx;
+    c.clearRect(0, 0, this.width, this.height);
+    c.drawImage(this.backdrop, 0, 0, this.width, this.height);
     if (this.settings.wind) {
-      offshoreAssets.slice(0, 14).forEach((farm, fi) => {
-        const [x, y] = this.project(farm.point);
-        const nearest = [...cities].sort(
-          (a, b) =>
-            Math.hypot(a[0] - farm.point[0], a[1] - farm.point[1]) -
-            Math.hypot(b[0] - farm.point[0], b[1] - farm.point[1]),
-        )[0];
-        const end: Point = [nearest[0], nearest[1]];
-        const middle: Point = [
-          (farm.point[0] + end[0]) / 2 + 0.3,
-          (farm.point[1] + end[1]) / 2 + 0.15,
-        ];
-        this.flow([farm.point, middle, end], fi);
-        this.glow(this.ctx, x, y, 25, "#2ea8ba", 0.12);
-        for (let j = 0; j < 3; j++)
-          this.turbine(x + (j - 1) * 11, y + (j % 2) * 7, j + fi);
+      this.markers.forEach((marker) => {
+        const asset = marker.assets[0];
+        const [x, y] = marker.screen;
+        const color =
+          marker.assets.length > 1
+            ? "#b9d9dc"
+            : (sourceFuels.find((f) => f.key === asset.fuel)?.color ??
+              "#a2b9c2");
+        c.save();
+        c.translate(x, y);
+        c.strokeStyle = color;
+        c.lineWidth = 1;
+        if (marker.assets.some((a) => a.id === this.settings.selectedId)) {
+          c.beginPath();
+          c.arc(0, 0, 16, 0, Math.PI * 2);
+          c.globalAlpha = 0.35;
+          c.stroke();
+          c.globalAlpha = 1;
+        }
+        if (marker.assets.length > 1) {
+          c.beginPath();
+          c.arc(0, 0, 11, 0, Math.PI * 2);
+          c.fillStyle = "#0d2732";
+          c.fill();
+          c.stroke();
+          c.fillStyle = color;
+          c.font = "11px Arial";
+          c.textAlign = "center";
+          c.textBaseline = "middle";
+          c.fillText(String(marker.assets.length), 0, 0);
+        } else if (asset.fuel === "wind") {
+          // Plan-view rotor symbol: no upright tower or perspective offset.
+          const phase = [...asset.id].reduce(
+            (sum, char) => sum + char.charCodeAt(0),
+            0,
+          );
+          c.rotate(this.elapsed * 0.35 + phase);
+          for (let blade = 0; blade < 3; blade++) {
+            c.rotate((Math.PI * 2) / 3);
+            c.beginPath();
+            c.moveTo(0, 0);
+            c.lineTo(asset.id === this.settings.selectedId ? 7 : 6, 0);
+            c.stroke();
+          }
+        } else c.strokeRect(-3, -3, 6, 6);
+        if (marker.assets.length === 1) this.dot(c, 0, 0, 1.3, color);
+        c.restore();
       });
     }
-    if (this.settings.connections)
-      connectionPaths.forEach((p, i) => {
-        const value = this.settings.flows[p.id];
-        if (value !== undefined) this.flow(p.points, i, value);
-      });
+    if (this.settings.connections && !this.settings.wind) this.drawTransfer();
   }
-  private tick = (t: number) => {
-    this.frame = 0;
-    const dt = Math.min((t - this.last) / 1000, 0.06);
-    this.last = t;
-    if (this.settings.playing && !document.hidden) {
-      this.elapsed += dt * this.settings.speed;
-      this.draw();
-      this.schedule();
+
+  /** One render clock: the overlay always uses MapLibre's displayed camera. */
+  render = () => {
+    if (this.disposed || document.hidden) {
+      this.last = 0;
+      return;
     }
-  };
-  private schedule() {
+    const now = performance.now();
+    if (this.geometryDirty) this.projectRoutes();
+    if (this.settings.playing && this.last) {
+      const dt = Math.min((now - this.last) / 1000, 0.06) * this.settings.speed;
+      this.elapsed += dt;
+      const state = transferState(
+        this.settings.flows,
+        this.settings.country,
+        this.settings.direction,
+        this.settings.stale,
+      );
+      if (
+        this.settings.connections &&
+        !this.settings.wind &&
+        state.active &&
+        this.route
+      )
+        this.progress =
+          (this.progress + dt / Math.max(4, this.route.length / 25)) % 1;
+    }
+    this.last = now;
+    this.draw();
+    const activeTransfer =
+      this.settings.connections &&
+      !this.settings.wind &&
+      transferState(
+        this.settings.flows,
+        this.settings.country,
+        this.settings.direction,
+        this.settings.stale,
+      ).active;
     if (
-      !this.frame &&
       this.settings.playing &&
-      !document.hidden &&
-      !this.disposed
-    ) {
-      this.last = performance.now();
-      this.frame = requestAnimationFrame(this.tick);
-    }
-  }
+      ((this.settings.wind &&
+        this.markers.some(
+          (m) => m.assets.length === 1 && m.assets[0].fuel === "wind",
+        )) ||
+        activeTransfer)
+    )
+      this.map.triggerRepaint();
+  };
   visibility = () => {
-    if (!document.hidden) {
-      this.draw();
-      this.schedule();
-    }
+    this.last = 0;
+    if (!document.hidden) this.map.triggerRepaint();
   };
   destroy() {
     this.disposed = true;
-    cancelAnimationFrame(this.frame);
   }
 }

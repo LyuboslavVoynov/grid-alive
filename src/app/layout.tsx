@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "GRID / ALIVE — Britain, electrified",
   description:
-    "A cinematic, top-down view of Great Britain’s electricity system. Explore generation, carbon intensity and international connections.",
+    "Explore Britain’s regional electricity mix, understand national demand and plan household energy use from one map.",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

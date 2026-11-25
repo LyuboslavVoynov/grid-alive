@@ -1,4 +1,4 @@
-import GridApp from "@/components/grid-app";
+import BalanceApp from "@/components/balance-app";
 export default function Page() {
-  return <GridApp />;
+  return <BalanceApp />;
 }

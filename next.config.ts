@@ -1,7 +1,19 @@
 import type { NextConfig } from "next";
 const config: NextConfig = {
   poweredByHeader: false,
+  devIndicators: false,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: "/area", destination: "/?tool=demand", permanent: false },
+      { source: "/home", destination: "/?tool=energy", permanent: false },
+      {
+        source: "/methodology",
+        destination: "/?tool=methodology",
+        permanent: false,
+      },
+    ];
+  },
   async headers() {
     return [
       {

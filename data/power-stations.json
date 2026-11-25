@@ -1,0 +1,1226 @@
+[
+  {
+    "id": "dukes-GAS-000185",
+    "name": "SUTTON BRIDGE POWER GENERATION",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 819,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.19314,
+      52.75718
+    ]
+  },
+  {
+    "id": "dukes-GAS-000377",
+    "name": "Severn Power Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 850,
+    "turbines": null,
+    "country": "Wales",
+    "region": "Wales",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.97518,
+      51.54777
+    ]
+  },
+  {
+    "id": "dukes-GAS-000197",
+    "name": "Seabank Power Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1205,
+    "turbines": null,
+    "country": "England",
+    "region": "South West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.66998,
+      51.53912
+    ]
+  },
+  {
+    "id": "dukes-NUC-000126",
+    "name": "Hartlepool",
+    "fuel": "nuclear",
+    "technology": "AGR",
+    "capacityMw": 1185,
+    "turbines": null,
+    "country": "England",
+    "region": "North East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.19912,
+      54.67212
+    ]
+  },
+  {
+    "id": "dukes-NUC-000127",
+    "name": "Heysham 1",
+    "fuel": "nuclear",
+    "technology": "AGR",
+    "capacityMw": 1060,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.89494,
+      54.04567
+    ]
+  },
+  {
+    "id": "dukes-NUC-000131",
+    "name": "Heysham 2",
+    "fuel": "nuclear",
+    "technology": "AGR",
+    "capacityMw": 1240,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.89494,
+      54.04567
+    ]
+  },
+  {
+    "id": "dukes-NUC-000132",
+    "name": "Torness",
+    "fuel": "nuclear",
+    "technology": "AGR",
+    "capacityMw": 1200,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.4101,
+      55.96822
+    ]
+  },
+  {
+    "id": "dukes-NUC-000159",
+    "name": "Sizewell B",
+    "fuel": "nuclear",
+    "technology": "PWR",
+    "capacityMw": 1198,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      1.61986,
+      52.21492
+    ]
+  },
+  {
+    "id": "dukes-GAS-000198",
+    "name": "Saltend Power Station",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1200,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.24337,
+      53.73567
+    ]
+  },
+  {
+    "id": "dukes-OIL-000168",
+    "name": "Indian Queens Power Ltd",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 140,
+    "turbines": null,
+    "country": "England",
+    "region": "South West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -4.93112,
+      50.38838
+    ]
+  },
+  {
+    "id": "dukes-GAS-000169",
+    "name": "EP SHB LTD",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1400,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.14558,
+      53.60301
+    ]
+  },
+  {
+    "id": "dukes-GAS-000376",
+    "name": "EP Langage Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 905,
+    "turbines": null,
+    "country": "England",
+    "region": "South West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -4.01176,
+      50.38822
+    ]
+  },
+  {
+    "id": "dukes-GAS-000941",
+    "name": "Carrington Power",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 884,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.40354,
+      53.43343
+    ]
+  },
+  {
+    "id": "dukes-GAS-000178",
+    "name": "Rocksavage Power Company Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 810,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.72679,
+      53.3157
+    ]
+  },
+  {
+    "id": "dukes-GAS-000222",
+    "name": "Coryton Energy Company Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 800,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.50536,
+      51.51237
+    ]
+  },
+  {
+    "id": "dukes-GAS-000250",
+    "name": "Spalding Energy Company Ltd",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 950,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.13335,
+      52.80721
+    ]
+  },
+  {
+    "id": "dukes-GAS-001280",
+    "name": "Spalding Expansion OCGT",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 299,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.13335,
+      52.80721
+    ]
+  },
+  {
+    "id": "dukes-GAS-000354",
+    "name": "Marchwood Power",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 898,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.4375,
+      50.89798
+    ]
+  },
+  {
+    "id": "dukes-GAS-000153",
+    "name": "Fellside CHP",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 105,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -3.4933,
+      54.42033
+    ]
+  },
+  {
+    "id": "dukes-GAS-000151",
+    "name": "Little Barford",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 735,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.26835,
+      52.20371
+    ]
+  },
+  {
+    "id": "dukes-GAS-000170",
+    "name": "Kings Lynn",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 395,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.37975,
+      52.72783
+    ]
+  },
+  {
+    "id": "dukes-GAS-000176",
+    "name": "Didcot B",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1490,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.26949,
+      51.62495
+    ]
+  },
+  {
+    "id": "dukes-GAS-000210",
+    "name": "Cheshire",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 60,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.91583,
+      53.29895
+    ]
+  },
+  {
+    "id": "dukes-GAS-000212",
+    "name": "Great Yarmouth",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 420,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      1.73323,
+      52.5839
+    ]
+  },
+  {
+    "id": "dukes-GAS-000282",
+    "name": "Hythe",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 53,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.38223,
+      50.84992
+    ]
+  },
+  {
+    "id": "dukes-GAS-000375",
+    "name": "Staythorpe",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1828,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.85887,
+      53.07315
+    ]
+  },
+  {
+    "id": "dukes-GAS-000453",
+    "name": "Pembroke",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 2325,
+    "turbines": null,
+    "country": "Wales",
+    "region": "Wales",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -4.98905,
+      51.66193
+    ]
+  },
+  {
+    "id": "dukes-GAS-001275",
+    "name": "Grimsby",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.1027,
+      53.58212
+    ]
+  },
+  {
+    "id": "dukes-OIL-000112",
+    "name": "Didcot GT",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 100,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.26498,
+      51.53649
+    ]
+  },
+  {
+    "id": "dukes-OIL-000124",
+    "name": "Cowes",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 140,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.31444,
+      50.73958
+    ]
+  },
+  {
+    "id": "dukes-OIL-000301",
+    "name": "Little Barford GT",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 17,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.25962,
+      52.19693
+    ]
+  },
+  {
+    "id": "dukes-GAS-000026",
+    "name": "Wilton International",
+    "fuel": "gas",
+    "technology": "Conventional steam",
+    "capacityMw": 120,
+    "turbines": null,
+    "country": "England",
+    "region": "North East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.10063,
+      54.54814
+    ]
+  },
+  {
+    "id": "dukes-GAS-000120",
+    "name": "Peterhead",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1180,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.78837,
+      57.47791
+    ]
+  },
+  {
+    "id": "dukes-GAS-000123",
+    "name": "Keadby",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 732,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.74317,
+      53.59501
+    ]
+  },
+  {
+    "id": "dukes-GAS-000152",
+    "name": "Medway",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 755,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.68976,
+      51.43972
+    ]
+  },
+  {
+    "id": "dukes-GAS-000182",
+    "name": "Burghfield",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.0395,
+      51.39201
+    ]
+  },
+  {
+    "id": "dukes-GAS-000183",
+    "name": "Chickerell",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "South West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.5096,
+      50.62698
+    ]
+  },
+  {
+    "id": "dukes-GAS-001553",
+    "name": "Keadby 2",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 840,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.75238,
+      53.59488
+    ]
+  },
+  {
+    "id": "dukes-OIL-000012",
+    "name": "Bowmore",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 6,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -6.27326,
+      55.76084
+    ]
+  },
+  {
+    "id": "dukes-OIL-000029",
+    "name": "Kirkwall",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 16,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.96435,
+      58.98241
+    ]
+  },
+  {
+    "id": "dukes-OIL-000030",
+    "name": "Stornoway",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 23,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -6.37358,
+      58.20314
+    ]
+  },
+  {
+    "id": "dukes-OIL-000034",
+    "name": "Lerwick",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 67,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.16472,
+      60.16693
+    ]
+  },
+  {
+    "id": "dukes-OIL-000035",
+    "name": "Tiree",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 2.5,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -6.87568,
+      56.49325
+    ]
+  },
+  {
+    "id": "dukes-OIL-000113",
+    "name": "Loch Carnan",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 11.2,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -7.27052,
+      57.36361
+    ]
+  },
+  {
+    "id": "dukes-OIL-000130",
+    "name": "Barra",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 2.5,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -7.40949,
+      57.00377
+    ]
+  },
+  {
+    "id": "dukes-OIL-000209",
+    "name": "Arnish",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 10,
+    "turbines": null,
+    "country": "Scotland",
+    "region": "Scotland",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -6.38736,
+      58.18775
+    ]
+  },
+  {
+    "id": "dukes-GAS-000502",
+    "name": "West Burton CCGT",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1332,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.81184,
+      53.36272
+    ]
+  },
+  {
+    "id": "dukes-GAS-000136",
+    "name": "Killingholme",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 619,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.23514,
+      53.66181
+    ]
+  },
+  {
+    "id": "dukes-GAS-000162",
+    "name": "Connahs Quay",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1380,
+    "turbines": null,
+    "country": "Wales",
+    "region": "Wales",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -3.06633,
+      53.20727
+    ]
+  },
+  {
+    "id": "dukes-GAS-000179",
+    "name": "Cottam Development Centre",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 445,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.78583,
+      53.30513
+    ]
+  },
+  {
+    "id": "dukes-GAS-000186",
+    "name": "Enfield",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 408,
+    "turbines": null,
+    "country": "England",
+    "region": "London",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.02278,
+      51.66278
+    ]
+  },
+  {
+    "id": "dukes-GAS-000404",
+    "name": "Grain",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1404,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.70782,
+      51.44298
+    ]
+  },
+  {
+    "id": "dukes-OIL-000119",
+    "name": "Taylors Lane",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 144,
+    "turbines": null,
+    "country": "England",
+    "region": "London",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.25744,
+      51.54604
+    ]
+  },
+  {
+    "id": "dukes-OIL-000452",
+    "name": "Grain (OCGT)",
+    "fuel": "oil",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.70758,
+      51.44309
+    ]
+  },
+  {
+    "id": "dukes-GAS-000138",
+    "name": "Rye House",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 715,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.00862,
+      51.76268
+    ]
+  },
+  {
+    "id": "dukes-GAS-000195",
+    "name": "Damhead Creek",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 805,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      0.60149,
+      51.42523
+    ]
+  },
+  {
+    "id": "dukes-GAS-000196",
+    "name": "Shoreham",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 420,
+    "turbines": null,
+    "country": "England",
+    "region": "South East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.23079,
+      50.82968
+    ]
+  },
+  {
+    "id": "dukes-GAS-000221",
+    "name": "Blackburn",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 60,
+    "turbines": null,
+    "country": "England",
+    "region": "North West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -2.537,
+      53.718
+    ]
+  },
+  {
+    "id": "dukes-GAS-000249",
+    "name": "VPI",
+    "fuel": "gas",
+    "technology": "CCGT",
+    "capacityMw": 1252,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.23675,
+      53.63779
+    ]
+  },
+  {
+    "id": "dukes-XXX-001661",
+    "name": "VPI Immingham B",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 299,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.23615,
+      53.64019
+    ]
+  },
+  {
+    "id": "dukes-GAS-000144",
+    "name": "Peterborough Power Station",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 245,
+    "turbines": null,
+    "country": "England",
+    "region": "East of England",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.25413,
+      52.57789
+    ]
+  },
+  {
+    "id": "dukes-XXX-001525",
+    "name": "Croydon",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "London",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.11625,
+      51.37642
+    ]
+  },
+  {
+    "id": "dukes-XXX-001526",
+    "name": "Derby",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.46413,
+      52.88402
+    ]
+  },
+  {
+    "id": "dukes-XXX-001527",
+    "name": "Exeter",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "South West",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -3.5242,
+      50.70662
+    ]
+  },
+  {
+    "id": "dukes-XXX-001528",
+    "name": "Heartlands",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 100,
+    "turbines": null,
+    "country": "England",
+    "region": "West Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.80946,
+      52.50977
+    ]
+  },
+  {
+    "id": "dukes-XXX-001529",
+    "name": "Peterborough Power Station PPL2 Gas Engines",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 49,
+    "turbines": null,
+    "country": "England",
+    "region": "East Midlands",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -0.20382,
+      52.57686
+    ]
+  },
+  {
+    "id": "dukes-XXX-001530",
+    "name": "Thornhill",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 40,
+    "turbines": null,
+    "country": "England",
+    "region": "Yorkshire and the Humber",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.65418,
+      53.67767
+    ]
+  },
+  {
+    "id": "dukes-XXX-001531",
+    "name": "Viking",
+    "fuel": "gas",
+    "technology": "Single cycle",
+    "capacityMw": 50,
+    "turbines": null,
+    "country": "England",
+    "region": "North East",
+    "updated": "2026-05-31",
+    "snapshot": "May 2026",
+    "source": "DESNZ DUKES 5.11 · May 2026",
+    "status": "Operational in May 2026 register; current operation not established",
+    "point": [
+      -1.20038,
+      54.60924
+    ]
+  }
+]
